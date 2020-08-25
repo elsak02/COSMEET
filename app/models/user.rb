@@ -13,6 +13,9 @@ class User < ApplicationRecord
 
   validates :name, :birth_date, :birth_time, :birth_place, :gender, :sexual_preference, :relationship_type, :element_ranking, :mode_ranking, presence: true
 
+  geocoded_by :birth_place
+  after_validation :geocode, if: :will_save_change_to_birth_place?
+
   RELATIONSHIP_TYPES = ["Un amour galactique #veryserious",
     "Le Big Bang céleste #friendswithbenefits",
     "Partir en exploration #justcurious"
