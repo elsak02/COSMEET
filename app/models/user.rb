@@ -11,8 +11,6 @@ class User < ApplicationRecord
   has_many :messages
   has_many_attached :photos
 
-  validates :name, :birth_date, :birth_time, :birth_place, :gender, :sexual_preference, :relationship_type, :element_ranking, :mode_ranking, presence: true
-
   RELATIONSHIP_TYPES = ["Un amour galactique #veryserious",
     "Le Big Bang céleste #friendswithbenefits",
     "Partir en exploration #justcurious"
