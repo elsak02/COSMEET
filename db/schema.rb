@@ -10,10 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_151148) do
+ActiveRecord::Schema.define(version: 2020_08_25_092719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chart_elements", force: :cascade do |t|
+    t.string "planet"
+    t.string "sign"
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_chart_elements_on_user_id"
+  end
+
+  create_table "horoscopes", force: :cascade do |t|
+    t.date "date"
+    t.string "sign"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "match_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["match_id"], name: "index_messages_on_match_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "user_matches", force: :cascade do |t|
+    t.bigint "match_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["match_id"], name: "index_user_matches_on_match_id"
+    t.index ["user_id"], name: "index_user_matches_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +72,23 @@ ActiveRecord::Schema.define(version: 2020_08_24_151148) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.date "birth_date"
+    t.time "birth_time"
+    t.string "birth_place"
+    t.string "gender"
+    t.string "sexual_preference"
+    t.string "relationship_type"
+    t.integer "element_ranking", array: true
+    t.integer "mode_ranking", array: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "chart_elements", "users"
+  add_foreign_key "likes", "users"
+  add_foreign_key "messages", "matches"
+  add_foreign_key "messages", "users"
+  add_foreign_key "user_matches", "matches"
+  add_foreign_key "user_matches", "users"
 end
