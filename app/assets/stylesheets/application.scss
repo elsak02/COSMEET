@@ -11,3 +11,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+body {
+  background-color: $pink;
+}
+
+h1, p {
+  font-family: $font-family;
+}
+

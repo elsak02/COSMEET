@@ -15,10 +15,12 @@
     <%= render 'shared/ios_pwa_links' %>
   </head>
 
-  <body id="<%= controller.controller_name %>-<%= controller.action_name %>">
-    <%= render 'shared/navbar' %>
+  <body id="<%= controller.controller_name %>-<%= controller.action_name %>" class="min-vh-100">
+    <% unless controller_name == "pages"  %>
+      <%= render 'shared/navbar' %>
+    <% end  %>
     <%= render 'shared/flashes' %>
-    <div class="container">
+    <div class="container <%= "min-vh-100" if controller_name == "pages" %>">
       <%= yield %>
     </div>
 
