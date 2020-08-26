@@ -1,0 +1,7 @@
+<h3>Select the tags that better correspond to your personality traits</h3>
+
+
+<%= simple_form_for(current_user, url: profiles_personality_traits_path) do |f| %>
+  <%= f.input  :relationship_type, collection: ["Trait 1", "Trait 2", "Trait 3"], as: :check_boxes %>
+  <%= f.submit 'Continue', class:'button' %>
+<% end %>

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resource :relationship_types, only: [:edit, :update]
     resource :element_rankings, only: [:edit, :update]
     resource :mode_rankings, only: [:edit, :update]
+    resource :personality_traits, only: [:edit, :update]
   end
   resources :users, only: [:show]
 end
