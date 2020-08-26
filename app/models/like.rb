@@ -1,4 +1,4 @@
 class Like < ApplicationRecord
-  belongs_to :giver, class_name: 'User'
-  belongs_to :receiver, class_name: 'User'
+  belongs_to :user # , class_name: 'User', foreign_key: :user_id
+  belongs_to :receiver, class_name: 'User', foreign_key: :receiver_id
 end
