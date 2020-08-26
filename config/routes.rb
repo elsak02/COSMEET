@@ -8,8 +8,7 @@ Rails.application.routes.draw do
     resource :photos, only: [:edit, :update]
     resource :relationship_types, only: [:edit, :update]
     resource :element_rankings, only: [:edit, :update]
+    resource :mode_rankings, only: [:edit, :update]
   end
-
-  resources :user, only: [:show]
-
+  resources :users, only: [:show]
 end

@@ -1,4 +1,4 @@
-class Profiles::ElementRankingsController < Profiles::PreferencesController
+class Profiles::ModeRankingsController < Profiles::PreferencesController
   def update
     authorize current_user
     current_user.assign_attributes(profile_params)
