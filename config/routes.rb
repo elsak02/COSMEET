@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resource :birth_infos, only: [:edit, :update]
     resource :photos, only: [:edit, :update]
     resource :relationship_types, only: [:edit, :update]
+    resource :element_rankings, only: [:edit, :update]
   end
 
   resources :user, only: [:show]
