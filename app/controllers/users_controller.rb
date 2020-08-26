@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def index
     @users = User.where.not(id: current_user.id)
     @users = policy_scope(@users).order(created_at: :desc)
+    @like = Like.new
   end
 
   def show

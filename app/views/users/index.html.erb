@@ -5,6 +5,11 @@
       <div class= "card c">
         <div class="top-sec">
           <%= cl_image_tag user.photos.first.key %>
+          <%= simple_form_for @like do |f|%>
+            <%= f.input_field :receiver_id, class: "d-none", value: user.id %>
+            <%= f.input_field :liked, class: "d-none" %>
+            <%= f.submit %>
+          <% end %>
         </div>
         <div class="bottom-sec">
           <h4><strong><%= user.name %></strong>, <%= user.age(user.birth_date) %></h4>

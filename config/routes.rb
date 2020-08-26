@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     resource :personality_traits, only: [:edit, :update]
   end
 
-  resources :users, only: [:index, :show] do
-    resources :likes, only: [:new, :create]
-  end
+  resources :users, only: [:index, :show]
+  resources :likes, only: [:new, :create]
 end
