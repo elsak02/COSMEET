@@ -1,4 +1,4 @@
-class Profiles::PhotosController < Profiles::PreferencesController
+class Profiles::RelationshipTypesController < Profiles::PreferencesController
   def update
     authorize current_user
     current_user.assign_attributes(profile_params)

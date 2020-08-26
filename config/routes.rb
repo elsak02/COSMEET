@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resource :preferences, only: [:edit, :update]
     resource :birth_infos, only: [:edit, :update]
     resource :photos, only: [:edit, :update]
+    resource :relationship_types, only: [:edit, :update]
   end
 
   resources :user, only: [:show]
