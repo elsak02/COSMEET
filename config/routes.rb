@@ -11,5 +11,8 @@ Rails.application.routes.draw do
     resource :mode_rankings, only: [:edit, :update]
     resource :personality_traits, only: [:edit, :update]
   end
-  resources :users, only: [:show]
+
+  resources :users, only: [:show] do
+    resources :likes, only: [:new, :create]
+  end
 end
