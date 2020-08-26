@@ -7,7 +7,6 @@ class Profiles::PreferencesController < ApplicationController
     authorize current_user
     current_user.assign_attributes(profile_params)
     if current_user.save
-      # changer ceci avec la prochaine etape!
       redirect_to edit_profiles_birth_infos_path
     else
       render :edit
@@ -26,6 +25,7 @@ class Profiles::PreferencesController < ApplicationController
       :sexual_preference,
       :relationship_type,
       :element_ranking,
-      :mode_ranking)
+      :mode_ranking,
+      :photos [])
   end
 end

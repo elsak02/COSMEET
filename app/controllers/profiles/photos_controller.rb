@@ -1,9 +1,10 @@
-class Profiles::BirthInfosController < Profiles::PreferencesController
+class Profiles::PhotosController < Profiles::PreferencesController
   def update
     authorize current_user
     current_user.assign_attributes(profile_params)
     if current_user.save
-      redirect_to edit_profiles_photos_path
+      # changer ceci avec la prochaine etape!
+      redirect_to new_user_session
     else
       render :edit
     end

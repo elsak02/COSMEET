@@ -11,8 +11,6 @@ class User < ApplicationRecord
   has_many :messages
   has_many_attached :photos
 
-  validates :name, :birth_date, :birth_time, :birth_place, :gender, :sexual_preference, :relationship_type, :element_ranking, :mode_ranking, presence: true
-
   geocoded_by :birth_place
   after_validation :geocode, if: :will_save_change_to_birth_place?
 
