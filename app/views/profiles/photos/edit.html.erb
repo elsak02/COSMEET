@@ -1,10 +1,60 @@
 <h3>Cosmeet helps you to boost your profile</h3>
 
-<%= simple_form_for(current_user, url: profiles_photos_path ) do |f| %>
-  <%= f.input :photo, label: 'A photo you would like to hang on a wall', label_html: { class: 'label'}, as: :file %>
-  <%= f.input :photo, label: 'What about a little bit of self-derision? ', label_html: { class: 'label'}, as: :file %>
-  <%= f.input :photo, label: 'A photo displaying what you are passionate about', label_html: { class: 'label'}, as: :file %>
-  <%= f.input :photo, label: 'A photo of you and your buddies', label_html: { class: 'label'}, as: :file %>
-  <%= f.submit 'Continue', class:'button' %>
-<% end %>
-<div class="media-preview"></div>
+
+<div>
+  <%= simple_form_for(current_user, url: profiles_photos_path ) do |f| %>
+    <div data-controller="img-preview">
+      <%= f.input(:photo,
+                  label: 'A photo you would like to hang on a wall',
+                  label_html: { class: 'label'},
+                  input_html: {
+                    data: {
+                      target: 'img-preview.photo',
+                      action: 'change->img-preview#loadPreview'
+                    }
+                  },
+                  as: :file) %>
+      <div data-target="img-preview.preview" class="profile-pictures"></div>
+    </div>
+    <div data-controller="img-preview">
+      <%= f.input(:photo,
+                  label: 'What about a little bit of self-derision? ',
+                  label_html: { class: 'label'},
+                  input_html: {
+                    data: {
+                      target: 'img-preview.photo',
+                      action: 'change->img-preview#loadPreview'
+                    }
+                  },
+                  as: :file) %>
+      <div data-target="img-preview.preview" class="profile-pictures"></div>
+    </div>
+    <div data-controller="img-preview">
+      <%= f.input(:photo,
+                  label: 'A photo displaying what you are passionate about',
+                  label_html: { class: 'label'},
+                  input_html: {
+                    data: {
+                      target: 'img-preview.photo',
+                      action: 'change->img-preview#loadPreview'
+                    }
+                  },
+                  as: :file) %>
+      <div data-target="img-preview.preview" class="profile-pictures"></div>
+    </div>
+    <div data-controller="img-preview">
+      <%= f.input(:photo,
+                  label: 'A photo of you and your buddies',
+                  label_html: { class: 'label'},
+                    input_html: {
+                    data: {
+                      target: 'img-preview.photo',
+                      action: 'change->img-preview#loadPreview'
+                    }
+                  },
+                  as: :file) %>
+      <div data-target="img-preview.preview" class="profile-pictures"></div>
+    </div>
+    <%= f.submit 'Continue', class:'button' %>
+  <% end %>
+</div>
