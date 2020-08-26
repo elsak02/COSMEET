@@ -78,7 +78,6 @@ minute = User.first.birth_time.strftime("%M")
 # cecile = astro_api.call("custom_western_chart", 29, 12, 1988, 5, 40, 49.043411, 3.956242, 2)
 
 
-
 User.create(email: "cecile@cosmeet.com", password: "123456", name: "Cecile", birth_date: "1988-12-29", birth_time: "5:40", birth_place:"Compiègne", gender: "Woman", sexual_preference: "Man", relationship_type:"Serious", element_ranking: [1,2,3,4], mode_ranking: [1,3,2], personality_trait: "sensible, dreamer, creative", latitude: "49.41", longitude: "2.82")
 
 User.create(email: "louis@cosmeet.com", password: "123456", name: "Louis", birth_date: "1990-02-20", birth_time: "5:30", birth_place:"Suresnes", gender: "Man", sexual_preference: "Woman", relationship_type:"Sexual", element_ranking: [3,4,1,2], mode_ranking: [1,2,3], personality_trait: "adventurous, curious, creative", latitude: "48.86", longitude: "2.23")
@@ -94,3 +93,4 @@ User.create(email: "elsa@cosmeet.com", password:"123456", name: "Elsa", birth_da
 User.create(email: "oceane@cosmeet.com", password:"123456", name: "Oceane", birth_date: "1989-03-14", birth_time: "7:10", birth_place:"Tourcoing", gender: “"Woman”", sexual_preference: "Man", relationship_type:"Serious", element_ranking: [,2,3,4,1], mode_ranking: [2,3,1], personality_trait: "committed, romantic, creative", latitude: "50.72" longitude: "3.16")
 # User Edouard
 User.create(email: "edouard@cosmeet.com", password:"123456", name: "Edouard", birth_date: "1989-11-20", birth_time: "18:30", birth_place:"Le Mans", gender: "Homme", sexual_preference: "Femme", relationship_type:"Serious", element_ranking: [3,2,4,1], mode_ranking: [3,2,1], personality_trait: "romantic, sociable, entrepreneur", latitude: "48.00", longitude: "0.19")
+
