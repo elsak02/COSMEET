@@ -79,3 +79,8 @@ minute = User.first.birth_time.strftime("%M")
 
 
 
+# Seed 6 users
+# - Users index - List all user except current one and the ones already liked
+# - Like create (Act as Votable)
+# - Matching generation
+
