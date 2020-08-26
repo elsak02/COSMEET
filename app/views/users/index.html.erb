@@ -1,0 +1,12 @@
+<% @users.each do |user| %>
+  <div class="d-flex justify-content-center">
+    <div class="my-4">
+      <div style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url('<%= cl_image_path user.photos.first.key %>')">
+          <h1><%= user.name %></h1>
+      </div>
+      <div class="p-3 d-flex justify-content-between">
+        <p><%= user.personality_trait %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
