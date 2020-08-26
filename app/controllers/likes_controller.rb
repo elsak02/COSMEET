@@ -4,6 +4,8 @@ class LikesController < ApplicationController
     @like.user = current_user
     authorize @like
     @like.save
+    match = @like.create_match
+    redirect_to match_path(match) if match
   end
 
   def like_params
