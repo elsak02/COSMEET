@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :birth_infos, only: [:edit, :update]
   end
 
-  resources :users, only: [:show] do
+  resources :users, only: [:index, :show] do
     resources :likes, only: [:new, :create]
   end
 end

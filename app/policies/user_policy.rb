@@ -4,6 +4,11 @@ class UserPolicy < ApplicationPolicy
       scope.all
     end
    end
+
+  def index?
+    return true
+  end
+
   def show?
     return true
   end
