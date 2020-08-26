@@ -1,5 +1,4 @@
 class Profiles::PreferencesController < ApplicationController
-
   def edit
     authorize current_user
   end
@@ -9,7 +8,7 @@ class Profiles::PreferencesController < ApplicationController
     current_user.assign_attributes(profile_params)
     if current_user.save
       # changer ceci avec la prochaine etape!
-      redirect_to users_path
+      redirect_to edit_profiles_birth_infos_path
     else
       render :edit
     end
@@ -29,5 +28,4 @@ class Profiles::PreferencesController < ApplicationController
       :element_ranking,
       :mode_ranking)
   end
-
 end
