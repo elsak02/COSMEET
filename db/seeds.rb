@@ -111,7 +111,7 @@ elsa.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #User Oceane
 file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1597859853/hlm3ivjlz0tezolmvyvo.jpg')
-oceane = User.create!(email: "oceane@cosmeet.com", password:"123456", name: "Océane", birth_date: "1989-03-14", birth_time: "7:10", birth_place: "Tourcoing", gender: "Woman", sexual_preference: "Man", relationship_type:"Serious", element_ranking: [2,3,4,1], mode_ranking: [2,3,1], personality_trait: "committed, romantic, creative", latitude: 50.72, longitude: 3.16)
+oceane = User.create!(email: "oceane@cosmeet.com", password:"123456", name: "Océane", birth_date: "1989-03-14", birth_time: "7:10", birth_place: "Tourcoing", gender: "Woman", sexual_preference: "Man", relationship_type:"Serious", element_ranking: [2,3,4,1], mode_ranking: [2,3,1], personality_trait: "committed, romantic, creative", latitude: 50.72, longitude: 3.16, biography: "Wabi-sabi and daydreaming believer. I love animails and hate the garbage trucks sound.")
 oceane.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 # User Edouard

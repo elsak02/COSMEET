@@ -1,12 +1,18 @@
+<div class="min-vh-80">
 <% @users.each do |user| %>
-  <div class="d-flex justify-content-center">
-    <div class="my-4">
-      <div style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url('<%= cl_image_path user.photos.first.key %>')">
-          <h1><%= user.name %></h1>
-      </div>
-      <div class="p-3 d-flex justify-content-between">
-        <p><%= user.personality_trait %></p>
+  <div class="row">
+    <div class="col">
+      <div class= "card c">
+        <div class="top-sec">
+          <%= cl_image_tag user.photos.first.key %>
+        </div>
+        <div class="bottom-sec">
+          <h4><strong><%= user.name %></strong>, <%= user.age(user.birth_date) %></h4>
+          <p><%= user.personality_trait %></p>
+          <p class="biography-index"><%= user.biography %></p>
+        </div>
       </div>
     </div>
   </div>
 <% end %>
+</div>
