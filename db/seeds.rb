@@ -91,12 +91,12 @@ louis.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 
 file = URI.open('https://avatars3.githubusercontent.com/u/61389907?v=4')
-quentin = User.create!(email: "quentin@cosmeet.com", password: "123456", name: "Quentin", birth_date: "1990-09-22", birth_time: "16:30", birth_place:"Rueil-Malmaison", gender: "Man", sexual_preference: "Woman", relationship_type:"Casual", element_ranking: [3,1,4,2], mode_ranking: [3,1,2], personality_trait: "adventurous, go-getter, curious", latitude: 48.88, longitude: 2.20, biography: "US footbal fan, I coach teams for a living. I also love to spend time with Mango my cat.")
+quentin = User.create!(email: "quentin@cosmeet.com", password: "123456", name: "Quentin", birth_date: "1990-09-22", birth_time: "16:30", birth_place:"Rueil-Malmaison", gender: "Man", sexual_preference: "Woman", relationship_type:"Casual", element_ranking: [3,1,4,2], mode_ranking: [3,1,2], personality_trait: "adventurous, go-getter, curious", latitude: 48.88, longitude: 2.20, biography: "US football fan, I coach teams for a living. I also love to spend time with Mango my cat.")
 quentin.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 
 file = URI.open('https://avatars2.githubusercontent.com/u/1598346?v=4')
-guillaume = User.create!(email: "guillaume@cosmeet.com", password: "123456", name: "Guillaume", birth_date: "1981-03-30", birth_time: "2:26", birth_place:"Rennes", gender: "Man", sexual_preference: "Woman", relationship_type:"Serious", element_ranking: [3,1,4,2], mode_ranking: [3,1,2], personality_trait: "funny, go-getter, creative", latitude: 48.08, longitude: -1.68, biography: "Recently been promoted to teacher at Le Wagon, I enjoy a good fried chicken (not without some shame).")
+guillaume = User.create!(email: "guillaume@cosmeet.com", password: "123456", name: "Guillaume", birth_date: "1981-03-30", birth_time: "2:26", birth_place:"Rennes", gender: "Man", sexual_preference: "Woman", relationship_type:"Serious", element_ranking: [3,1,4,2], mode_ranking: [3,1,2], personality_trait: "funny, go-getter, creative", latitude: 48.08, longitude: -1.68, biography: "Recently been promoted to teacher at Le Wagon, I enjoy a good fried chicken (not without shame).")
 guillaume.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 
