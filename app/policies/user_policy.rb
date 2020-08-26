@@ -2,6 +2,7 @@ class UserPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
+      # scope.where.not(id: current_user.id)
     end
    end
 
