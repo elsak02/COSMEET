@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   namespace :profiles do
     resource :preferences, only: [:edit, :update]
     resource :birth_infos, only: [:edit, :update]
+    resource :photos, only: [:edit, :update]
+    resource :relationship_types, only: [:edit, :update]
+    resource :element_rankings, only: [:edit, :update]
+    resource :mode_rankings, only: [:edit, :update]
+    resource :personality_traits, only: [:edit, :update]
   end
 
   resources :users, only: [:index, :show] do

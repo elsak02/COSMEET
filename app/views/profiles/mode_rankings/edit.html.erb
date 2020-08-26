@@ -1,0 +1,8 @@
+<h3>In your opinion, what is most important in the early stages of a relationship?</h3>
+<h4>Rank your preferences (1-4):</h4>
+
+<%= simple_form_for(current_user, url: profiles_mode_rankings_path) do |f| %>
+  <%= f.input  :relationship_type, collection: ["My significant other has a lot of initiative", "Me and my partner must be on the same page. That's it!", "My partner is very flexible and usually adapts to my wishes."], as: :check_boxes %>
+  <%= f.submit 'Continue', class:'button' %>
+<% end %>
+

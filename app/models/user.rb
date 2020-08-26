@@ -11,7 +11,6 @@ class User < ApplicationRecord
   has_many :messages
   has_many_attached :photos
 
-
   geocoded_by :birth_place
   after_validation :geocode, if: :will_save_change_to_birth_place?
 

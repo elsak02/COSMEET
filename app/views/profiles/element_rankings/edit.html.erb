@@ -1,0 +1,9 @@
+<h3>What personality traits are you looking for in a potential match?</h3>
+<h4>Rank your preferences (1-4):</h4>
+
+<%= simple_form_for(current_user, url: profiles_element_rankings_path) do |f| %>
+  <%= f.input  :relationship_type, collection: ["Independent, Enthousiatic, Active", "Trustworthy, Purposefull, Secure", "Communicative, Social, Creative", "Sensitive, Romantic, Caring"], as: :check_boxes %>
+  <%= f.submit 'Continue', class:'button' %>
+<% end %>
+
+
