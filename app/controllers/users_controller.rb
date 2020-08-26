@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   def show
     authorize @user
   end
-
   def update
   end
 

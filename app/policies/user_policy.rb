@@ -3,8 +3,7 @@ class UserPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
-  end
-
+   end
   def show?
     return true
   end
@@ -12,4 +11,5 @@ class UserPolicy < ApplicationPolicy
   def update?
     record == user
   end
+
 end

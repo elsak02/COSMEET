@@ -7,4 +7,6 @@ Rails.application.routes.draw do
     resource :birth_infos, only: [:edit, :update]
   end
 
+  resources :user, only: [:show]
+
 end
