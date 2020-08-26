@@ -1,4 +1,4 @@
-love_traits_signs:
+signs:
   Aries:
     'Like their ruling planet Mars, Aries are hot and stormy. They're a combination of confidence and passion combined with temper and petulance. Everyone who ever loves an Aries tries—unsuccessfully but excitingly—to tame them.'
   Taurus:
@@ -23,4 +23,198 @@ love_traits_signs:
     'When it comes to love, Aquarius may march to the beat of their own drummer—the free-love era wasn't named "The Age of Aquarius" for nothing. Aquarius doesn't take a lot of stock in what "should" be done, but Aquarius has their own rules, codes of ethics, and morality and takes all three incredibly seriously.'
   Pisces:
     'Passionate, intense, and singular, a relationship with a Pisces is a roller-coaster ride that will make you feel your feelings—even the bad ones—and help you emerge as a better, more honest person. Even if a relationship with a Pisces doesn't last, the lessons you learn from a Pisces partner will.'
+tags:
+  Aries:
+    - creative
+    - original
+    - intuitive
+    - perceptive
+    - spontaneous
+    - couragous
+    - hasty
+    - intolerant
+    - independent
+    - honest
+    - passionate
+    - impulsive
+    - moody
+    - determined
+    - optimistic
+  Taurus:
+    - productive
+    - loyal
+    - trustworthy
+    - sensitive
+    - understanding
+    - calm
+    - affectionate
+    - artistic
+    - lazy
+    - short-tempered
+    - possessive
+    - stubborn
+    - aloof
+    - materialistic
+    - responsible
+  Gemini:
+    - gentle
+    - affectionate
+    - curious
+    - adaptable
+    - expressive
+    - intelligent
+    - perceptive
+    - inventive
+    - cheerful
+    - sensitive
+    - changeable
+    - restless
+    - silly
+    - cold
+    - scatter brained
+  Cancer:
+    - tenacious
+    - highly imaginative
+    - loyal
+    - emotional
+    - sympathetic
+    - persuasive
+    - intutive
+    - sensitive
+    - good memory
+    - caring
+    - maternal
+    - clingy
+    - moody
+    - snobissh
+    - lazy
+  Leo:
+    - proud
+    - confident
+    - ambitious
+    - creative
+    - artistic
+    - optimistic
+    - generous
+    - romantic
+    - idealistic
+    - childish
+    - show off
+    - dictator
+    - lustful
+    - pretentious
+    - sincere
+  Virgo:
+    - loyal
+    - analytical
+    - kind
+    - hardworking
+    - practical
+    - meticulous
+    - studious
+    - calm
+    - helpful
+    - picky
+    - sloppy
+    - melancholy
+    - secretive
+    - precise
+    - disorganized
+  Libra:
+    - persuasive
+    - sociable
+    - refined
+    - suave
+    - idealistic
+    - artistic
+    - cooperative
+    - diplomatic
+    - gracious
+    - social
+    - indecisive
+    - lazy
+    - fickle
+    - judicial
+    - fair-minded
+  Scorpio:
+    - resourceful
+    - brave
+    - passionate
+    - stubborn
+    - jealous
+    - secretive
+    - intense
+    - ambitious
+    - intuitive
+    - magnetic
+    - determined
+    - suspicious
+    - sarcastic
+    - resentful
+    - healer
+  Sagittarius:
+    - philosophical
+    - broad minded
+    - just
+    - optimistic
+    - inspirationnal
+    - expansive
+    - great sense of humor
+    - generous
+    - idealistic
+    - magnanimous
+    - pushy
+    - religiously rigid
+    - indulgent
+    - freedom-loving
+    - procrastinating
+  Capricorn:
+    - responsible
+    - efficient
+    - practical
+    - hard working
+    - executive
+    - loyal
+    - trustworthy
+    - disciplined
+    - good manager
+    - know-it-all
+    - condescending
+    - demanding
+    - unforgiving
+    - stubborn
+    - ambitious
+  Aquarius:
+    - original
+    - independent
+    - humanitarian
+    - progressive
+    - tolerant
+    - loyal
+    - intellectual
+    - intuitive
+    - scientist
+    - unsociable
+    - cold
+    - fanatic
+    - excentric
+    - impersonal
+    - rebellious
+  Pisces:
+    - compassionate
+    - artistic
+    - intuitive
+    - gentle
+    - wise
+    - musical
+    - caring
+    - empathetic
+    - creative
+    - sensitive
+    - melancholy
+    - indecisive
+    - procrastinating
+    - pessimistic
+    - imaginative
+
 
