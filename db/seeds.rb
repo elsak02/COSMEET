@@ -78,7 +78,9 @@ require "open-uri"
 # louis = astro_api.call("western_chart_data", 20, 02, 1990, 5, 30, 48.8667, 2.2333, 2)
 # astro_api.call("custom_western_chart", 20, 02, 1990, 5, 30, 48.8667, 2.2333, 2)
 # cecile = astro_api.call("custom_western_chart", 29, 12, 1988, 5, 40, 49.043411, 3.956242, 2)
+Like.destroy_all
 User.destroy_all
+
 
 file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1539599254/janttrofl6xagki5zk6g.jpg')
 cecile = User.create!(email: "cecile@cosmeet.com", password: "123456", name: "Cecile", birth_date: "1988-12-29", birth_time: "5:40", birth_place:"Compiègne", gender: "Woman", sexual_preference: "Man", relationship_type:"Serious", element_ranking: [1,2,3,4], mode_ranking: [1,3,2], personality_trait: "sensible, dreamer, creative", latitude: 49.41, longitude: 2.82, biography: "Teacher at Le Wagon, passionate about astrology, looking for the right fit!")
