@@ -24,8 +24,8 @@ class Profiles::PreferencesController < ApplicationController
       :gender,
       :sexual_preference,
       :relationship_type,
-      :element_ranking,
       :mode_ranking,
+      :element_ranking,
       photos: [])
   end
 end
