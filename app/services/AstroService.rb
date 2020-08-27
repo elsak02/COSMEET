@@ -25,7 +25,7 @@ class AstroService
     else
       resp = Net::HTTP.new(url.host, url.port).start {|http| http.request(req) }
     end
-    p resp.body
+      resp.body
   end
 
   def packageHoroData(date, month, year, hour, minute, latitude, longitude, timezone)
@@ -82,7 +82,7 @@ class AstroService
   end
 
   def matchMakingCall(resource, maleBirthData, femaleBirthData)
-    p data = self.packageMatchMakingData(maleBirthData, femaleBirthData)
+    data = self.packageMatchMakingData(maleBirthData, femaleBirthData)
     getResponse(resource, data)
   end
 
