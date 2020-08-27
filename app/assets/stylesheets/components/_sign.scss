@@ -1,69 +1,53 @@
 .user-sign {
   background-size: cover;
+  background-color: white;
+  border: 3px solid white;
 }
 
 .aquarius {
-  background-image: asset-url('aquarius.jpg');
+  background-image: asset-url('aquarius.png');
 }
 
 .aries {
-  background-image: url("<%= asset_path 'aries.png' %>");
-  background-color: gold;
-  background-size: cover;
+  background-image: asset-url('aries.png');
 }
 
 .cancer {
-  background-image: url("<%= asset_path 'cancer.png' %>");
-  background-color: gold;
-  background-size: cover;
+  background-image: asset-url('cancer.png');
 }
 
 .capricorn {
-  background-image: url("<%= asset_path 'capricorn.png' %>");
-  background-color: gold;
-  background-size: cover;
+  background-image: asset-url('capricorn.png');
 }
 
 .gemini {
-  background-image: url("<%= asset_path 'gemini.png' %>");
-  background-color: gold;
-  background-size: cover;
+  background-image: asset-url('gemini.png');
 }
 
 .leo {
-  background-image: url("<%= asset_path 'leo.png' %>");
-  background-color: gold;
-  background-size: cover;
+  background-image: asset-url('leo.png');
 }
 
 .libra {
-  background-image: url("<%= asset_path 'libra.png' %>");
-  background-color: gold;
-  background-size: cover;
+  background-image: asset-url('libra.png');
 }
 
 .pisces {
-  background-image: url("<%= asset_path 'pisces.png' %>");
-  background-color: gold;
-  background-size: cover;
+  background-image: asset-url('pisces.png');
 }
 
 .sagittarius {
-  background-image: url("<%= asset_path 'sagittarius.png' %>");
+  background-image: asset-url('sagittarius.png');
 }
 
 .scorpio {
-  background-image: asset-url('scorpio.jpg');
+  background-image: asset-url('scorpio.png');
 }
 
 .taurus {
-  background-image: url("<%= asset_path 'taurus.png' %>");
-  background-color: gold;
-  background-size: cover;
+  background-image: asset-url('taurus.png');
 }
 
 .virgo {
-  background-image: url("<%= asset_path 'virgo.png' %>");
-  background-color: gold;
-  background-size: cover;
+  background-image: asset-url('virgo.png');
 }
