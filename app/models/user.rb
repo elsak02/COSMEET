@@ -1,3 +1,4 @@
+require 'date'
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -22,4 +23,9 @@ class User < ApplicationRecord
   ELEMENT_RANKING = []
 
   MODE_RANKING = []
+
+  def age(birth_date)
+    now = Time.now.utc.to_date
+    now.year - birth_date.year - ((now.month > birth_date.month || (now.month == birth_date.month && now.day >= birth_date.day)) ? 0 : 1)
+  end
 end

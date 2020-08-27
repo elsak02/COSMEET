@@ -1,13 +1,9 @@
 class LikesController < ApplicationController
-  def new
-    @like = Like.new
-  end
-
   def create
-    @receiver = User.find(params[:id])
-    @like = Like.create(like_params)
+    @like = Like.new(like_params)
     @like.user = current_user
-    @like.receiver = @receiver
+    authorize @like
+    @like.save
   end
 
   def like_params
