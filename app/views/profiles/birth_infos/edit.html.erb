@@ -1,5 +1,11 @@
 <%= simple_form_for(current_user, url: profiles_birth_infos_path ) do |f| %>
-  <%= f.input :birth_date, label: 'Your date of birth', label_html: { class: 'label'}, as: :date %>
+  <%= f.input(:birth_date,
+              label: 'Your date of birth',
+              label_html: { class: 'label'},
+              as: :date,
+              start_year: Date.today.year - 90,
+              end_year: Date.today.year - 18,
+              required: true) %>
   <%= f.input  :birth_time, label: 'Your time of birth', collection: %w[male female], as: :time %>
   <%= f.input  :birth_place, label: 'Your place of birth' %>
   <%= f.submit 'Continue', class:'button' %>

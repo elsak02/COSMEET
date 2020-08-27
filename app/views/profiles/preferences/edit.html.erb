@@ -1,6 +1,6 @@
 <%= simple_form_for(current_user, url: profiles_preferences_path ) do |f| %>
   <%= f.input :name, label: 'Your name', label_html: { class: 'label'} %>
-  <%= f.input  :gender, label: 'You identify yourself as', collection: %w[male female], as: :radio_buttons %>
-  <%= f.input  :sexual_preference, label: 'You are looking for a', collection: %w[man woman both], as: :radio_buttons %>
+  <%= f.input  :gender, label: 'You identify yourself as a', collection: %w[Man Woman], as: :radio_buttons %>
+  <%= f.input  :sexual_preference, label: 'You are looking for a', collection: %w[Man Woman Both], as: :radio_buttons %>
   <%= f.submit 'Continue', class:'button' %>
 <% end %>
