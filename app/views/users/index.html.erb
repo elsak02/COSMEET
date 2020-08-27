@@ -4,7 +4,9 @@
       <div class="col">
       <div class="card c">
         <div class="top-sec">
-          <%= cl_image_tag user.photos.first.key %>
+          <% if user.photos.any? %>
+            <%= cl_image_tag user.photos.first.key %>
+          <% end %>
         </div>
         <div class="sign-sec #{user.sign(user)} user-sign">
         </div>
