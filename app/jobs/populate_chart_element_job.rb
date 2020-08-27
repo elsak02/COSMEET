@@ -9,7 +9,7 @@ PLANETS = %w[Sun Moon Saturn Jupiter Venus Mercury Pluto Uranus Neptune Mars]
 ASTRO_API = AstroService.new(ENV["ASTRO_ID"], ENV["ASTRO_KEY"])
 
   def perform(user)
-    timezone = -5
+    timezone = 2
     latitude = user.latitude
     longitude = user.longitude
     date = user.birth_date.day
