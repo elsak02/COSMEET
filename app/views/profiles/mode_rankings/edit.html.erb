@@ -1,8 +1,17 @@
-<h3>In your opinion, what is most important in the early stages of a relationship?</h3>
-<h4>Rank your preferences (1-4):</h4>
+<h3 class="text-center">In your opinion, what is most important in  a relationship?</h3>
+<h5>Rank your preferences from top to bottom:</h5>
+
+
+<ul class="list-inline">
+  <li id="cardinal" class="element-tag"> My significant other has a lot of initiative</li>
+  <li id="fixed" class="element-tag"> Me and my partner must be on the same page. That's it!</li>
+  <li id="mutable" class="element-tag"> My partner is very flexible and usually adapts to my wishes.</li>
+</ul>
+
+
 
 <%= simple_form_for(current_user, url: profiles_mode_rankings_path) do |f| %>
-  <%= f.input  :relationship_type, collection: ["My significant other has a lot of initiative", "Me and my partner must be on the same page. That's it!", "My partner is very flexible and usually adapts to my wishes."], as: :check_boxes %>
+  <%= f.input  :mode_ranking, as: :hidden %>
   <%= f.submit 'Continue', class:'button' %>
 <% end %>
 

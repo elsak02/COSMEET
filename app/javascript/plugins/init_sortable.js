@@ -2,7 +2,7 @@ import Sortable from 'sortablejs';
 
 const initSortable = () => {
   const list = document.querySelector('.list-inline');
-  const input = document.querySelector("#user_element_ranking");
+  const input = document.querySelector("#user_element_ranking, #user_mode_ranking");
   const sortable = Sortable.create(list, {
     ghostClass: "ghost",
     animation: 150,
