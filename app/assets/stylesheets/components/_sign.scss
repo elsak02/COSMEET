@@ -1,0 +1,59 @@
+.aquarius {
+  background-image: asset-url('aquarius.png');
+  background-color: gold;
+}
+
+.aries {
+  background-image: url("<%= asset_path 'aries.png' %>");
+  background-color: gold;
+}
+
+.cancer {
+  background-image: url("<%= asset_path 'cancer.png' %>");
+  background-color: gold;
+}
+
+.capricorn {
+  background-image: url("<%= asset_path 'capricorn.png' %>");
+  background-color: gold;
+}
+
+.gemini {
+  background-image: url("<%= asset_path 'gemini.png' %>");
+  background-color: gold;
+}
+
+.leo {
+  background-image: url("<%= asset_path 'leo.png' %>");
+  background-color: gold;
+}
+
+.libra {
+  background-image: url("<%= asset_path 'libra.png' %>");
+  background-color: gold;
+}
+
+.pisces {
+  background-image: url("<%= asset_path 'pisces.png' %>");
+  background-color: gold;
+}
+
+.sagittarius {
+  background-image: url("<%= asset_path 'sagittarius.png' %>");
+  background-color: gold;
+}
+
+.scorpio {
+  background-image: url("<%= asset_path 'scorpio.png' %>");
+  background-color: gold;
+}
+
+.taurus {
+  background-image: url("<%= asset_path 'taurus.png' %>");
+  background-color: gold;
+}
+
+.virgo {
+  background-image: url("<%= asset_path 'virgo.png' %>");
+  background-color: gold;
+}
