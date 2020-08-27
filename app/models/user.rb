@@ -33,6 +33,6 @@ class User < ApplicationRecord
   end
 
   def sign(user)
-    user.chart_elements.where(planet: "sun")
+    user.chart_elements.where(planet: "Sun").first.sign.downcase
   end
 end
