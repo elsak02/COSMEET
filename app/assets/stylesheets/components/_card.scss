@@ -24,6 +24,7 @@
   margin-top: -40px;
   margin-bottom: 15px;
   margin-right: 10px;
+  position: relative;
 }
 
 .bottom-sec {
@@ -41,8 +42,8 @@
 
 .c .sign-sec {
   position: absolute;
-  right: 30px;
-  top: 50%;
+  right: 5%;
+  bottom: -10%;
   width: 50px;
   height: 50px;
   border-radius: 50%;
