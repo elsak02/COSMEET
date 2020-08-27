@@ -1,1 +1,12 @@
-my show
+<div class="container">
+  <%= cl_image_tag @user.chart.key %>
+  <ul> <% @user.chart_elements.each do |chart_element| %>
+        <li> <strong><%= chart_element.planet %></strong></li>
+          <li><strong><%= chart_element.sign %> </strong></li>
+          <li><%= chart_element.content %></li>
+          <% end %>
+  </ul>
+</div>
+
+
+

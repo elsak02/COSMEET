@@ -11,38 +11,66 @@ require 'json'
 require "open-uri"
 
 # astro_api = AstroService.new(ENV["ASTRO_ID"], ENV["ASTRO_KEY"])
+# ChartElement.destroy_all
+# UserMatch.destroy_all
+# Match.destroy_all
+# Like.destroy_all
+# User.destroy_all
+
+# file = URI.open('https://avatars2.githubusercontent.com/u/61321542?v=4')
+# elsa = User.create!(email: "elsa@cosmeet.com", password:"123456", name: "Elsa", birth_date: "1990-04-02", birth_time: "15:44", birth_place:"Schoelcher", gender: "Woman", sexual_preference: "Man", relationship_type:"Serious", element_ranking: [1,3,2,4], mode_ranking: [1,3,2], personality_trait: "adventurous, traveller, dynamic", latitude: 14.61, longitude: -61.05, biography: "Born and raised in Martinique. I love to travel and hate skooters.")
+# elsa.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 
-# Get User charts and infos for each user
+# # Get User charts and infos for each user
+# user = elsa
+# # # Get Timezone
+# # timezone = 2 #=> for France timezone
+# timezone = -5 #=> Martinique timezone
 
-# # Get Timezone
-# timezone = 2 #=> for France timezone
-# #timezone = -5 #=> Martinique timezone
-
-# # Get Coordinates from user address
-# # TODO: Write API call with Geocoder
-# latitude = User.first.latitude
-# longitude = User.first.longitude
-
-
-# # Get date and time infos as individual integers
-
-# date = User.first.birth_date.day
-# month = User.first.birth_date.month
-# year = User.first.birth_date.year
-# hour = User.first.birth_time.hour
-# minute = User.first.birth_time.strftime("%M")
+# # # Get Coordinates from user address
+# # # TODO: Write API call with Geocoder
+# latitude = user.latitude
+# longitude = user.longitude
 
 
+# # # Get date and time infos as individual integers
 
-#//////API CALLS/////
+# date = user.birth_date.day
+# month = user.birth_date.month
+# year = user.birth_date.year
+# hour = user.birth_time.hour
+# minute = user.birth_time.strftime("%M")
 
-#GET the chart info
-# astro_api.call("western_chart_data", date, month, year, hour, minute, latitude, longitude, timezone)
+
+
+# #//////API CALLS/////
+# PLANETS = %w[Sun Moon Saturn Jupiter Venus Mercury Pluto Uranus Neptune Mars]
+
+# #GET the chart info
+# #user = User.create(...)
+# api_user = astro_api.call("western_chart_data", date, month, year, hour, minute, latitude, longitude, timezone)
+# user_parsed = JSON.parse(api_user)
+# #//ASCENDANT//
+# api_content_ascendant = astro_api.call("general_ascendant_report/tropical", date, month, year, hour, minute, latitude, longitude, -5)
+# content_parsed_ascendant = JSON.parse(api_content_ascendant)
+# ChartElement.create!(user: user, planet: "ascendant", sign: elsa_parsed["houses"][0]["sign"], content: content_parsed_ascendant["report"])
+# user_parsed["houses"].each do |house|
+# #//PLANETS//
+#     house["planets"].each do |planet|
+#       next unless PLANETS.include?(planet["name"])
+#       api_content_planet = astro_api.call("general_sign_report/tropical/#{planet["name"]}", date, month, year, hour, minute, latitude, longitude, -5)
+#       content_parsed = JSON.parse(api_content_planet)
+#       ChartElement.create!(user: user, planet: planet["name"], sign: planet["sign"], content: content_parsed["report"])
+#     end
+#   end
+# end
+
 
 #GET the explication by planet
-#astro_api.call("general_sign_report/tropical/:planetName", date, month, year, hour, minute, latitude, longitude, -5)
-
+# api_content_planet = astro_api.call("general_sign_report/tropical/planet_name", date, month, year, hour, minute, latitude, longitude, -5)
+# content_parsed = JSON.parse(api_content_planet)
+# p content_planet = content_parsed["report"]
 #GET the chart image
 #astro_api.call("custom_western_chart", date, month, year, hour, minute, latitude, longitude, timezone)
 
@@ -65,22 +93,14 @@ require "open-uri"
 
 
 
-# exemple oceane
-# oceane_file = astro_api.call("western_chart_data", 14, 03, 1989, 7, 10, 50.724, 3.162, 1)
-# astro_api.call("custom_western_chart", 14, 03, 1989, 7, 10, 50.724, 3.162, 1)
-
-#Parsing needed?
-# serialized_oceane = File.read(oceane_file)
-# oceane = JSON.parse(serialized_oceane)
-# p ascendant = oceane["houses"]
-
-# exemple Louis
-# louis = astro_api.call("western_chart_data", 20, 02, 1990, 5, 30, 48.8667, 2.2333, 2)
-# astro_api.call("custom_western_chart", 20, 02, 1990, 5, 30, 48.8667, 2.2333, 2)
-# cecile = astro_api.call("custom_western_chart", 29, 12, 1988, 5, 40, 49.043411, 3.956242, 2)
+# //SEED//
+ChartElement.destroy_all
+UserMatch.destroy_all
+Match.destroy_all
 Like.destroy_all
 User.destroy_all
 
+puts "Creating User..."
 
 file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1539599254/janttrofl6xagki5zk6g.jpg')
 cecile = User.create!(email: "cecile@cosmeet.com", password: "123456", name: "Cecile", birth_date: "1988-12-29", birth_time: "5:40", birth_place:"Compiègne", gender: "Woman", sexual_preference: "Man", relationship_type:"Serious", element_ranking: [1,2,3,4], mode_ranking: [1,3,2], personality_trait: "sensible, dreamer, creative", latitude: 49.41, longitude: 2.82, biography: "Teacher at Le Wagon, passionate about astrology, looking for the right fit!")
@@ -121,4 +141,11 @@ file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1535710792/jwfox
 edouard = User.create!(email: "edouard@cosmeet.com", password:"123456", name: "Edouard", birth_date: "1989-11-20", birth_time: "18:30", birth_place: "Le Mans", gender: "Homme", sexual_preference: "Femme", relationship_type: "Serious", element_ranking: [3,2,4,1], mode_ranking: [3,2,1], personality_trait: "romantic, sociable, entrepreneur", latitude: 48.00, longitude: 0.19, biography: "Cop of the wagon, my mission is to make the students follow the rules but always with a smile on my face.")
 edouard.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
+puts "Creating Likes..."
 
+Like.create(user: quentin, receiver: elsa, liked: true)
+
+puts "Creating Chart Element..."
+  User.find_each do |user|
+    PopulateChartElementJob.perform_now(user)
+  end

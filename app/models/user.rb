@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_many :matches, through: :user_matches
   has_many :messages
   has_many_attached :photos
+  has_one_attached :chart
 
   geocoded_by :birth_place
   after_validation :geocode, if: :will_save_change_to_birth_place?
