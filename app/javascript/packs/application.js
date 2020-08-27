@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "controllers";
 import { initAutocomplete } from '../plugins/init_autocomplete.js';
 
 // Internal imports, e.g:
@@ -35,3 +36,4 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initAutocomplete();
 });
+
