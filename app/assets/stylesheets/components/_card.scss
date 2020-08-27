@@ -1,5 +1,7 @@
 .card {
   height: calc(100vh - 70px - 75px);
+
+  position: relative;
 }
 
 .c {
@@ -8,10 +10,12 @@
   border: 1px solid black;
 }
 
-.c img {
+.top-sec img {
   width: 100%;
   object-fit: cover;
   box-shadow: 7px 7px 0px black;
+
+  position: relative;
 }
 
 .c .top-sec {
@@ -31,4 +35,13 @@
 
 .biography-index {
   text-align: justify;
+}
+
+.c .sign-sec {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }

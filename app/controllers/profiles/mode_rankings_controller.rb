@@ -1,7 +1,9 @@
 class Profiles::ModeRankingsController < Profiles::PreferencesController
-  def update
+   def update
     authorize current_user
-    current_user.assign_attributes(profile_params)
+    # current_user.assign_attributes(profile_params)
+    current_user.assign_attributes(mode_ranking: params[:user][:mode_ranking].split(','))
+
     if current_user.save
       redirect_to edit_profiles_personality_traits_path
     else

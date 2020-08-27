@@ -1,3 +1,4 @@
+require 'date'
 class User < ApplicationRecord
   RELATIONSHIP_TYPES = ["Un amour galactique #veryserious",
     "Le Big Bang céleste #friendswithbenefits",
@@ -24,5 +25,14 @@ class User < ApplicationRecord
   def liked_by?(user)
     # likes.find { |like| like.receiver == user } # In Ruby
     received_likes.where(user: user).any?
+  end
+
+  def age(birth_date)
+    now = Time.now.utc.to_date
+    now.year - birth_date.year - ((now.month > birth_date.month || (now.month == birth_date.month && now.day >= birth_date.day)) ? 0 : 1)
+  end
+
+  def sign(user)
+    user.chart_elements.where(planet: "sun")
   end
 end

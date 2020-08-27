@@ -14,19 +14,20 @@
   display: flex;
   align-items: center;
   opacity: .7;
+  padding-top: 3px;
   &:hover {
     opacity: 1;
   }
 }
 
 .footer-links .navbar-brand img {
-  width: 40px;
+  width: 30px;
 }
 
 .footer-links .heartz img {
-  width: 60px;
+  width: 50px;
 }
 
 .footer-links .message img {
-  width: 50px;
+  width: 40px;
 }

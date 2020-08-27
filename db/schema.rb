@@ -103,8 +103,8 @@ ActiveRecord::Schema.define(version: 2020_08_26_140035) do
     t.string "gender"
     t.string "sexual_preference"
     t.string "relationship_type"
-    t.integer "element_ranking", array: true
-    t.integer "mode_ranking", array: true
+    t.string "element_ranking", array: true
+    t.string "mode_ranking", array: true
     t.float "latitude"
     t.float "longitude"
     t.string "personality_trait"
