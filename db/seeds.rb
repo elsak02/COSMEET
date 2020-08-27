@@ -27,13 +27,9 @@ require "open-uri"
 #astro_api.matchMakingCall("love_compatibility_report/tropical", maleBirthData, femaleBirthData)
 
 #Get the compatibility report by sun/rising sign
-# match_data = {
-#   sun_sign: 'capricorn',
-#   rising_sign: 'scorpio',
-#   partner_sun_sign: 'pisces',
-#   partner_rising_sign: 'capricorn'
-# }
-#astro_api.matchSigns(match_data)
+
+
+
 
 
 

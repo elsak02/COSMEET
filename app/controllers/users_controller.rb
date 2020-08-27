@@ -8,6 +8,7 @@ class UsersController < ApplicationController
       @users = User.where.not(id: current_user.id).where(gender: current_user.sexual_preference)
     end
     @users = policy_scope(@users).order(created_at: :desc)
+     #.joins(:given_likes).where.not('likes.user_id = ?', current_user.id)
     @like = Like.new
   end
 
@@ -24,3 +25,4 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 end
+

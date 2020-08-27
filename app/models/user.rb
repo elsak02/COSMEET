@@ -35,4 +35,13 @@ class User < ApplicationRecord
   def sign(user)
     user.chart_elements.where(planet: "Sun").first.sign.downcase
   end
+
+  def find_sign(planet)
+    user.chart_elements.where(planet: planet).first.sign.downcase
+  end
+
+
+  def compatibility(user_2)
+    #PopulateCompatibilityJob.perform_now(current_user, user_2)["compatibility_report"] ???????
+  end
 end
