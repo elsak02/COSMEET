@@ -4,8 +4,10 @@
       <div class="col">
       <div class="card c">
         <div class="top-sec">
-      <%= cl_image_tag user.photos.first.key %>
-      </div>
+          <%= cl_image_tag user.photos.first.key %>
+        </div>
+        <div class="sign-sec <%= user.sign(user) %>">
+        </div>
       <div class="bottom-sec">
           <%= simple_form_for @like do |f|%>
             <%= f.input_field :receiver_id, class: "d-none", value: user.id %>
