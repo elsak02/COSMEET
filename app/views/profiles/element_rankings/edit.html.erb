@@ -1,12 +1,16 @@
 <h3>What personality traits are you looking for in a potential match?</h3>
-<h4>Rank your preferences (1-4):</h4>
+<h4>Rank your preferences from top to bottom:</h4>
 
-
-
+<ul class="list-inline">
+  <li id="fire" class="element-tag"><i class="fab fa-gripfire"></i> Independent, Enthousiatic, Active</li>
+  <li id="earth" class="element-tag"><i class="fas fa-seedling"></i> Trustworthy, Purposefull, Secure</li>
+  <li id="air" class="element-tag"><i class="fas fa-wind"></i> Communicative, Social, Creative</li>
+  <li id="water" class="element-tag"><i class="fas fa-tint"></i> Sensitive, Romantic, Caring</li>
+</ul>
 
 
 <%= simple_form_for(current_user, url: profiles_element_rankings_path) do |f| %>
-  <%= f.input  :relationship_type, collection: ["Independent, Enthousiatic, Active", "Trustworthy, Purposefull, Secure", "Communicative, Social, Creative", "Sensitive, Romantic, Caring"], as: :check_boxes %>
+  <%= f.input  :element_ranking, as: :hidden %>
   <%= f.submit 'Continue', class:'button' %>
 <% end %>
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_26_140035)
+ActiveRecord::Schema.define(version: 2020_08_27_105625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,8 +103,8 @@ ActiveRecord::Schema.define(version: 2020_08_26_140035)
     t.string "gender"
     t.string "sexual_preference"
     t.string "relationship_type"
-    t.integer "element_ranking", array: true
-    t.integer "mode_ranking", array: true
+    t.string "element_ranking", array: true
+    t.string "mode_ranking", array: true
     t.float "latitude"
     t.float "longitude"
     t.string "personality_trait"

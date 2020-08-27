@@ -13,3 +13,32 @@
   background: white;
   border-radius: 2px;
 }
+
+.list-inline {
+  list-style: none;
+  padding-left: 0px;
+
+  li {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: grab;
+  }
+
+  li:active {
+    opacity: 0.4;
+  }
+
+  li.ghost {
+    filter: grayscale(1);
+    opacity: 0.2;
+  }
+}
+
+.element-tag {
+  border: 1px solid black;
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: white;
+  width: 323px;
+  margin-bottom: 10px;
+}
