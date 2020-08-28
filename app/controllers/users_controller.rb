@@ -2,13 +2,19 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show]
 
   def index
-    if current_user.sexual_preference == "both"
-      @users = User.where.not(id: current_user.id)
+    @users = User.where.not(id: current_user.id)
+
+    # excluding the ones we already liked/disliked
+    already_liked_user_ids = current_user.given_likes.pluck(:receiver_id)
+    @users = @users.where.not(id: already_liked_user_ids)
+
+    if current_user.sexual_preference == "Both"
+      @users = @users.where(sexual_preference: ["Both", current_user.gender])
     else
-      @users = User.where.not(id: current_user.id).where(gender: current_user.sexual_preference)
+      @users = @users.where(gender: current_user.sexual_preference)
     end
+
     @users = policy_scope(@users).order(created_at: :desc)
-     #.joins(:given_likes).where.not('likes.user_id = ?', current_user.id)
     @like = Like.new
   end
 
@@ -25,4 +31,3 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 end
-

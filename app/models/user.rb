@@ -32,12 +32,12 @@ class User < ApplicationRecord
     now.year - birth_date.year - ((now.month > birth_date.month || (now.month == birth_date.month && now.day >= birth_date.day)) ? 0 : 1)
   end
 
-  def sign(user)
-    user.chart_elements.where(planet: "Sun").first.sign.downcase
+  def sign
+    chart_elements.where(planet: "Sun").first.sign.downcase
   end
 
   def find_sign(planet)
-    user.chart_elements.where(planet: planet).first.sign.downcase
+    chart_elements.where(planet: planet).first.sign.downcase
   end
 
 

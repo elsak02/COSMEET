@@ -13,5 +13,6 @@ ASTRO_API = AstroService.new(ENV["ASTRO_ID"], ENV["ASTRO_KEY"])
 }
   api_compatibility = ASTRO_API.matchSigns(match_data)
   compatibility_parsed = JSON.parse(api_compatibility)
+  compatibility_parsed["compatibility_report"]
   end
 end

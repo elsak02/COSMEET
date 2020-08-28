@@ -1,12 +1,12 @@
 <div class="container">
-  <h2 class="text-center">Planets are aligned!</h2>
-  <div class="d-flex">
+  <h2 class="text-center my-4">Planets are aligned!</h2>
+  <div class="d-flex justify-content-center">
       <% @match.user_matches.each do |user_match| %>
-        <div class="top-sec">
-          <%= cl_image_tag user_match.user.photos.first.key %>
-        </div>
-       <div class="sign-sec <%= user_match.user.sign(user_match.user) %> user-sign">
-      </div>
+          <div class="avatar-match m-4">
+            <%= cl_image_tag user_match.user.photos.first.key, class: "avatar-match" %>
+          <div class="sign-match <%= user_match.user.sign %> user-sign">
+          </div>
+          </div>
       <% end %>
     </div>
   </div>
