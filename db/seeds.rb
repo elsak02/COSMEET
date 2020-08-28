@@ -108,7 +108,7 @@ alex_h.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #User Julie
 file = URI.open('https://avatars0.githubusercontent.com/u/64073068?v=4')
-julie = User.create!(email: "julie@cosmeet.com", password: "123456", name: "Julie", birth_date: "1988-01-20", birth_time: "19:00", birth_place: "Paris", gender: "Woman", sexual_preference: "Man", relationship_type: "Serious", element_ranking: [2,3,1,4]), mode_ranking: [2,3,1], personality_trait: "#practical #hardworking #ambitious", latitude: 48.83, longitude: 2.32, biography: "My world used to be excel sheets, now my focus will be programming & love...")
+julie = User.create!(email: "julie@cosmeet.com", password: "123456", name: "Julie", birth_date: "1988-01-20", birth_time: "19:00", birth_place: "Paris", gender: "Woman", sexual_preference: "Man", relationship_type: "Serious", element_ranking: [2,3,1,4], mode_ranking: [2,3,1], personality_trait: "#practical #hardworking #ambitious", latitude: 48.83, longitude: 2.32, biography: "My world used to be excel sheets, now my focus will be programming & love...")
 julie.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #User Chloé
