@@ -13,11 +13,18 @@
         </div>
 
       <div class="bottom-sec">
-          <%= simple_form_for @like do |f|%>
-            <%= f.input_field :receiver_id, class: "d-none", value: user.id %>
-            <%= f.input_field :liked, class: "d-none" %>
-            <%= f.submit %>
+        <div class="d-flex">
+          <%= simple_form_for @like, html: {id: "dislike_form_#{user.id}"} do |f|%>
+            <%= f.input :receiver_id, as: :hidden, input_html: { value: user.id, id: "dislike_receiver_id_#{user.id}" } %>
+            <%= f.input :liked, as: :hidden, input_html: { value: false, id: "dislike_liked_#{user.id}" } %>
+            <%= f.submit "Dislike"%>
+            <% end %>
+          <%= simple_form_for @like, html: {id: "like_form_#{user.id}"} do |f|%>
+            <%= f.input :receiver_id, as: :hidden, input_html: { value: user.id, id: "like_receiver_id_#{user.id}" } %>
+            <%= f.input :liked, as: :hidden, input_html: { value: true, id: "like_liked_#{user.id}" } %>
+            <%= f.submit "Like"%>
           <% end %>
+        </div>
 
           <h4><strong><%= user.name %></strong>, <%= user.age(user.birth_date) %></h4>
           <p><%= user.personality_trait %></p>
