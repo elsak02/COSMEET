@@ -1,4 +1,6 @@
 require 'date'
+require 'yaml'
+
 class User < ApplicationRecord
   RELATIONSHIP_TYPES = ["Un amour galactique #veryserious",
     "Le Big Bang céleste #friendswithbenefits",
@@ -36,10 +38,17 @@ class User < ApplicationRecord
     chart_elements.where(planet: "Sun").first.sign.downcase
   end
 
+  def content
+    chart_elements.where(planet: "Sun").first.content.downcase
+  end
+
+  def short_content
+    sample = YAML.load(open(Rails.root.join("db", "yaml", "love_traits_signs.yml")).read)
+    sample["signs"][self.sign]
+    
   def find_sign(planet)
     chart_elements.where(planet: planet).first.sign.downcase
   end
-
 
   def compatibility(user_2)
     #PopulateCompatibilityJob.perform_now(current_user, user_2)["compatibility_report"] ???????
