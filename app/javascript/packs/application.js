@@ -27,6 +27,7 @@ import "bootstrap";
 import "controllers";
 import { initAutocomplete } from '../plugins/init_autocomplete.js';
 import { initSortable } from '../plugins/init_sortable.js';
+import { profileSwipe } from '../plugins/init_swipe.js';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -36,5 +37,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initAutocomplete();
   initSortable();
+  profileSwipe();
 });
 
