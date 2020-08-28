@@ -1,9 +1,9 @@
 <div class="footer fixed-bottom">
   <div class="footer-links">
-  <%= link_to "#", class: "navbar-brand m-0 profile" do %>
+  <%= link_to user_path(current_user), class: "navbar-brand m-0 profile" do %>
     <%= image_tag "profilephoto.png" %>
   <% end %>
-  <%= link_to "#", class: "navbar-brand m-0 heartz" do %>
+  <%= link_to users_path, class: "navbar-brand m-0 heartz" do %>
     <%= image_tag "cropheartz.png" %>
   <% end %>
   <%= link_to "#", class: "navbar-brand m-0 message" do %>
