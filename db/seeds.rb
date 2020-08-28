@@ -91,9 +91,19 @@ dimitri = User.create!(email: "dimitri@cosmeet.com", password:"123456", name: "D
 dimitri.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #User Joseph
-file = URI.open(https://avatars0.githubusercontent.com/u/63474556?v=4)
+file = URI.open('https://avatars0.githubusercontent.com/u/63474556?v=4')
 joseph = User.create!(email: "joseph@cosmeet.com", password:"123456", name: "Joseph", birth_date: "1996-11-11", birth_place: "Paris", gender: "Man", sexual_preference: "Woman", relationship_type: "Serious", element_ranking: [1,2,3,4], mode_ranking: [1,2,3], personality_trait: "#intense  #passionate #sarcastic", latitude: 48.85, longitude: 2.34, biography: "Graduated from Berkeley, I have a passion for Shrek and nice prints on my shorts." )
 joseph.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+#User Mathilde
+file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1596092435/l5ra1wph8je4jrzhgodr.jpg')
+mathilde = User.create!(email: "mathilde@cosmeet.com", password:"123456", name: "Mathilde", birth_date: "1988-01-21", birth_place: "Créteil", gender: "Woman", sexual_preference: "Man", relationship_type: "Serious", element_ranking: [2,1,4,3], mode_ranking: [2,3,1], personality_trait: "#social #suave #indecisive", latitude: 48.78, longitude: 2.46, biography: "I am warrior passionated by crime sections. I also never say no to a nice drink!")
+mathilde.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+#User Chloé
+file = URI.open('https://avatars2.githubusercontent.com/u/65725594?v=4')
+chloe = User.create!(email: "chloe@cosmeet.com", password:"123456", name: "Chloé", birth_date: "1988-05-08", birth_place: "Lagny-sur-Marne", gender: "Woman", sexual_preference: "Man", relationship_type: "Serious", element_rankings: [1,4,3,2], mode_ranking: [3,1,2], personality_trait: "#generous #proud #lustful", latitude: 48.86, longitude: 2.71, biography: "Manager of a music band, I ride Paris with great hair!")
+chloe.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 puts "Creating Likes..."
 Like.create(user: quentin, receiver: elsa, liked: true)
