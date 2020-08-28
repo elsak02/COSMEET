@@ -10,6 +10,10 @@ class UserPolicy < ApplicationPolicy
     return true
   end
 
+  def chart?
+    return true
+  end
+
   def show?
     return true
   end
