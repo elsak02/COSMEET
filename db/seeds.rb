@@ -130,6 +130,7 @@ patricia.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts "Creating Likes..."
 
 Like.create(user: quentin, receiver: elsa, liked: true)
+Like.create(user: oceane, receiver: quentin, liked: true)
 
 puts "Creating Chart Element..."
   User.find_each do |user|
