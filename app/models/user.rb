@@ -45,7 +45,8 @@ class User < ApplicationRecord
   def short_content
     sample = YAML.load(open(Rails.root.join("db", "yaml", "love_traits_signs.yml")).read)
     sample["signs"][self.sign]
-    
+  end
+
   def find_sign(planet)
     chart_elements.where(planet: planet).first.sign.downcase
   end
