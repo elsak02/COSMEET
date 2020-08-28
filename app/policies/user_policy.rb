@@ -14,6 +14,10 @@ class UserPolicy < ApplicationPolicy
     return true
   end
 
+  def chart?
+    return true
+  end
+
   def update?
     record == user
   end
