@@ -10,62 +10,6 @@ require 'json'
 
 require "open-uri"
 
-# astro_api = AstroService.new(ENV["ASTRO_ID"], ENV["ASTRO_KEY"])
-# ChartElement.destroy_all
-# UserMatch.destroy_all
-# Match.destroy_all
-# Like.destroy_all
-# User.destroy_all
-
-# file = URI.open('https://avatars2.githubusercontent.com/u/61321542?v=4')
-# elsa = User.create!(email: "elsa@cosmeet.com", password:"123456", name: "Elsa", birth_date: "1990-04-02", birth_time: "15:44", birth_place:"Schoelcher", gender: "Woman", sexual_preference: "Man", relationship_type:"Serious", element_ranking: [1,3,2,4], mode_ranking: [1,3,2], personality_trait: "adventurous, traveller, dynamic", latitude: 14.61, longitude: -61.05, biography: "Born and raised in Martinique. I love to travel and hate skooters.")
-# elsa.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-
-
-# # Get User charts and infos for each user
-# user = elsa
-# # # Get Timezone
-# # timezone = 2 #=> for France timezone
-# timezone = -5 #=> Martinique timezone
-
-# # # Get Coordinates from user address
-# # # TODO: Write API call with Geocoder
-# latitude = user.latitude
-# longitude = user.longitude
-
-
-# # # Get date and time infos as individual integers
-
-# date = user.birth_date.day
-# month = user.birth_date.month
-# year = user.birth_date.year
-# hour = user.birth_time.hour
-# minute = user.birth_time.strftime("%M")
-
-
-
-# #//////API CALLS/////
-# PLANETS = %w[Sun Moon Saturn Jupiter Venus Mercury Pluto Uranus Neptune Mars]
-
-# #GET the chart info
-# #user = User.create(...)
-# api_user = astro_api.call("western_chart_data", date, month, year, hour, minute, latitude, longitude, timezone)
-# user_parsed = JSON.parse(api_user)
-# #//ASCENDANT//
-# api_content_ascendant = astro_api.call("general_ascendant_report/tropical", date, month, year, hour, minute, latitude, longitude, -5)
-# content_parsed_ascendant = JSON.parse(api_content_ascendant)
-# ChartElement.create!(user: user, planet: "ascendant", sign: elsa_parsed["houses"][0]["sign"], content: content_parsed_ascendant["report"])
-# user_parsed["houses"].each do |house|
-# #//PLANETS//
-#     house["planets"].each do |planet|
-#       next unless PLANETS.include?(planet["name"])
-#       api_content_planet = astro_api.call("general_sign_report/tropical/#{planet["name"]}", date, month, year, hour, minute, latitude, longitude, -5)
-#       content_parsed = JSON.parse(api_content_planet)
-#       ChartElement.create!(user: user, planet: planet["name"], sign: planet["sign"], content: content_parsed["report"])
-#     end
-#   end
-# end
-
 
 #GET the explication by planet
 # api_content_planet = astro_api.call("general_sign_report/tropical/planet_name", date, month, year, hour, minute, latitude, longitude, -5)
