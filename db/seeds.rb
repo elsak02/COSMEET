@@ -27,13 +27,9 @@ require "open-uri"
 #astro_api.matchMakingCall("love_compatibility_report/tropical", maleBirthData, femaleBirthData)
 
 #Get the compatibility report by sun/rising sign
-# match_data = {
-#   sun_sign: 'capricorn',
-#   rising_sign: 'scorpio',
-#   partner_sun_sign: 'pisces',
-#   partner_rising_sign: 'capricorn'
-# }
-#astro_api.matchSigns(match_data)
+
+
+
 
 
 
@@ -57,7 +53,7 @@ louis.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 
 file = URI.open('https://avatars3.githubusercontent.com/u/61389907?v=4')
-quentin = User.create!(email: "quentin@cosmeet.com", password: "123456", name: "Quentin", birth_date: "1990-09-22", birth_time: "16:30", birth_place:"Rueil-Malmaison", gender: "Man", sexual_preference: "both", relationship_type:"Casual", element_ranking: [3,1,4,2], mode_ranking: [3,1,2], personality_trait: "#adventurous #go-getter #curious", latitude: 48.88, longitude: 2.20, biography: "US football fan, I coach teams for a living. I also love to spend time with Mango my cat.")
+quentin = User.create!(email: "quentin@cosmeet.com", password: "123456", name: "Quentin", birth_date: "1990-09-22", birth_time: "16:30", birth_place:"Rueil-Malmaison", gender: "Man", sexual_preference: "Both", relationship_type:"Casual", element_ranking: [3,1,4,2], mode_ranking: [3,1,2], personality_trait: "adventurous, go-getter, curious", latitude: 48.88, longitude: 2.20, biography: "US football fan, I coach teams for a living. I also love to spend time with Mango my cat.")
 quentin.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 
