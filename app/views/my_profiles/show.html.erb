@@ -1,0 +1,25 @@
+ <div class="d-flex justify-content-center">
+    <div class="row">
+      <div class="col">
+      <div class="profile-card c">
+        <div class="top-sec">
+
+          <% if current_user.photos.any? %>
+            <%= cl_image_tag current_user.photos.first.key %>
+          <% end %>
+         <div class="sign-sec <%= current_user.sign %> user-sign">
+        </div>
+        </div>
+
+      <div class="bottom-sec">
+
+            <h4><strong><%= current_user.name %></strong>, <%= current_user.age(current_user.birth_date) %></h4>
+            <h5>Quick Analyse</h5>
+            <p><%= current_user.short_content %></p>
+          <h4>My Sign Analyse</h4>
+          <p><%= current_user.content %></p>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>

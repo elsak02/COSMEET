@@ -1,4 +1,6 @@
 require 'date'
+require 'yaml'
+
 class User < ApplicationRecord
   RELATIONSHIP_TYPES = ["Un amour galactique #veryserious",
     "Le Big Bang céleste #friendswithbenefits",
@@ -32,7 +34,21 @@ class User < ApplicationRecord
     now.year - birth_date.year - ((now.month > birth_date.month || (now.month == birth_date.month && now.day >= birth_date.day)) ? 0 : 1)
   end
 
-  def sign(user)
-    user.chart_elements.where(planet: "Sun").first.sign.downcase
+  def sign
+    chart_elements.where(planet: "Sun").first.sign.downcase
+  end
+
+  def content
+    chart_elements.where(planet: "Sun").first.content.downcase
+  end
+
+  def liked_filter(user_id)
+    liked = Like.find_by(receiver_id: id, user_id: user_id)
+    return true if liked
+  end
+
+  def short_content
+    sample = YAML.load(open(Rails.root.join("db", "yaml", "love_traits_signs.yml")).read)
+    sample["signs"][self.sign]
   end
 end

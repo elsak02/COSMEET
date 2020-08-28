@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     if current_user.sexual_preference == "both"
       @users = User.where.not(id: current_user.id)
     else
-      @users = User.where.not(id: current_user.id).where(gender: current_user.sexual_preference)
+      @users = User.where.not(id: current_user.id).where(gender: current_user.sexual_preference).where.not(liked_filter(@user) == true)
     end
     @users = policy_scope(@users).order(created_at: :desc)
     @like = Like.new
