@@ -83,18 +83,20 @@ edouard = User.create!(email: "edouard@cosmeet.com", password:"123456", name: "E
 edouard.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 # User Dimitri
+# file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1535710792/jwfoxmnm29vxuny3vmxi.jpg')
+
 file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1523284008/vewklncjschzufwaixd6.jpg')
 dimitri = User.create!(email: "dimitri@cosmeet.com", password:"123456", name: "Dimitri", birth_date: "1986-03-04", birth_time: "14:40", birth_place: "Lyon", gender: "Man", sexual_preference: "Woman", relationship_type: "Sexual", element_ranking: [4,2,1,3], mode_ranking: [1,3,2], personality_trait: "#caring #creative #sensitive", latitude: 45.75, longitude: 4.85, biography: "Master of the reeboot, I ride my silver bike around town jazzy style.")
 dimitri.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #User Joseph
 file = URI.open('https://avatars0.githubusercontent.com/u/63474556?v=4')
-joseph = User.create!(email: "joseph@cosmeet.com", password:"123456", name: "Joseph", birth_date: "1996-11-11", birth_time: "17:01", birth_place: "Paris", gender: "Man", sexual_preference: "Woman", relationship_type: "Serious", element_ranking: [1,2,3,4], mode_ranking: [1,2,3], personality_trait: "#intense  #passionate #sarcastic", latitude: 48.85, longitude: 2.34, biography: "Graduated from Berkeley, I have a passion for Shrek and nice prints on my shorts." )
+joseph = User.create!(email: "joseph@cosmeet.com", password:"123456", name: "Joseph", birth_date: "1996-11-11", birth_time: "17:01" , birth_place: "Paris", gender: "Man", sexual_preference: "Woman", relationship_type: "Serious", element_ranking: [1,2,3,4], mode_ranking: [1,2,3], personality_trait: "#intense  #passionate #sarcastic", latitude: 48.85, longitude: 2.34, biography: "Graduated from Berkeley, I have a passion for Shrek and nice prints on my shorts." )
 joseph.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #User Mathilde
 file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1596092435/l5ra1wph8je4jrzhgodr.jpg')
-mathilde = User.create!(email: "mathilde@cosmeet.com", password:"123456", name: "Mathilde", birth_date: "1988-01-21",birth_time: "2:35", birth_place: "Créteil", gender: "Woman", sexual_preference: "Man", relationship_type: "Serious", element_ranking: [2,1,4,3], mode_ranking: [2,3,1], personality_trait: "#social #suave #indecisive", latitude: 48.78, longitude: 2.46, biography: "I am warrior passionated by crime sections. I also never say no to a nice drink!")
+mathilde = User.create!(email: "mathilde@cosmeet.com", password:"123456", name: "Mathilde", birth_date: "1988-01-21", birth_time: "02:35" , birth_place: "Créteil", gender: "Woman", sexual_preference: "Man", relationship_type: "Serious", element_ranking: [2,1,4,3], mode_ranking: [2,3,1], personality_trait: "#social #suave #indecisive", latitude: 48.78, longitude: 2.46, biography: "I am warrior passionated by crime sections. I also never say no to a nice drink!")
 mathilde.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #User Anthony
