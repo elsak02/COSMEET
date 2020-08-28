@@ -85,6 +85,10 @@ file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1535710792/jwfox
 edouard = User.create!(email: "edouard@cosmeet.com", password:"123456", name: "Edouard", birth_date: "1989-11-20", birth_time: "18:30", birth_place: "Le Mans", gender: "Man", sexual_preference: "Woman", relationship_type: "Serious", element_ranking: [3,2,4,1], mode_ranking: [3,2,1], personality_trait: "#romantic #sociable #entrepreneur", latitude: 48.00, longitude: 0.19, biography: "Cop of the wagon, my mission is to make the students follow the rules but always with a smile on my face.")
 edouard.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
+# User Dimitri
+file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1523284008/vewklncjschzufwaixd6.jpg')
+dimitri = User.create!(email: "dimitri@cosmeet.com", password:"123456", name: "Dimitri", birth_date: "1986-03-04", birth_time: "14:40", birth_place: "Lyon", gender: "Man", sexual_preference: "Woman", relationship_type: "Sexual", element_ranking: [4,2,1,3], mode_ranking: [1,3,2], personality_trait: "#caring #creative #sensitive", latitude: 45.75, longitude: 4.85, biography: "Master of the reeboot, I ride my silver bike around town jazzy style.")
+dimitri.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 puts "Creating Likes..."
 
 Like.create(user: quentin, receiver: elsa, liked: true)
