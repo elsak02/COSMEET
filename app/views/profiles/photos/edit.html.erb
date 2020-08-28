@@ -18,6 +18,7 @@
                         action: 'change->img-preview#loadPreview'
                       }
                     },
+                    required: true,
                     as: :file) %>
       </div>
       <div data-controller="img-preview">
@@ -71,6 +72,8 @@
                     as: :file) %>
       </div>
   </div>
-  <%= f.submit 'Continue', class:'button' %>
+  <div class=" d-flex justify-content-center">
+      <%= f.submit 'Continue', class:'button mt-4' %>
+  </div>
 <% end %>
 

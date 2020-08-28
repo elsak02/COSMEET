@@ -1,8 +1,13 @@
-<h3>What are you looking for?</h3>
+<h4 class="py-3 text-center">What are you looking for?</h4>
 
 <%= simple_form_for(current_user, url: profiles_relationship_types_path) do |f| %>
-  <%= f.input  :relationship_type, collection: ["a galatical love #veryserious", "a celestial Big Bang #friendswithbenefits", "Explore the unknown #justcurious"], class:'button', as: :radio_buttons %>
-  <%= f.submit 'Continue', class:'button' %>
+  <%= f.input(:relationship_type,
+              collection: ["a galatical love #veryserious", "a celestial Big Bang #friendswithbenefits", "Explore the unknown #justcurious"],
+              required: true,
+              as: :radio_buttons) %>
+  <div class=" d-flex justify-content-center">
+      <%= f.submit 'Continue', class:'button mt-4' %>
+  </div>
 <% end %>
 
 

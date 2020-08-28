@@ -1,7 +1,9 @@
-<h3>Select the tags that better correspond to your personality traits</h3>
+<h4 class="py-3 text-center">Select the tags that better fit to your personality</h4>
 
 
 <%= simple_form_for(current_user, url: profiles_personality_traits_path) do |f| %>
-  <%= f.input  :relationship_type, collection: ["Trait 1", "Trait 2", "Trait 3"], as: :check_boxes %>
-  <%= f.submit 'Continue', class:'button' %>
+  <%= f.input  :relationship_type, collection: ["Trait 1", "Trait 2", "Trait 3"], required: true, as: :check_boxes %>
+   <div class=" d-flex justify-content-center">
+      <%= f.submit 'Continue', class:'button mt-4' %>
+  </div>
 <% end %>
