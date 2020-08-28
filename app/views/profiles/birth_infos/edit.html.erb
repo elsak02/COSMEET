@@ -1,15 +1,27 @@
-<%= simple_form_for(current_user, url: profiles_birth_infos_path ) do |f| %>
-  <%= f.input(:birth_date,
-              label: 'Your date of birth',
-              label_html: { class: 'label'},
-              input_html: { class: 'form-input'},
-              as: :date,
-              start_year: Date.today.year - 90,
-              end_year: Date.today.year - 18,
-              required: true) %>
-  <%= f.input  :birth_time, label: 'Your time of birth', input_html: { class: 'form-input'}, collection: %w[male female], as: :time %>
-  <%= f.input  :birth_place, label: 'Your place of birth', input_html: { class: 'form-input'} %>
-  <%= f.submit 'Continue', class:'button' %>
-<% end %>
+<h4 class="py-4 text-center">Your personal information</h4>
+  <%= simple_form_for(current_user, url: profiles_birth_infos_path ) do |f| %>
+    <%= f.input(:birth_date,
+                label: 'Your date of birth:',
+                input_html: { class: 'form-input'},
+                as: :date,
+                start_year: Date.today.year - 90,
+                end_year: Date.today.year - 18,
+                required: true) %>
+    <%= f.input(:birth_time,
+                label: 'Your time of birth:',
+                input_html: { class: 'form-input'},
+                hint: ("If you don't know, please refer to your birth certificate"),
+                required: true,
+                collection: %w[male female],
+                as: :time) %>
+    <%= f.input(:birth_place,
+                label: 'Your place of birth:',
+                label_html: { class: 'mt-4'},
+                required: true,
+                input_html: { class: 'form-input'}) %>
 
-<p>If you don't know your exact time of birth, please refer to your birth certificate.</p>
+    <div class=" d-flex justify-content-center">
+      <%= f.submit 'Continue', class:'button mt-4' %>
+    </div>
+  <% end %>
+

@@ -1,8 +1,8 @@
-<h3 class="text-center">In your opinion, what is most important in  a relationship?</h3>
-<h5>Rank your preferences from top to bottom:</h5>
+<h4 class="py-3 text-center">In your opinion, what is most important in  a relationship?</h4>
+<h6 class="py-3 text-center">Rank your preferences from top to bottom:</h6>
 
 
-<ul class="list-inline">
+<ul class="list-inline text-center">
   <li id="cardinal" class="element-tag"> My significant other has a lot of initiative</li>
   <li id="fixed" class="element-tag"> Me and my partner must be on the same page. That's it!</li>
   <li id="mutable" class="element-tag"> My partner is very flexible and usually adapts to my wishes.</li>
@@ -11,7 +11,9 @@
 
 
 <%= simple_form_for(current_user, url: profiles_mode_rankings_path) do |f| %>
-  <%= f.input  :mode_ranking, as: :hidden %>
-  <%= f.submit 'Continue', class:'button' %>
+  <%= f.input  :mode_ranking, required: true, as: :hidden %>
+  <div class=" d-flex justify-content-center">
+      <%= f.submit 'Continue', class:'button mt-4' %>
+  </div>
 <% end %>
 
