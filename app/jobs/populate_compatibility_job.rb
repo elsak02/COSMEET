@@ -6,19 +6,19 @@ class PopulateCompatibilityJob < ApplicationJob
   def perform(userone, usertwo)
 
     match_data = {
-      sun_sign: userone.find_sign("Sun"),
-      rising_sign: userone.find_sign("Ascendant"),
-      partner_sun_sign: usertwo.find_sign("Sun"),
-      partner_rising_sign: usertwo.find_sign("Ascendant")
+      sun_sign: userone.find_sign("Sun")&.downcase,
+      rising_sign: userone.find_sign("Ascendant")&.downcase,
+      partner_sun_sign: usertwo.find_sign("Sun")&.downcase,
+      partner_rising_sign: usertwo.find_sign("Ascendant")&.downcase
     }
+
     api_compatibility = ASTRO_API.matchSigns(match_data)
     compatibility_parsed = JSON.parse(api_compatibility)
-    # raise
     Compatibility.create!(
       user: userone,
-      #user: usertwo,
-      compatibility_description: compatibility_parsed["compatibility_report"],
-      compatibility_score: compatibility_parsed["compatibility_percentage"]
+      receiver: usertwo,
+      compatibility_description: compatibility_parsed["compatibility_report"] || "",
+      compatibility_score: compatibility_parsed["compatibility_percentage"] || 0
     )
   end
 end
