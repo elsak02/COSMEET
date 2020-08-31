@@ -5,8 +5,9 @@ class Profiles::PreferencesController < ApplicationController
 
   def update
     authorize current_user
-    current_user.assign_attributes(profile_params)
-    if current_user.save
+    form = PreferencesForm.new(profile_params)
+    if form.valid?
+      current_user.update(profile_params)
       redirect_to edit_profiles_birth_infos_path
     else
       render :edit
