@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+   require "sidekiq/web"
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
   devise_for :users, controllers: { registrations: 'users/registrations' }
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -14,8 +18,16 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
   resources :likes, only: [:new, :create]
-  resources :matches, only: [:show]
+  resources :matches, only: [:index, :show]
+  # get 'chatroom', to: 'matches#chatroom'
 
   resource :my_profile, only: [:show, :edit, :update, :chart]
   get 'chart', to: 'my_profiles#chart'
+
+  resources :matches do
+    member do
+      get :chatroom
+    end
+    resources :messages, only: :create
+  end
 end
