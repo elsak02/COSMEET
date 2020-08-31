@@ -34,6 +34,7 @@ require "open-uri"
 
 
 # //SEED//
+Compatibility.destroy_all
 ChartElement.destroy_all
 UserMatch.destroy_all
 Match.destroy_all

@@ -10,7 +10,7 @@
               <% if user.photos.any? %>
                 <%= cl_image_tag user.photos.first.key %>
               <% end %>
-             <div class="sign-sec <%= user.sign %> user-sign">
+             <div class="sign-sec <%= user.sign.downcase %> user-sign">
             </div>
             </div>
 

@@ -5,7 +5,7 @@ class Profiles::ModeRankingsController < Profiles::PreferencesController
     current_user.assign_attributes(mode_ranking: params[:user][:mode_ranking].split(','))
 
     if current_user.save
-      redirect_to users_path
+      redirect_to my_profile_path
     else
       render :edit
     end

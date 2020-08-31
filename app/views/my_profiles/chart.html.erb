@@ -3,6 +3,50 @@
   <div class="chart-show">
     <%= cl_image_tag current_user.chart.key %>
   </div>
-   <h4 class="mt-4 mb-4 text-center">Sun in <%= current_user.find_sign("Sun") %></h4>
-   <p><%= current_user.content %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Sun in <%= current_user.find_sign("Sun") %></h4>
+    <p><%= current_user.first_content("Sun") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Ascendant in <%= current_user.find_sign("Ascendant") %></h4>
+    <p><%= current_user.first_content("Ascendant") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Moon in <%= current_user.find_sign("Moon") %></h4>
+    <p><%= current_user.first_content("Moon") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Mercury in <%= current_user.find_sign("Mercury") %></h4>
+    <p><%= current_user.first_content("Mercury") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Venus in <%= current_user.find_sign("Venus") %></h4>
+    <p><%= current_user.first_content("Venus") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Mars in <%= current_user.find_sign("Mars") %></h4>
+    <p><%= current_user.first_content("Mars") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Jupiter in <%= current_user.find_sign("Jupiter") %></h4>
+    <p><%= current_user.first_content("Jupiter") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Saturn in <%= current_user.find_sign("Saturn") %></h4>
+    <p><%= current_user.first_content("Saturn") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Uranus in <%= current_user.find_sign("Uranus") %></h4>
+    <p><%= current_user.first_content("Uranus") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Neptun in <%= current_user.find_sign("Neptune") %></h4>
+    <p><%= current_user.first_content("Neptune") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Pluto in <%= current_user.find_sign("Pluto") %></h4>
+    <p><%= current_user.first_content("Pluto") %></p>
+
 </div>
+
