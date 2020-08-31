@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   resources :likes, only: [:new, :create]
   resources :matches, only: [:show]
 
-  resource :my_profile, only: [:show, :edit, :update]
+  resource :my_profile, only: [:show, :edit, :update, :chart]
+  get 'chart', to: 'my_profiles#chart'
 end

@@ -25,6 +25,11 @@ class UsersController < ApplicationController
   def update
   end
 
+  def chart
+    authorize current_user
+  end
+
+
   private
 
   def set_user

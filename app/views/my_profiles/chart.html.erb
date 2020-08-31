@@ -1,0 +1,8 @@
+<div class="container">
+  <h4 class="text-center mt-3"><%= current_user.name %>'s natal chart</h4>
+  <div class="chart-show">
+    <%= cl_image_tag current_user.chart.key %>
+  </div>
+   <h4 class="mt-4 mb-4 text-center">Sun in <%= current_user.find_sign("Sun") %></h4>
+   <p><%= current_user.content %></p>
+</div>

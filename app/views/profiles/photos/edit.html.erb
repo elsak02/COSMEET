@@ -4,7 +4,7 @@
 <%= simple_form_for(current_user, url: profiles_photos_path ) do |f| %>
   <div class="photos-container flex-wrap justify-content-around">
       <div data-controller="img-preview">
-        <%= f.input(:photo,
+        <%= f.input(:photos,
                     label: 'Add your best picture here',
                     label_html: {
                       class: 'photo-label',
@@ -16,13 +16,14 @@
                       data: {
                         target: 'img-preview.photo',
                         action: 'change->img-preview#loadPreview'
-                      }
+                      },
+                      multiple: true
                     },
                     required: true,
                     as: :file) %>
       </div>
       <div data-controller="img-preview">
-        <%= f.input(:photo,
+        <%#= f.input(:photo,
                     label: 'What about a little bit of self-derision? ',
                     label_html: {
                       class: 'photo-label',
@@ -39,7 +40,7 @@
                     as: :file) %>
       </div>
       <div data-controller="img-preview">
-        <%= f.input(:photo,
+        <%#= f.input(:photo,
                     label: 'Show us your passions!',
                     label_html: {
                       class: 'photo-label',
@@ -56,7 +57,7 @@
                     as: :file) %>
       </div>
       <div data-controller="img-preview">
-        <%= f.input(:photo,
+        <%#= f.input(:photo,
                     label: 'Now you and your buddies',
                     label_html: { class: 'photo-label',
                     data: { target: 'img-preview.preview'}

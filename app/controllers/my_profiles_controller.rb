@@ -5,6 +5,10 @@ class MyProfilesController < ApplicationController
     authorize current_user
   end
 
+  def chart
+    authorize current_user
+  end
+
   def edit
   end
 
