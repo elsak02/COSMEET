@@ -1,10 +1,10 @@
 <h4 class="py-3 text-center">Select the 3 tags that better fit to your personality</h4>
 
 <%= simple_form_for(current_user, url: profiles_personality_traits_path) do |f| %>
-   <div class=" d-flex flex-wrap justify-content-center">
+   <div class=" d-flex flex-wrap justify-content-center personality-traits">
     <% current_user.perso_traits.each do |trait| %>
       <%= check_box_tag "user[personality_traits][]", trait, false, id: "user_personality_traits_#{trait}", class: "d-none" %>
-      <%= label_tag "user_personality_traits_#{trait}", trait, class: "ml-5" %>
+      <%= label_tag "user_personality_traits_#{trait}", trait, class: "" %>
     <% end %>
   </div>
 
