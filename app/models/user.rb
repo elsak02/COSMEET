@@ -15,12 +15,6 @@ class User < ApplicationRecord
   has_many :chart_elements
   has_many :given_likes, class_name: 'Like', foreign_key: 'user_id'
   has_many :received_likes, class_name: 'Like', foreign_key: 'receiver_id'
-  validates_presence_of :name, :gender, :sexual_preference, controller_name: 'preferences'
-  validates_presence_of :birth_date, :birth_time, :birth_place, controller_name: 'birth_infos'
-  # validates_presence_of :photo, controller_name: 'photos'
-  validates_presence_of :relationship_type, controller_name: 'relationship_types'
-  validates_presence_of :element_ranking, controller_name: 'element_rankings'
-  validates_presence_of :mode_ranking, controller_name: 'mode_rankings'
   has_many :user_matches
   has_many :matches, through: :user_matches
   has_many :messages
@@ -28,6 +22,7 @@ class User < ApplicationRecord
   has_many :received_compatibilities, class_name: 'Compatibility', foreign_key: 'receiver_id'
 
   has_many_attached :photos
+  # validates :photos, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg']
   has_one_attached :chart
 
   geocoded_by :birth_place
