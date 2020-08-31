@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_27_105625) do
+ActiveRecord::Schema.define(version: 2020_08_28_170206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,17 @@ ActiveRecord::Schema.define(version: 2020_08_27_105625) do
     t.index ["user_id"], name: "index_chart_elements_on_user_id"
   end
 
+  create_table "compatibilities", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.text "compatibility_description"
+    t.integer "compatibility_score"
+    t.bigint "receiver_id"
+    t.index ["receiver_id"], name: "index_compatibilities_on_receiver_id"
+    t.index ["user_id"], name: "index_compatibilities_on_user_id"
+  end
+
   create_table "horoscopes", force: :cascade do |t|
     t.date "date"
     t.string "sign"
@@ -67,6 +78,7 @@ ActiveRecord::Schema.define(version: 2020_08_27_105625) do
   create_table "matches", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "compatibility_description"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -115,6 +127,8 @@ ActiveRecord::Schema.define(version: 2020_08_27_105625) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "chart_elements", "users"
+  add_foreign_key "compatibilities", "users"
+  add_foreign_key "compatibilities", "users", column: "receiver_id"
   add_foreign_key "likes", "users"
   add_foreign_key "likes", "users", column: "receiver_id"
   add_foreign_key "messages", "matches"
