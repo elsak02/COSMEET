@@ -55,6 +55,7 @@ class User < ApplicationRecord
 
   def find_sign(planet)
     chart_elements.where(planet: planet).first.sign
+    # raise
   end
 
    def first_content(planet)
