@@ -3,10 +3,10 @@ class Profiles::BirthInfosController < Profiles::PreferencesController
     authorize current_user
 
     form = BirthInfosForm.new(format_params)
-
     if form.valid?
       current_user.update(profile_params)
-      PopulateChartElementJob.perform_later(current_user)
+      PopulateChartElementJob.perform_now(current_user)
+      # raise
       redirect_to edit_profiles_photos_path
     else
       render :edit
