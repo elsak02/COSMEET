@@ -19,8 +19,8 @@ class User < ApplicationRecord
   validates_presence_of :birth_date, :birth_time, :birth_place, controller_name: 'birth_infos'
   # validates_presence_of :photo, controller_name: 'photos'
   validates_presence_of :relationship_type, controller_name: 'relationship_types'
-  validates_presence_of :element_ranking, controller_name: 'element_rankings'
-  validates_presence_of :mode_ranking, controller_name: 'mode_rankings'
+  #validates_presence_of :element_ranking, controller_name: 'element_rankings'
+  #validates_presence_of :mode_ranking, controller_name: 'mode_rankings'
   has_many :user_matches
   has_many :matches, through: :user_matches
   has_many :messages
@@ -58,11 +58,16 @@ class User < ApplicationRecord
     sample["signs"][self.sign.downcase]
   end
 
+  def perso_traits
+    traits = YAML.load(open(Rails.root.join("db", "yaml", "love_traits_signs.yml")).read)
+    traits["tags"][self.sign]
+  end
+
   def find_sign(planet)
     chart_elements.where(planet: planet).first.sign
   end
 
-   def first_content(planet)
+  def first_content(planet)
     chart_elements.where(planet: planet).first.content.split(".").first(3).join(".")+"."
   end
 
