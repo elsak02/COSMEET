@@ -5,7 +5,7 @@ class Profiles::ModeRankingsController < Profiles::PreferencesController
     form.user = current_user
     if form.valid?
       form.save
-      redirect_to users_path
+      redirect_to edit_profiles_personality_traits_path
     else
       flash[:alert] = form.errors.full_messages.join(", ")
       render :edit
