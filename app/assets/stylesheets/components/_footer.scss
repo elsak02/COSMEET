@@ -1,11 +1,11 @@
 .footer {
-  background: #eee6e9;
-  position: sticky;
+  background: $pink;
+  position: fixed;
   bottom: 0px;
   width: 100%;
   padding: 15px;
   margin-top: 15px;
-  box-shadow: 0 -1px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
 
 
 }

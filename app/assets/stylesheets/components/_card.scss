@@ -1,15 +1,18 @@
 .card {
-  height: calc(100vh - 70px - 75px);
+  // height: calc(100vh - 70px - 75px);
   position: relative;
 
   li.list-group-item {
     margin-right: 5px;
-    background: #e4dfcf;
-    border: none;
+    background: #efe6e9;
+    border: 1px solid #d2bbc4 !important;
     font-size: 14px;
-    color: #927f42;
+    color: #6b5f63;
     padding: 4px 8px;
-}
+    border-radius: 20px !important;
+    box-shadow: 1px 3px 0px #d2bbc4;
+    margin-bottom: 10px;
+ }
 }
 
 .profile-card {
@@ -46,7 +49,10 @@
     font-family: $font-family;
   }
   p {
-    font-family: $font-family;
+    font-family: $body-font;
+    font-size: 16px;
+    margin-top: 15px;
+    color: #4e3941;
   }
 }
 
