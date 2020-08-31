@@ -30,10 +30,7 @@
 
               <h4><strong><%= user.name %></strong>, <%= user.age(user.birth_date) %></h4>
               <p><%= user.personality_trait %></p>
-              <p><% user.score_compatibility(current_user).times do %>
-                 <i class="fas fa-heart"></i>
-                 <% end %>
-              </p>
+              <p><%=current_user.score_compatibility(user) %></p>
               <p><%= user.biography %></p>
             </div>
             </div>

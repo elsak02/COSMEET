@@ -15,9 +15,12 @@ class UsersController < ApplicationController
     end
 
     @users = policy_scope(@users).order(created_at: :desc)
+
     @users.each do |user|
       PopulateCompatibilityJob.perform_now(current_user, user)
+      # raise
     end
+
     @like = Like.new
   end
 

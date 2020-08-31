@@ -19,7 +19,8 @@ class User < ApplicationRecord
   has_many :matches, through: :user_matches
   has_many :messages
   has_many :compatibilities, class_name: 'Compatibility', foreign_key: 'user_id'
-  has_many :compatibilities, class_name: 'Compatibility', foreign_key: 'receiver_id'
+  has_many :received_compatibilities, class_name: 'Compatibility', foreign_key: 'receiver_id'
+
   has_many_attached :photos
   has_one_attached :chart
 
@@ -60,16 +61,18 @@ class User < ApplicationRecord
   end
 
   def score_compatibility(user)
-    score = Compatibility.where(user_id: user.id).first.compatibility_score
-      if score >= 75
-        score = 3
-      elsif score >= 50
-        score = 2
-      else score = 1
-      end
+    score = self.compatibilities.where(receiver_id: user.id).first.compatibility_score
+
+    # if score >= 75
+    #   score = 3
+    # elsif score >= 50
+    #   score = 2
+    # else
+    #   score = 1
+    # end
   end
 
   def describe_compatibility(user)
-    Compatibility.where(user_id: user.id).first.compatibility_description
+    compatibilities.where(receiver_id: user.id).first.compatibility_description
   end
 end
