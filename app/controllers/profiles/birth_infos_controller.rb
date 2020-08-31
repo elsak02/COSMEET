@@ -9,6 +9,7 @@ class Profiles::BirthInfosController < Profiles::PreferencesController
       # raise
       redirect_to edit_profiles_photos_path
     else
+      flash[:alert] = form.errors.full_messages.join(", ")
       render :edit
     end
   end
