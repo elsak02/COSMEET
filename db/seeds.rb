@@ -136,6 +136,14 @@ puts "Creating Likes..."
 Like.create(user: quentin, receiver: elsa, liked: true)
 Like.create(user: oceane, receiver: quentin, liked: true)
 
+# Like.create(user: oceane, receiver: anthony, liked: true)
+# Like.create(user: oceane, receiver: dimitri, liked: true)
+# Like.create(user: oceane, receiver: edouard, liked: true)
+Like.create(user: quentin, receiver: oceane, liked: true)
+Like.create(user: anthony, receiver: oceane, liked: true)
+Like.create(user: dimitri, receiver: oceane, liked: true)
+Like.create(user: edouard, receiver: oceane, liked: true)
+
 puts "Creating Chart Element..."
   User.find_each do |user|
     PopulateChartElementJob.perform_now(user)
