@@ -6,8 +6,20 @@ class User < ApplicationRecord
     "Le Big Bang céleste #friendswithbenefits",
     "Partir en exploration #justcurious"
   ]
-  ELEMENT_RANKING = []
-  MODE_RANKING = []
+
+  ELEMENTS = {
+    water: ["Cancer","Pisces", "Scorpio"],
+    fire: ["Leo", "Sagittarius", "Aries"],
+    earth: ["Capricorn", "Taurus", "Virgo"],
+    air: ["Libra", "Aquarius", "Gemini"]
+  }
+
+  MODES = {
+    cardinal: ["Aries", "Capricorn", "Libra", "Cancer"],
+    fixed: ["Leo", "Taurus", "Aquarius", "Scorpio"],
+    mutable: ["Sagittarius", "Virgo", "Gemini", "Pisces"]
+  }
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -40,12 +52,12 @@ class User < ApplicationRecord
 
   #do we need it??? find below method find_sign
   def sign
-    chart_elements.where(planet: "Sun").first.sign
+    self.chart_elements.where(planet: "Sun").first.sign
   end
 
   #do we need it??? find below method first_content
   def content
-    chart_elements.where(planet: "Sun").first.content.split(".").first(3).join(".")+"."
+    self.chart_elements.where(planet: "Sun").first.content.split(".").first(3).join(".")+"."
   end
 
   def short_content
