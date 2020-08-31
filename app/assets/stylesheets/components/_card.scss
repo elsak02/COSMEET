@@ -1,7 +1,15 @@
 .card {
   height: calc(100vh - 70px - 75px);
-
   position: relative;
+
+  li.list-group-item {
+    margin-right: 5px;
+    background: #e4dfcf;
+    border: none;
+    font-size: 14px;
+    color: #927f42;
+    padding: 4px 8px;
+}
 }
 
 .profile-card {
