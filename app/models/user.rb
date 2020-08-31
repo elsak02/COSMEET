@@ -65,11 +65,17 @@ class User < ApplicationRecord
     sample["signs"][self.sign.downcase]
   end
 
-  def find_sign(planet)
-    chart_elements.where(planet: planet).first.sign
+  def perso_traits
+    traits = YAML.load(open(Rails.root.join("db", "yaml", "love_traits_signs.yml")).read)
+    traits["tags"][self.sign]
   end
 
-   def first_content(planet)
+  def find_sign(planet)
+    chart_elements.where(planet: planet).first.sign
+    # raise
+  end
+
+  def first_content(planet)
     chart_elements.where(planet: planet).first.content.split(".").first(3).join(".")+"."
   end
 

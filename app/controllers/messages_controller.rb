@@ -1,5 +1,4 @@
 class MessagesController < ApplicationController
-
   def create
     @chatroom = Match.find(params[:match_id])
     @message = Message.new(message_params)
@@ -7,12 +6,14 @@ class MessagesController < ApplicationController
     @message.user = current_user
     authorize @message
     if @message.save
+      MatchChannel.broadcast_to(
+        @chatroom,
+        render_to_string(partial: "message", locals: { message: @message })
+      )
       redirect_to chatroom_match_path(@chatroom, anchor: "message-#{@message.id}")
     else
       render "chatrooms/show"
     end
-
-
   end
 
   private

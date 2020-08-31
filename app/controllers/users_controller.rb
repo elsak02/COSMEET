@@ -16,8 +16,9 @@ class UsersController < ApplicationController
 
     @users = rank_users
     @users = policy_scope(@users).order("score desc")
-
+    
     @users.each do |user|
+    # raise
       PopulateCompatibilityJob.perform_now(current_user, user)
       # raise
     end

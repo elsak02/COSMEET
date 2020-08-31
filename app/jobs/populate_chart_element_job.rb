@@ -9,6 +9,7 @@ PLANETS = %w[Sun Moon Saturn Jupiter Venus Mercury Pluto Uranus Neptune Mars]
 ASTRO_API = AstroService.new(ENV["ASTRO_ID"], ENV["ASTRO_KEY"])
 
   def perform(user)
+    # raise
     timezone = 2
     latitude = user.latitude
     longitude = user.longitude
@@ -42,5 +43,6 @@ ASTRO_API = AstroService.new(ENV["ASTRO_ID"], ENV["ASTRO_KEY"])
       chart_url = chart_parsed["url"]
       file = URI.open(chart_url)
       user.chart.attach(io: file, filename: 'chart.png', content_type: 'image/png')
+
   end
 end
