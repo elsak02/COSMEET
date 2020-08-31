@@ -2,7 +2,7 @@
 
 
 <%= simple_form_for(current_user, url: profiles_photos_path ) do |f| %>
-  <div class="photos-container flex-wrap justify-content-between">
+  <div class="photos-container flex-wrap justify-content-around">
       <div data-controller="img-preview">
         <%= f.input(:photos,
                     label: 'Add your best picture here',
@@ -74,7 +74,7 @@
       </div>
   </div>
   <div class=" d-flex justify-content-center">
-      <%= f.submit 'Continue', class:'button mt-4' %>
+      <%= f.submit 'Continue', class:'button' %>
   </div>
 <% end %>
 

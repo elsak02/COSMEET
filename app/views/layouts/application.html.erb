@@ -8,11 +8,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable"  content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
     <link rel="manifest" href=" <%= asset_path 'manifest.json' %>">
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= render 'shared/ios_pwa_links' %>
   </head>
@@ -25,7 +22,7 @@
     <div class="container <%= "min-vh-100" if controller_name == "pages" %>">
       <%= yield %>
     </div>
-      <% unless controller_name == "pages"  %>
+      <% unless controller_name == "pages" || controller_name == "registrations" %>
         <%= render 'shared/footer' %>
       <% end  %>
   </body>

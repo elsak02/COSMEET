@@ -1,11 +1,20 @@
 .footer {
-  background: #E3D7DC;
+  background: #eee6e9;
   position: sticky;
+  bottom: 0px;
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  box-shadow: 0 -1px 5px rgba(0,0,0,0.2);
+
+
 }
 .footer-links {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  vertical-align: center;
   width: 100%;
+
 }
 .footer-links a {
   color: black;
@@ -22,13 +31,21 @@
 }
 
 .footer-links .navbar-brand img {
-  width: 30px;
+  width: 35px;
+  height: 40px;
 }
 
 .footer-links .heartz img {
-  width: 50px;
+  width: 45px;
+  height: 40px;
 }
 
 .footer-links .message img {
-  width: 40px;
+  width: 35px;
+  height: 40px;
+}
+
+.footer-links .chart img {
+  width: 35px;
+  height: 40px;
 }
