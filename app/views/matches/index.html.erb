@@ -1,10 +1,30 @@
+<div class="d-flex head-box">
+<% @matches.each do |match| %>
+  <% match.user_matches.where.not(user: current_user).each do |user_match| %>
+    <%= link_to chatroom_match_path(user_match.match) do %>
+      <%= cl_image_tag user_match.user.photos.first.key, class: "avatar-message" %>
+    <% end %>
+  <% end %>
+<% end %>
+</div>
+
+
 <div>
 <% @matches.each do |match| %>
   <% match.user_matches.where.not(user: current_user).each do |user_match| %>
-    <%= user_match.user.name %>
-   <div class="btn button">
-       <%= link_to "My Chat" , chatroom_match_path(user_match.match) %>
+  <div class="d-flex">
+    <div class="small-head">
+      <%= cl_image_tag user_match.user.photos.first.key, class: "avatar-message" %>
+      <%= user_match.user.name %>
     </div>
+    <div>
+      <% if  user_match.match.messages.last.nil?%>
+        <p>Start texting</p>
+      <% else  %>
+       <%= link_to user_match.match.messages.last.content , chatroom_match_path(user_match.match), class: "text-message" %>
+      <% end %>
+    </div>
+  </div>
   <% end  %>
 <% end %>
 </div>
