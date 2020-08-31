@@ -38,6 +38,7 @@ gem 'simple_form'
 gem 'pundit'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
+gem 'validates_timeliness', '~> 5.0.0.beta1'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

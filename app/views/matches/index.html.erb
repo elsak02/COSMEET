@@ -1,0 +1,10 @@
+<div>
+<% @matches.each do |match| %>
+  <% match.user_matches.where.not(user: current_user).each do |user_match| %>
+    <%= user_match.user.name %>
+   <div class="btn button">
+       <%= link_to "My Chat" , chatroom_match_path(user_match.match) %>
+    </div>
+  <% end  %>
+<% end %>
+</div>
