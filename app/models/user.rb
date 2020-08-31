@@ -21,6 +21,7 @@ class User < ApplicationRecord
   validates_presence_of :relationship_type, controller_name: 'relationship_types'
   #validates_presence_of :element_ranking, controller_name: 'element_rankings'
   #validates_presence_of :mode_ranking, controller_name: 'mode_rankings'
+
   has_many :user_matches
   has_many :matches, through: :user_matches
   has_many :messages
@@ -28,6 +29,7 @@ class User < ApplicationRecord
   has_many :received_compatibilities, class_name: 'Compatibility', foreign_key: 'receiver_id'
 
   has_many_attached :photos
+  # validates :photos, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg']
   has_one_attached :chart
 
   geocoded_by :birth_place
@@ -65,6 +67,7 @@ class User < ApplicationRecord
 
   def find_sign(planet)
     chart_elements.where(planet: planet).first.sign
+    # raise
   end
 
   def first_content(planet)

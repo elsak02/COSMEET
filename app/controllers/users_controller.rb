@@ -15,8 +15,8 @@ class UsersController < ApplicationController
     end
 
     @users = policy_scope(@users).order(created_at: :desc)
-
     @users.each do |user|
+    # raise
       PopulateCompatibilityJob.perform_now(current_user, user)
       # raise
     end
