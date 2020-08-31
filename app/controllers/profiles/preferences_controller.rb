@@ -28,6 +28,7 @@ class Profiles::PreferencesController < ApplicationController
       :relationship_type,
       :mode_ranking,
       :element_ranking,
-      photos: [])
+      photos: [],
+      personality_traits: [])
   end
 end

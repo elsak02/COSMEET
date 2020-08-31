@@ -1,12 +1,13 @@
 <h4 class="py-3 text-center">Select the 3 tags that better fit to your personality</h4>
 
-  <% current_user.perso_traits.each do |trait| %>
-    <li class="list-group-item"><%= trait %></li>
-  <% end %>
-
 <%= simple_form_for(current_user, url: profiles_personality_traits_path) do |f| %>
-  <%= f.input  :relationship_type, collection: ["Trait 1", "Trait 2", "Trait 3"], required: true, as: :check_boxes %>
-   <div class=" d-flex justify-content-center">
-      <%= f.submit 'Continue', class:'button mt-4' %>
+   <div class=" d-flex flex-wrap justify-content-center">
+    <% current_user.perso_traits.each do |trait| %>
+      <%= check_box_tag "user[personality_traits][]", trait, false, id: "user_personality_traits_#{trait}", class: "d-none" %>
+      <%= label_tag "user_personality_traits_#{trait}", trait, class: "ml-5" %>
+    <% end %>
   </div>
+
+  <%= f.submit 'Continue', class:'button mt-4' %>
 <% end %>
+
