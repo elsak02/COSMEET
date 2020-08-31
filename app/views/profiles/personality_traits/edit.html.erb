@@ -1,8 +1,8 @@
 <h4 class="py-3 text-center">Select the 3 tags that better fit to your personality</h4>
 
-  <%= current_user.perso_traits.each do |trait| %>
-    <li class="list-group-item"><%= perso_traits %></li>
-  <%= end %>
+  <% current_user.perso_traits.each do |trait| %>
+    <li class="list-group-item"><%= trait %></li>
+  <% end %>
 
 <%= simple_form_for(current_user, url: profiles_personality_traits_path) do |f| %>
   <%= f.input  :relationship_type, collection: ["Trait 1", "Trait 2", "Trait 3"], required: true, as: :check_boxes %>

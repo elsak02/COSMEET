@@ -3,7 +3,7 @@ class Profiles::PersonalityTraitsController < Profiles::PreferencesController
     authorize current_user
     current_user.assign_attributes(profile_params)
     if current_user.save
-      redirect_to users_path
+      redirect_to my_profile_path
     else
       render :edit
     end
