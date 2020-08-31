@@ -10,7 +10,7 @@
               <% if user.photos.any? %>
                 <%= cl_image_tag user.photos.first.key %>
               <% end %>
-             <div class="sign-sec <%= user.sign %> user-sign">
+             <div class="sign-sec <%= user.sign.downcase %> user-sign">
             </div>
             </div>
 
@@ -30,6 +30,10 @@
 
               <h4><strong><%= user.name %></strong>, <%= user.age(user.birth_date) %></h4>
               <p><%= user.personality_trait %></p>
+              <p><% user.score_compatibility(current_user).times do %>
+                 <i class="fas fa-heart"></i>
+                 <% end %>
+              </p>
               <p><%= user.biography %></p>
             </div>
             </div>

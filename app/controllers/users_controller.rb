@@ -15,6 +15,9 @@ class UsersController < ApplicationController
     end
 
     @users = policy_scope(@users).order(created_at: :desc)
+    @users.each do |user|
+      PopulateCompatibilityJob.perform_now(current_user, user)
+    end
     @like = Like.new
   end
 
@@ -28,7 +31,6 @@ class UsersController < ApplicationController
   def chart
     authorize current_user
   end
-
 
   private
 
