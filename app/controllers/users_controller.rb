@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show]
+  SCORE ={}
 
   def index
     @users = User.where.not(id: current_user.id)
@@ -16,13 +17,11 @@ class UsersController < ApplicationController
 
     @users = rank_users
     @users = policy_scope(@users).order("score desc")
-    
+    @score = {}
     @users.each do |user|
-    # raise
-      PopulateCompatibilityJob.perform_now(current_user, user)
-      # raise
+      id = user.id
+      @score[id.to_s] = score_compatibility(current_user, user).to_i
     end
-
     @like = Like.new
   end
 
@@ -38,6 +37,50 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def score_compatibility(user_one, user_two)
+      personal_planets = %w[Sun Moon Ascendant]
+      secondary_planets = %w[Venus Mercury Mars]
+      other_planets = %w[Saturn Jupiter Pluto Uranus Neptune]
+
+      score = 0
+
+      personal_planets.each do |planet|
+        if condition(user_one, user_two, planet)
+          score += 3
+        end
+      end
+      secondary_planets.each do |planet|
+        if condition(user_one, user_two, planet)
+          score += 2
+        end
+      end
+      other_planets.each do |planet|
+        if condition(user_one, user_two, planet)
+          score += 1
+        end
+      end
+
+      compatibility_percentage = (score / 20.to_f) * 100
+
+       if compatibility_percentage >= 75
+            score = 3
+          elsif compatibility_percentage >= 50
+            score = 2
+          else
+            score = 1
+          end
+    end
+
+  def condition(user_one, user_two, planet)
+    elements_matching = {
+        match_one: ["Cancer", "Pisces", "Scorpio", "Capricorn", "Taurus", "Virgo"],
+        match_two: ["Leo", "Sagittarius", "Aries", "Libra", "Aquarius", "Gemini"]
+      }
+
+    elements_matching[:match_one].include?(user_one.find_sign(planet)) & elements_matching[:match_one].include?(user_two.find_sign(planet)) || elements_matching[:match_two].include?(user_one.find_sign(planet)) & elements_matching[:match_two].include?(user_two.find_sign(planet))
+  end
+
 
   def set_user
     @user = User.find(params[:id])

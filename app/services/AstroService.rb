@@ -93,6 +93,7 @@ class AstroService
 
   def matchSigns(data)
     url = "compatibility/#{data[:sun_sign]}/#{data[:rising_sign]}/#{data[:partner_sun_sign]}/#{data[:partner_rising_sign]}"
+    p url
     getResponse(url)
   end
 end
