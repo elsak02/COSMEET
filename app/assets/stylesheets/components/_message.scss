@@ -1,13 +1,28 @@
 .head-box {
-  background-color: white;
-  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .text-message {
   color: black;
+  margin-right: 5px;
 }
 
 .small-head {
-  background-color: white;
-  width: 40%;
+  width: 20%;
+  margin-right: 20px;
+}
+
+.message-story {
+  margin-bottom: 10px;
+}
+
+.avatar-message {
+  margin-right: 5px;
+}
+
+.small-message {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
