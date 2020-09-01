@@ -1,10 +1,10 @@
 <div class="footer fixed-bottom">
   <div class="footer-links">
   <% if current_user %>
-    <%= link_to my_profile_path(current_user), class: "navbar-brand m-0 profile" do %>
+    <%= link_to my_profile_path, class: "navbar-brand m-0 profile" do %>
       <%= image_tag "icons/user.png" %>
     <% end %>
-    <%= link_to chart_path(current_user), class: "navbar-brand m-0 chart" do %>
+    <%= link_to chart_path, class: "navbar-brand m-0 chart" do %>
       <%= image_tag "icons/Group.png" %>
     <% end %>
   <%= link_to users_path, class: "navbar-brand m-0 heartz" do %>

@@ -12,7 +12,7 @@
 
 
 <div>
-<% if @matches.nil? %>
+<% if @matches.empty? %>
   <p>Planets did not align for you yet</p>
 <% else %>
 <% @matches.each do |match| %>
