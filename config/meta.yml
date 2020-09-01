@@ -1,0 +1,5 @@
+meta_product_name: "Cosmeet"
+meta_title: "Cosmeet - Planets align for you"
+meta_description: "Cosmeet is a dating app based on astrology"
+meta_image: "logo.png" # should exist in `app/assets/images/`
+twitter_account: "@lewagonparis"   # required for Twitter Cards
