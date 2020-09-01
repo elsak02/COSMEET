@@ -153,6 +153,13 @@ patricia = User.create!(email: "patricia@cosmeet.com", password: "123456", name:
 
 patricia.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
+#User Martin
+file = URI.open()
+
+martin = User.create!(email: "martin@cosmeet.com", password: "123456", name: "Martin", birth_date: "1992-07-26", birth_time: "10:40", birth_place: "Orléans", gender: "Man", sexual_preference: "Woman", relationship_type: "Curious", element_ranking: ["air","water","earth","fire"], mode_ranking: ["fixed","mutable","cardinal"], personality_traits: ["childish", "proud", "sincere"], latitude: 47.91, longitude: 1.9, biography: "I pretend I did Harvard to pick-up girls, would it work on you?")
+
+martin.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
 #User Chloé
 # file = URI.open('https://avatars2.githubusercontent.com/u/65725594?v=4')
 # chloe = User.create!(email: "chloe@cosmeet.com", password:"123456", name: "Chloé", birth_date: "1988-05-08", birth_place: "Lagny-sur-Marne", gender: "Woman", sexual_preference: "Man", relationship_type: "Serious", element_ranking: [1,4,3,2], mode_ranking: [3,1,2], personality_traits: ["#generous" #"proud" #"lustful"], latitude: 48.86, longitude: 2.71, biography: "Manager of a music band, I ride Paris with great hair!")
