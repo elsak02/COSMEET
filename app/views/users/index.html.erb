@@ -34,6 +34,12 @@
               <li class="perso-traits list-group-item"><%= personality_trait %></li>
               <% end %>
              </ul>
+            <div class="d-flex">
+               <% id = user.id %>
+               <% @score[id.to_s].times do %>
+                <p><i class="fas fa-heart"></i></p>
+                 <% end %>
+            </div>
               <p><%= user.biography %></p>
             </div>
             </div>

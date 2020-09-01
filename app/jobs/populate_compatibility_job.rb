@@ -5,20 +5,30 @@ class PopulateCompatibilityJob < ApplicationJob
 
   def perform(userone, usertwo)
 
-    match_data = {
-      sun_sign: userone.find_sign("Sun")&.downcase,
-      rising_sign: userone.find_sign("Ascendant")&.downcase,
-      partner_sun_sign: usertwo.find_sign("Sun")&.downcase,
-      partner_rising_sign: usertwo.find_sign("Ascendant")&.downcase
-    }
+    timezone = 2
+    latitude = userone.latitude
+    longitude = userone.longitude
+    date = userone.birth_date.day
+    month = userone.birth_date.month
+    year = userone.birth_date.year
+    hour = userone.birth_time.hour
+    minute = userone.birth_time.strftime("%M")
 
-    api_compatibility = ASTRO_API.matchSigns(match_data)
-    compatibility_parsed = JSON.parse(api_compatibility)
-    Compatibility.create!(
-      user: userone,
-      receiver: usertwo,
-      compatibility_description: compatibility_parsed["compatibility_report"] || "",
-      compatibility_score: compatibility_parsed["compatibility_percentage"] || 0
-    )
+    userone_birth_data = {'date' => date, "month" => month, "year" => year, "hour" => hour, "minute" => minute, "latitude" => latitude, "longitude" => longitude, "timezone" => timezone}
+
+    timezone = 2
+    latitude = usertwo.latitude
+    longitude = usertwo.longitude
+    date = usertwo.birth_date.day
+    month = usertwo.birth_date.month
+    year = usertwo.birth_date.year
+    hour = usertwo.birth_time.hour
+    minute = usertwo.birth_time.strftime("%M")
+
+    usertwo_birth_data = {'date' => date, "month" => month, "year" => year, "hour" => hour, "minute" => minute, "latitude" => latitude, "longitude" => longitude, "timezone" => timezone}
+
+    content_compat = ASTRO_API.matchMakingCall("love_compatibility_report/tropical", userone_birth_data, usertwo_birth_data)
+    content_compat_parsed = JSON.parse(content_compat)
+    return content_compat_parsed["love_report"].first
   end
 end
