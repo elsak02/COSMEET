@@ -154,11 +154,27 @@ patricia = User.create!(email: "patricia@cosmeet.com", password: "123456", name:
 patricia.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #User Martin
-file = URI.open()
+file = URI.open(https://avatars1.githubusercontent.com/u/62666031?v=4)
 
 martin = User.create!(email: "martin@cosmeet.com", password: "123456", name: "Martin", birth_date: "1992-07-26", birth_time: "10:40", birth_place: "Orléans", gender: "Man", sexual_preference: "Woman", relationship_type: "Curious", element_ranking: ["air","water","earth","fire"], mode_ranking: ["fixed","mutable","cardinal"], personality_traits: ["childish", "proud", "sincere"], latitude: 47.91, longitude: 1.9, biography: "I pretend I did Harvard to pick-up girls, would it work on you?")
 
 martin.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+#Christophe
+file = URI.open(https://avatars0.githubusercontent.com/u/62895586?v=4)
+
+christophe = User.create!(email: "christophe@cosmee.com", password: "123456", name: "Christophe", birth_date: "1978-08-25", birth_time: "17:05", birth_place: "Clamart", gender: "Man", sexual_preference: "Woman", relationship_type: "Serious", element_ranking: ["earth","air","water","fire"], mode_ranking: ["cardinal","fixed","mutable"], personality_traits: ["hardworking", "kind", "calm"], latitude:48.80, longitude: 2.26, biography: "I used to design auto motors, now I design apps. My friend call me 'soft power'")
+
+christophe.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+#User Hugo Lavorel
+file = URI.open(https://avatars2.githubusercontent.com/u/63447451?v=4)
+
+hugo = User.create!(email: "hugo@cosmeet.com", password: "123456", name: "Hugo L", birth_date: "1990-08-06", birth_time: "18:50", birth_place: "Vitry-sur-seine", gender: "Man", sexual_preference: "Woman", relationship_type: "Serious", element_ranking: ["water","air","earth","fire"], mode_ranking: ["fixed","mutable","cardinal"], personality_traits: ["generous", "idealistic", "lustful"], latitude: 48.78, longitude: 2.4, biography: "I usually seduce with my suave voice. Wait to see my other talents...")
+
+hugo.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+
 
 #User Chloé
 # file = URI.open('https://avatars2.githubusercontent.com/u/65725594?v=4')
