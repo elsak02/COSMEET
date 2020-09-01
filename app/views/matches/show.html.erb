@@ -12,11 +12,7 @@
   <h1 class="text-center p-5">🌟💞🌟</h1>
   <div class="compatibility-description">
           <h3>What to expect?</h3>
-  <% @match.user_matches.each do |user_match| %>
-          <% if user_match.user != current_user %>
-           <p><%= user_match.user.describe_compatibility(current_user) %></p>
-          <% end %>
-  <% end %>
+           <p><%= @match_description %></p>
   </div>
   </div>
 </div>

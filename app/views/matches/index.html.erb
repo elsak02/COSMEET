@@ -1,30 +1,46 @@
 <div class="d-flex head-box">
 <% @matches.each do |match| %>
   <% match.user_matches.where.not(user: current_user).each do |user_match| %>
+  <div class="avatar-chat">
     <%= link_to chatroom_match_path(user_match.match) do %>
       <%= cl_image_tag user_match.user.photos.first.key, class: "avatar-message" %>
     <% end %>
+  </div>
   <% end %>
 <% end %>
 </div>
 
 
 <div>
+<% if @matches.nil? %>
+  <p>Planets did not align for you yet</p>
+<% else %>
 <% @matches.each do |match| %>
   <% match.user_matches.where.not(user: current_user).each do |user_match| %>
-  <div class="d-flex">
+  <div class="d-flex message-story">
     <div class="small-head">
       <%= cl_image_tag user_match.user.photos.first.key, class: "avatar-message" %>
-      <%= user_match.user.name %>
     </div>
-    <div>
+    <div class="message-row">
       <% if  user_match.match.messages.last.nil?%>
-        <p>Start texting</p>
+      <div class="row">
+        <strong><%= user_match.user.name %></strong>
+      </div>
+      <div class="row">
+        <%= link_to "Let your story begin...", chatroom_match_path(user_match.match), class: "text-message" %>
+      </div>
       <% else  %>
-       <%= link_to user_match.match.messages.last.content , chatroom_match_path(user_match.match), class: "text-message" %>
+      <div class="row">
+        <strong><%= user_match.user.name %></strong>
+      </div>
+      <div class="row small-message">
+        <%= link_to user_match.match.messages.last.content.truncate(25) , chatroom_match_path(user_match.match), class: "text-message" %>
+        <small>at <%= user_match.match.messages.last.created_at.strftime("%l:%M%p") %></small>
+      </div>
       <% end %>
     </div>
   </div>
+  <% end %>
   <% end  %>
 <% end %>
 </div>
