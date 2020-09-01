@@ -3,8 +3,10 @@
   background: $pink;
   font-family: 'Playfair Display', serif;
   font-size: 25px;
-  position: sticky;
-  box-shadow: 0 -1px 5px rgba(0,0,0,0.2);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 -1px 4px rgba(0,0,0,5.2);
   margin-bottom: 10px;
   padding: 12px;
 }
@@ -13,9 +15,32 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-  margin-left: 10px;
+.logo-navbar {
+  width: 33px;
 }
 
+.burger-bttn {
+  opacity: 0.8;
+  margin-right: 4px;
+  position: absolute;
+  top: -13px;
+  left: 71px;
 
+}
+
+.z-idx-pos {
+  z-index: 10;
+  left: -77px;
+  top: 16px;
+  font-family: $body-font;
+
+}
+
+.dropdown-item:hover {
+  background-color: $pink;
+}
+
+.z-idx-neg {
+  z-index: -1;
+  position: relative;
+}
