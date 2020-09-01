@@ -10,7 +10,7 @@ ASTRO_API = AstroService.new(ENV["ASTRO_ID"], ENV["ASTRO_KEY"])
 
   def perform(user)
     # raise
-    timezone = 2
+    timezone = 1
     latitude = user.latitude
     longitude = user.longitude
     date = user.birth_date.day
