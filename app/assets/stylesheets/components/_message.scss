@@ -26,3 +26,105 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.user-message {
+  background-color: #E4C9D8;
+  border-radius: 10px;
+}
+
+.user-message span {
+  color: #44001A;
+}
+
+.current-message {
+  background-color: #F4F4F6;
+  align-self: flex-end;
+  text-align: right;
+  border-radius: 10px;
+}
+
+.current-time {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.current-message span {
+  color: #49393B;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+#messages {
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.line-text {
+  overflow-wrap: break-word;
+  max-width: 100%;
+  margin-bottom: 0;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.input-text {
+  position: fixed;
+  display: flex;
+  bottom: 73px;
+  width: 100%;
+  left: 0;
+  background: $pink;
+  padding: 10px 0;
+  box-shadow: 0px -1px 5px rgba(0,0,0,.2);
+  form#new_message {
+    width: 90%;
+    margin: auto;
+    .message_content {
+      margin: 0;
+    }
+  }
+}
+
+.message-container {
+    width: fit-content;
+    max-width: 75%;
+    padding: 5px;
+    margin-bottom: 2px;
+}
+
+
+.author {
+  display: flex;
+    flex-direction: column;
+}
+
+.author span {
+    margin-bottom: 5px;
+}
+
+.author small {
+    margin-bottom: 15px;
+}
+
+#submit-btn
+{
+  width: 30%;
+  object-fit: cover;
+  margin-left: 10px;
+  color: $pink;
+  background-color: #F4F4F6;
+  border: 0px solid $pink;
+  border-radius: 10px;
+}
+
+.text-button {
+  display: flex;
+}
+
+.form-control {
+
+  border-radius: 10px;
+  background-color: #F4F4F6;
+}
