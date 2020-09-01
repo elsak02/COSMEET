@@ -3,13 +3,13 @@
   <div class="chart-show">
     <%= cl_image_tag current_user.chart.key %>
   </div>
-
+    <div class="police_text">
     <h4 class="mt-4 mb-4 text-center">
-    <%= image_tag("sun.png", width: "8%", class: "style_image") %>Sun in <%= current_user.find_sign("Sun") %></h4>
+    <%= image_tag("sun.png", width: "9%", class: "style_image") %>Sun in <%= current_user.find_sign("Sun") %></h4>
     <p><%= current_user.first_content("Sun") %></p>
 
     <h4 class="mt-4 mb-4 text-center">
-    <%= image_tag("ascendant.png", width: "6%", class: "style_image") %>Ascendant in <%= current_user.find_sign("Ascendant") %></h4>
+    <%= image_tag("ascendant.png", width: "7%", class: "style_image") %>Ascendant in <%= current_user.find_sign("Ascendant") %></h4>
     <p><%= current_user.first_content("Ascendant") %></p>
 
     <h4 class="mt-4 mb-4 text-center">
@@ -17,19 +17,19 @@
     <p><%= current_user.first_content("Moon") %></p>
 
     <h4 class="mt-4 mb-4 text-center">
-    <%= image_tag("mercury.png", width: "6%", class: "style_image")%>Mercury in <%= current_user.find_sign("Mercury") %></h4>
+    <%= image_tag("mercury.png", width: "7%", class: "style_image")%>Mercury in <%= current_user.find_sign("Mercury") %></h4>
     <p><%= current_user.first_content("Mercury") %></p>
 
     <h4 class="mt-4 mb-4 text-center">
-    <%= image_tag("venus.png", width: "6%", class: "style_image")%>Venus in <%= current_user.find_sign("Venus") %></h4>
+    <%= image_tag("venus.png", width: "7%", class: "style_image")%>Venus in <%= current_user.find_sign("Venus") %></h4>
     <p><%= current_user.first_content("Venus") %></p>
 
     <h4 class="mt-4 mb-4 text-center">
-    <%= image_tag("mars.png", width: "8%", class: "style_image")%>Mars in <%= current_user.find_sign("Mars") %></h4>
+    <%= image_tag("mars.png", width: "9%", class: "style_image")%>Mars in <%= current_user.find_sign("Mars") %></h4>
     <p><%= current_user.first_content("Mars") %></p>
 
     <h4 class="mt-4 mb-4 text-center">
-    <%= image_tag("jupiter.png", width: "6%", class: "style_image")%>Jupiter in <%= current_user.find_sign("Jupiter") %></h4>
+    <%= image_tag("jupiter.png", width: "7%", class: "style_image")%>Jupiter in <%= current_user.find_sign("Jupiter") %></h4>
     <p><%= current_user.first_content("Jupiter") %></p>
 
     <h4 class="mt-4 mb-4 text-center">
@@ -41,12 +41,12 @@
     <p><%= current_user.first_content("Uranus") %></p>
 
     <h4 class="mt-4 mb-4 text-center">
-    <%= image_tag("neptune.png", width: "6%", class: "style_image")%>Neptun in <%= current_user.find_sign("Neptune") %></h4>
+    <%= image_tag("neptune.png", width: "7%", class: "style_image")%>Neptun in <%= current_user.find_sign("Neptune") %></h4>
     <p><%= current_user.first_content("Neptune") %></p>
 
     <h4 class="mt-4 mb-4 text-center">
-    <%= image_tag("pluto.png", width: "6%", class: "style_image")%>Pluto in <%= current_user.find_sign("Pluto") %></h4>
+    <%= image_tag("pluto.png", width: "7%", class: "style_image")%>Pluto in <%= current_user.find_sign("Pluto") %></h4>
     <p><%= current_user.first_content("Pluto") %></p>
-
+  </div>
 </div>
 
