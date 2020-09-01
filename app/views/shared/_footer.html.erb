@@ -5,6 +5,7 @@
       <%= image_tag "icons/user.png" %>
     <% end %>
     <%= link_to chart_path(current_user), class: "navbar-brand m-0 chart #{'active' if controller_name == 'my_profiles' && action_name == 'chart'}" do %>
+
       <%= image_tag "icons/Group.png" %>
     <% end %>
   <%= link_to users_path, class: "navbar-brand m-0 heartz #{'active' if controller_name == 'users' && action_name == 'index'}" do %>

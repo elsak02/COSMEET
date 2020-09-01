@@ -29,17 +29,17 @@
             </div>
 
             <h4><strong><%= user.name %></strong>, <%= user.age(user.birth_date) %></h4>
+            <div class="d-flex pb-2">
+               <% id = user.id %>
+               <% @score[id.to_s].times do %>
+                <%= image_tag "icons/heart.png", class: "mr-1" %>
+                 <% end %>
+             </div>
               <ul class="list-group list-group-horizontal flex-wrap justify-items-center">
               <% user.personality_traits.each do |personality_trait| %>
               <li class="perso-traits list-group-item"><%= personality_trait %></li>
               <% end %>
              </ul>
-            <div class="d-flex">
-               <% id = user.id %>
-               <% @score[id.to_s].times do %>
-                <p><i class="fas fa-heart"></i></p>
-                 <% end %>
-            </div>
               <p><%= user.biography %></p>
             </div>
             </div>

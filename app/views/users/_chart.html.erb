@@ -1,0 +1,52 @@
+
+<div class="container">
+  <h4 class="text-center mt-3"><%= @user.name %>'s natal chart</h4>
+  <div class="chart-show">
+    <%= cl_image_tag @user.chart.key %>
+  </div>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Sun in <%= @user.find_sign("Sun") %></h4>
+    <p><%= @user.first_content("Sun") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Ascendant in <%= @user.find_sign("Ascendant") %></h4>
+    <p><%= @user.first_content("Ascendant") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Moon in <%= @user.find_sign("Moon") %></h4>
+    <p><%= @user.first_content("Moon") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Mercury in <%= @user.find_sign("Mercury") %></h4>
+    <p><%= @user.first_content("Mercury") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Venus in <%= @user.find_sign("Venus") %></h4>
+    <p><%= @user.first_content("Venus") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Mars in <%= @user.find_sign("Mars") %></h4>
+    <p><%= @user.first_content("Mars") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Jupiter in <%= @user.find_sign("Jupiter") %></h4>
+    <p><%= @user.first_content("Jupiter") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Saturn in <%= @user.find_sign("Saturn") %></h4>
+    <p><%= @user.first_content("Saturn") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Uranus in <%= @user.find_sign("Uranus") %></h4>
+    <p><%= @user.first_content("Uranus") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Neptun in <%= @user.find_sign("Neptune") %></h4>
+    <p><%= @user.first_content("Neptune") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    Pluto in <%= @user.find_sign("Pluto") %></h4>
+    <p><%= @user.first_content("Pluto") %></p>
+
+</div>
