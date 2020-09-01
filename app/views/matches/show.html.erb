@@ -7,6 +7,9 @@
             <div class="sign-match <%= user_match.user.sign.downcase %>">
             </div>
           </div>
+          <% if user_match.user != current_user %>
+          <%= link_to "#{user_match.user.name}'s profile", user_path(user_match.user), class: "button"%>
+          <% end %>
       <% end %>
   </div>
   <h1 class="text-center p-5">🌟💞🌟</h1>

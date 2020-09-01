@@ -16,7 +16,15 @@ Rails.application.routes.draw do
     resource :personality_traits, only: [:edit, :update]
   end
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :chart] do
+    member do
+      get 'chart'
+    end
+
+  end
+
+
+
   resources :likes, only: [:new, :create]
   resources :matches, only: [:index, :show]
   # get 'chatroom', to: 'matches#chatroom'
