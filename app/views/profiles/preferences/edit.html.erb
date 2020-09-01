@@ -1,4 +1,4 @@
-<div class="py-2">
+<div class="py-2 form-card">
   <%= simple_form_for(current_user, url: profiles_preferences_path ) do |f| %>
     <%= f.input :name, required: true, label: 'Your name', input_html: { class: 'form-input'} %>
     <%= f.input :biography, label: 'Define yourself in a few words', input_html: { maxlength: 150, class: 'form-input'} %>
