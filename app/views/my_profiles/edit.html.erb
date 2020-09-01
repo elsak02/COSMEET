@@ -1,0 +1,43 @@
+<h4 class="py-3 text-center">Edit your profile</h4>
+
+<div class="py-2">
+  <%= simple_form_for(current_user, url: my_profile_path ) do |f| %>
+    <%= f.input :name, required: true, label: 'Your name', input_html: { class: 'form-input'} %>
+    <%= f.input :biography, label: 'Define yourself in a few words', input_html: { maxlength: 150, class: 'form-input'} %>
+    <%= f.input  :gender, label: 'You identify yourself as a', collection: %w[Man Woman], as: :radio_buttons, required: true %>
+    <%= f.input  :sexual_preference, label: 'You are looking for a', collection: %w[Man Woman Both], as: :radio_buttons, required: true %>
+    <%= f.input(:birth_date,
+              label: 'Your date of birth:',
+              input_html: { class: 'form-input'},
+              as: :date,
+              start_year: Date.today.year - 90,
+              end_year: Date.today.year - 18,
+              required: true) %>
+    <%= f.input(:birth_time,
+              label: 'Your time of birth:',
+              input_html: { class: 'form-input'},
+              hint: ("If you don't know, please refer to your birth certificate"),
+              required: true,
+              collection: %w[male female],
+              as: :time) %>
+    <%= f.input(:birth_place,
+              label: 'Your place of birth:',
+              label_html: { class: 'mt-4'},
+              required: true,
+              input_html: { class: 'form-input'}) %>
+    <%= f.input(:relationship_type,
+              collection: ["a galactical love #veryserious", "a celestial Big Bang #friendswithbenefits", "Explore the unknown #justcurious"],
+              required: true,
+              as: :radio_buttons) %>
+    <span>Please select three personality traits:</span>
+    <div class="my-3 d-flex flex-wrap justify-content-center personality-traits">
+    <% current_user.perso_traits.each do |trait| %>
+      <%= check_box_tag "user[personality_traits][]", trait, false, id: "user_personality_traits_#{trait}", class: "d-none" %>
+      <%= label_tag "user_personality_traits_#{trait}", trait, class: "" %>
+    <% end %>
+  </div>
+      <div class=" d-flex justify-content-center">
+        <%= f.submit 'Continue', class:'button mt-1' %>
+    </div>
+  <% end %>
+</div>
