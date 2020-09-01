@@ -11,7 +11,9 @@
     border-bottom: 1px solid
 }
 
-
+.form-check-input.is-valid ~ .form-check-label {
+  color: black;
+}
 // edit perso tags
 .personality-traits label {
   margin-right: 0;
@@ -30,7 +32,62 @@
   }
 }
 
+.rel-type {
+  display: none;
+}
+
+.pink-label {
+  display: flex;
+  overflow: hidden;
+  // padding: 10px 0;
+}
+
+.pink-label input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+.pink-label label {
+  margin-right: 0;
+  background: $pink;
+  border: 1px solid #d2bbc4 !important;
+  font-size: 15px;
+  color: #6b5f63;
+  padding: 10px 8px;
+  border-radius: 20px !important;
+  box-shadow: 1px 3px 0px $pink;
+  margin: 0 5px 10px;
+}
+
+.pink-label label:hover {
+  cursor: pointer;
+}
+
+.pink-label input:checked + label {
+  background-color: white;
+  box-shadow: 1px 3px 0px #d2bbc4;
+  color: #6b5f63;
+}
+
+.pink-label label:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.pink-label label:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+
+
 .link {
   color: black;
 
+}
+
+.form-control:focus {
+  background-color: transparent;
+  border-color: black;
 }

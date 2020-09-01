@@ -1,16 +1,16 @@
 <div class="footer fixed-bottom">
   <div class="footer-links">
   <% if current_user %>
-    <%= link_to my_profile_path(current_user), class: "navbar-brand m-0 profile" do %>
+    <%= link_to my_profile_path(current_user), class: "navbar-brand m-0 profile #{'active' if controller_name == 'my_profiles' && action_name == 'show'}" do %>
       <%= image_tag "icons/user.png" %>
     <% end %>
-    <%= link_to chart_path(current_user), class: "navbar-brand m-0 chart" do %>
+    <%= link_to chart_path(current_user), class: "navbar-brand m-0 chart #{'active' if controller_name == 'my_profiles' && action_name == 'chart'}" do %>
       <%= image_tag "icons/Group.png" %>
     <% end %>
-  <%= link_to users_path, class: "navbar-brand m-0 heartz" do %>
+  <%= link_to users_path, class: "navbar-brand m-0 heartz #{'active' if controller_name == 'users' && action_name == 'index'}" do %>
     <%= image_tag "icons/hearts2.png" %>
   <% end %>
-  <%= link_to matches_path, class: "navbar-brand m-0 message" do %>
+  <%= link_to matches_path, class: "navbar-brand m-0 message #{'active' if controller_name == 'matches' && action_name == 'index'}" do %>
     <%= image_tag "icons/chat.png" %>
   <% end %>
 <% end %>
