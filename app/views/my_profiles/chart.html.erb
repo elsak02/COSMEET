@@ -1,4 +1,4 @@
-<div class="container">
+
   <h4 class="text-center mt-3"><%= current_user.name %>'s natal chart</h4>
   <div class="chart-show">
     <%= cl_image_tag current_user.chart.key %>
@@ -48,5 +48,5 @@
     <%= image_tag("pluto.png", width: "7%", class: "style_image")%>Pluto in <%= current_user.find_sign("Pluto") %></h4>
     <p><%= current_user.first_content("Pluto") %></p>
   </div>
-</div>
+
 
