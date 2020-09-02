@@ -5,34 +5,34 @@
        viewBox="0 0 291.3 277.3" enable-background="new 0 0 291.3 277.3" xml:space="preserve">
     <polygon fill="gold" points="145.5,0.2 185.2,99.4 291,105.9 209.7,174.9 235.4,276.9 145.5,221.6 55.6,276.9 81.2,174.9 0,105.9 105.8,99.4 "/>
   </svg>
- -->
+</div> -->
 
-<!-- <div class="js-container container"> -->
-<div class="container">
-  <h2 class="text-center my-4">Planets are aligned!</h2>
-  <div class="d-flex justify-content-center mb-5">
-      <% @match.user_matches.each do |user_match| %>
-          <div class="avatar-match m-4">
-            <%= cl_image_tag user_match.user.photos.first.key, class: "avatar-match" %>
-            <div class="sign-match <%= user_match.user.sign.downcase %>">
+
+<div class="js-container container">
+  <div class="container">
+    <h2 class="text-center my-4">Planets are aligned!</h2>
+    <div class="d-flex justify-content-center mb-5">
+        <% @match.user_matches.each do |user_match| %>
+            <div class="avatar-match m-4">
+              <%= cl_image_tag user_match.user.photos.first.key, class: "avatar-match" %>
+              <div class="sign-match <%= user_match.user.sign.downcase %>">
+              </div>
             </div>
-          </div>
-      <% end %>
+        <% end %>
+    </div>
+        <% @match.user_matches.each do |user_match| %>
+            <% if user_match.user != current_user %>
+            <%= link_to "Discover #{user_match.user.name}", user_path(user_match.user), class: "button-match"%>
+            <%= link_to "Chat with #{user_match.user.name}", chatroom_match_path(@match), class: "button-match"%>
+            <% end %>
+        <% end %>
+    <div class="compatibility-description">
+            <h3>What to expect?</h3>
+             <p><%= @match_description %></p>
+    </div>
   </div>
-      <% @match.user_matches.each do |user_match| %>
-          <% if user_match.user != current_user %>
-          <%= link_to "Discover #{user_match.user.name}", user_path(user_match.user), class: "button-match"%>
-          <%= link_to "Chat with #{user_match.user.name}", chatroom_match_path(@match), class: "button-match"%>
-          <% end %>
-      <% end %>
-  <div class="compatibility-description">
-          <h3>What to expect?</h3>
-           <p><%= @match_description %></p>
-  </div>
-<!-- </div> -->
 </div>
-<!-- </div> -->
-<!--   <script>
+  <script>
     const Confettiful = function(el) {
   this.el = el;
   this.containerEl = null;
@@ -83,7 +83,7 @@ Confettiful.prototype._renderConfetti = function() {
 };
 
 window.confettiful = new Confettiful(document.querySelector('.js-container'));
-  </script> -->
+  </script>
 
 <!--   <script>
     var tl = new TimelineMax(),
