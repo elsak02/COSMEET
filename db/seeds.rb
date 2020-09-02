@@ -100,7 +100,7 @@ edouard.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1523284008/vewklncjschzufwaixd6.jpg')
 
-dimitri = User.create!(email: "dimitri@cosmeet.com", password:"123456", name: "Dimitri", birth_date: "1986-03-04", birth_time: "14:40", birth_place: "Lyon", gender: "Man", sexual_preference: "Woman", relationship_type: "Sexual", element_ranking: ["earth","air","water","fire"], mode_ranking: ["mutable","cardinal","fixed"], personality_traits: ["caring", "creative", "sensitive"], latitude: 45.75, longitude: 4.85, biography: "Master of the reeboot, I ride my silver bike around town jazzy style.")
+dimitri = User.create!(email: "dimitri@cosmeet.com", password:"123456", name: "Dimitri", birth_date: "1986-03-04", birth_time: "14:40", birth_place: "Lyon", gender: "Man", sexual_preference: "Woman", relationship_type: "Sexual", element_ranking: ["earth","air","water","fire"], mode_ranking: ["mutable","cardinal","fixed"], personality_traits: ["caring", "creative", "sensitive"], latitude: 45.75, longitude: 4.85, biography: "Master of the reboot, I ride my silver bike around town jazzy style.")
 
 dimitri.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
@@ -236,6 +236,13 @@ file = URI.open('https://avatars1.githubusercontent.com/u/67333715?v=4')
 jules = User.create!(email: "jules@cosmeet.com", password: "123456", name: "Jules", birth_date: "2001-06-20", birth_time: "7:34", birth_place: "Paris", gender: "Man", sexual_preference: "Man", relationship_type: "Curious", element_ranking: ["water","air","earth","fire"], mode_ranking: ["fixed","mutable","cardinal"], personality_traits: ["affectionate", "gentle", "sensitive"], latitude: 48.86, longitude: 2.33, biography: "Sweet as a candy, I like protective men and salsa music.")
 
 jules.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+#User Mathilda
+file = URI.open('https://avatars0.githubusercontent.com/u/56888912?v=4')
+
+mathilda = User.create!(email: "mathilda@cosmeet.com", password: "123456", name: "Mathilda", birth_date: "1993-05-03", birth_time: "9:55", birth_place: "Nice", gender: "Woman", sexual_preference: "Man", relationship_type: "Serious", element_ranking: ["fire", "earth", "water", "air"], mode_ranking: ["cardinal","fixed","mutable"], personality_traits: ["short-tempered", "productive", "affectionate"], latitude: 43.70, longitude: 7.26, biography: "Hyperactive girl, I mostly hate waste.")
+
+mathilda.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 #User Chloé
 # file = URI.open('https://avatars2.githubusercontent.com/u/65725594?v=4')
 # chloe = User.create!(email: "chloe@cosmeet.com", password:"123456", name: "Chloé", birth_date: "1988-05-08", birth_place: "Lagny-sur-Marne", gender: "Woman", sexual_preference: "Man", relationship_type: "Serious", element_ranking: [1,4,3,2], mode_ranking: [3,1,2], personality_traits: ["#generous" #"proud" #"lustful"], latitude: 48.86, longitude: 2.71, biography: "Manager of a music band, I ride Paris with great hair!")
