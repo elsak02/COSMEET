@@ -7,11 +7,14 @@ class LikesController < ApplicationController
 
     if @like.liked?
       match = @like.create_match
-      redirect_to match_path(match) if match
+      if match
+        redirect_to match_path(match)
+      else
+        redirect_to users_path
+      end
     else
       redirect_to users_path
     end
-
   end
 
   def like_params
