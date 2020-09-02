@@ -100,7 +100,7 @@ edouard.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1523284008/vewklncjschzufwaixd6.jpg')
 
-dimitri = User.create!(email: "dimitri@cosmeet.com", password:"123456", name: "Dimitri", birth_date: "1986-03-04", birth_time: "14:40", birth_place: "Lyon", gender: "Man", sexual_preference: "Woman", relationship_type: "Sexual", element_ranking: ["earth","air","water","fire"], mode_ranking: ["mutable","cardinal","fixed"], personality_traits: ["caring", "creative", "sensitive"], latitude: 45.75, longitude: 4.85, biography: "Master of the reeboot, I ride my silver bike around town jazzy style.")
+dimitri = User.create!(email: "dimitri@cosmeet.com", password:"123456", name: "Dimitri", birth_date: "1986-03-04", birth_time: "14:40", birth_place: "Lyon", gender: "Man", sexual_preference: "Woman", relationship_type: "Sexual", element_ranking: ["earth","air","water","fire"], mode_ranking: ["mutable","cardinal","fixed"], personality_traits: ["caring", "creative", "sensitive"], latitude: 45.75, longitude: 4.85, biography: "Master of the reboot, I ride my silver bike around town jazzy style.")
 
 dimitri.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
@@ -174,8 +174,75 @@ hugo = User.create!(email: "hugo@cosmeet.com", password: "123456", name: "Hugo L
 
 hugo.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
+#User Corentin Malvaux
+file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1594053645/uvcfxlqizphyumwnqzck.jpg')
 
+corentin_malvaux = User.create!(email: "corentin_malvaux@cosmeet.com", password: "123456", name: "Corentin M", birth_date: "1991-08-29", birth_time: "21:42", birth_place: "Fontainebleau", gender: "Man", sexual_preference: "Both", relationship_type: "Serious", element_ranking: ["earth","air","water","fire"], mode_ranking: ["fixed","mutable","cardinal"], personality_traits: ["loyal", "calm", "helpful"], latitude: 48.4, longitude: 2.7, biography: "A nice guy to hang out with. Netflix and chill and so much more.")
 
+corentin_malvaux.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+#User Raphael Bilon
+#file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1594388173/fwgzimmjivqzsi9dk1wu.jpg')
+
+#raphael_bilon = User.create!(email: "raphael_bilon@cosmeet.com", password: "123456", name: "Raphael B", birth_date: "1992-09-15", birth_time: "00:30", birth_place: "Paris", gender: "Man", sexual_preference: "Woman", relationship_type: "Casual", element_ranking: ["earth","air","water","fire"], mode_ranking: ["cardinal","fixed","mutable"], personality_traits: ["ambitious", "optimistic", "confident"], latitude: 48.85, longitude: 2.34, biography: "Mankind is the only animal that can remain on friendly terms with the victims he intends to eat until he eats them.")
+
+#raphael_bilon.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+#User Adrien Fort
+file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1594044342/wxmddv0pmdhneh3kojbp.jpg')
+
+adrien = User.create!(email: "adrien@cosmeet.com", password: "123456", name: "Adrien", birth_date: "2001-12-19", birth_time: "9:12", birth_place: "Laval", gender: "Man", sexual_preference: "Woman", relationship_type: "Serious", element_ranking: ["water","air","earth","fire"], mode_ranking: ["mutable","cardinal","fixed"], personality_traits: ["generous", "freedom-loving", "great sense of humor"], latitude: 48.07, longitude: -0.76, biography: "I planned on accumulate as much money as possible when I am 30 in order to travel the rest of my life.")
+
+adrien.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+#User Julien Bouland
+file = URI.open('https://avatars3.githubusercontent.com/u/47059149?v=4')
+
+julien = User.create!(email: "julien@cosmeet.com", password: "123456", name: "Julien", birth_date: "1995-02-17", birth_time: "14:02", birth_place: "Paris", gender: "Man", sexual_preference: "Both", relationship_type: "Sexual", element_ranking: ["earth","air","water","fire"], mode_ranking: ["cardinal","fixed","mutable"], personality_traits: ["independent", "progressive", "humanitarian"], latitude: 48.85, longitude: 2.34, biography: "I traveled around the world but I still have not find my soulmate yet.")
+
+julien.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+#User Eliott Mogenet
+file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1597912687/tmy20aexx0mnpwled9nt.jpg')
+
+eliott = User.create!(email: "eliott@cosmeet.com", password: "123456", name: "Eliott", birth_date: "1997-04-22", birth_time: "9:32", birth_place: "Lyon", gender: "Man", sexual_preference: "Woman", relationship_type: "Serious", element_ranking:["water","air","earth","fire"], mode_ranking: ["fixed","mutable","cardinal"], personality_traits: ["sensitive", "affectionate", "aloof"], latitude: 45.75, longitude: 4.85, biography: "I enjoy long talks, nice built tech products and drinks with a nice view.")
+
+eliott.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+#User Vincent Pacheco
+file = URI.open('https://avatars0.githubusercontent.com/u/67064699?v=4')
+
+vincent = User.create!(email: "vincent@cosmeet.com", password: "123456", name: "Vincent", birth_date: "1995-11-16", birth_time: "14:55", birth_place: "Lagny-sur-Marne", gender: "Man", sexual_preference: "Woman", relationship_type: "Casual", element_ranking: ["fire", "earth", "water", "air"], mode_ranking: ["cardinal","fixed","mutable"], personality_traits: ["intense", "magnetic", "sarcastic"], latitude: 48.87, longitude: 2.71, biography: "Passionate about iT, I am a very sporty guy with a soft heart.")
+
+vincent.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+#User Grégoire Pothier
+file = URI.open('https://avatars3.githubusercontent.com/u/64417080?v=4')
+
+gregoire = User.create!(email: "gregoire@cosmeet.com", password: "123456", name: "Grégoire", birth_date: "1987-11-28", birth_time: "23:10", birth_place: "Paris", gender: "Man", sexual_preference: "Woman", relationship_type: "Serious", element_ranking: ["earth","air","water","fire"], mode_ranking: ["cardinal","fixed","mutable"], personality_traits: ["optimistic", "great sense of humor", "magnanimous"], latitude: 48.86, longitude: 2.33, biography: "Funny, curious but very easily ill-at-ease.")
+
+gregoire.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+#User Diane Johnston
+#file = URI.open('https://avatars2.githubusercontent.com/u/43373459?v=4')
+
+#diane = User.create!(email: "diane@cosmeet.com", password: "123456", name: "Diane", birth_date: "1992-07-16", birth_time: "11:30", birth_place: "Boulogne-Billancourt", gender: "Woman", sexual_preference: "Man", relationship_type: "Serious", element_ranking: ["fire", "earth", "water", "air"], mode_ranking: ["mutable","cardinal","fixed"], personality_traits: ["emotional", "caring", "clingy"], latitude: 48.83, longitude: 2.25, biography: "Dedicated 100percent in what I do, I used to be a fly attendant now I teach how to code to cool people.")
+
+#diane.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+#User Jules
+file = URI.open('https://avatars1.githubusercontent.com/u/67333715?v=4')
+
+jules = User.create!(email: "jules@cosmeet.com", password: "123456", name: "Jules", birth_date: "2001-06-20", birth_time: "7:34", birth_place: "Paris", gender: "Man", sexual_preference: "Man", relationship_type: "Curious", element_ranking: ["water","air","earth","fire"], mode_ranking: ["fixed","mutable","cardinal"], personality_traits: ["affectionate", "gentle", "sensitive"], latitude: 48.86, longitude: 2.33, biography: "Sweet as a candy, I like protective men and salsa music.")
+
+jules.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+#User Mathilda
+file = URI.open('https://avatars0.githubusercontent.com/u/56888912?v=4')
+
+mathilda = User.create!(email: "mathilda@cosmeet.com", password: "123456", name: "Mathilda", birth_date: "1993-05-03", birth_time: "9:55", birth_place: "Nice", gender: "Woman", sexual_preference: "Man", relationship_type: "Serious", element_ranking: ["fire", "earth", "water", "air"], mode_ranking: ["cardinal","fixed","mutable"], personality_traits: ["short-tempered", "productive", "affectionate"], latitude: 43.70, longitude: 7.26, biography: "Hyperactive girl, I mostly hate waste.")
+
+mathilda.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 #User Chloé
 # file = URI.open('https://avatars2.githubusercontent.com/u/65725594?v=4')
 # chloe = User.create!(email: "chloe@cosmeet.com", password:"123456", name: "Chloé", birth_date: "1988-05-08", birth_place: "Lagny-sur-Marne", gender: "Woman", sexual_preference: "Man", relationship_type: "Serious", element_ranking: [1,4,3,2], mode_ranking: [3,1,2], personality_traits: ["#generous" #"proud" #"lustful"], latitude: 48.86, longitude: 2.71, biography: "Manager of a music band, I ride Paris with great hair!")

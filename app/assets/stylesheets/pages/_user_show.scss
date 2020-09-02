@@ -16,13 +16,14 @@
 }
 
 .cosmeet-tabs {
-    width: 100%;
-    justify-content: flex-end;
-    padding-right: 26px !important;
+    width: 60%;
+    justify-content: center;
     margin-bottom: 0px !important;
     align-items: flex-end;
+    border-bottom: 1px solid #bf99a8 !important;
+    margin: auto;
 }
 
 .nav-tabs .nav-item {
-    margin-bottom: -5px !important;
+
 }

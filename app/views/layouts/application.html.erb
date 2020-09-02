@@ -31,6 +31,7 @@
     <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
     <meta name="twitter:image:src" content="<%= meta_image %>">
   </head>
+
     <body id="<%= controller.controller_name %>-<%= controller.action_name %>" class="min-vh-100">
       <% unless controller_name == "pages"  %>
         <%= render 'shared/navbar' %>
