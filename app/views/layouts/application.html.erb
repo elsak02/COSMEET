@@ -37,7 +37,7 @@
       <%= render 'shared/navbar' %>
     <% end  %>
     <%= render 'shared/flashes' %>
-    <div class="container custom-container min-vh-100">
+    <div class="container custom-container min-vh-100" id="<%= scroll_chatroom? ? 'scrollchat' : '' %>">
       <%= yield %>
     </div>
       <% unless controller_name == "pages" || controller_name == "registrations" %>
