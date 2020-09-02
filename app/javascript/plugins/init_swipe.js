@@ -42,6 +42,7 @@ const profileSwipe = () => {
   //     }, 50)
   //   })
   // })
+
 }
 
 export { profileSwipe }
