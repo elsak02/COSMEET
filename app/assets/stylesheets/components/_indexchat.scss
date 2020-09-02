@@ -1,34 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Arima+Madurai:300');
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
 
-h1 {
+.indexchat h1 {
     font-family: 'Arima Madurai', cursive;
     color: black;
     font-size: 2rem;
     letter-spacing: -3px;
     text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
     position: relative;
+    text-align: center;
     z-index: 3;
 }
 
-.container {
+.indexchat {
     z-index: 1;
     position: relative;
     overflow: hidden;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     // min-height: 100vh;
-    min-height: 100vh;
-    background-blend-mode: soft-light;
-    background-size: cover;
-    background-position: center center;
-    padding: 2rem;
+    min-height: 50%;
 }
 
 .bird {
@@ -180,6 +172,6 @@ h1 {
 
 .nomatch {
   position: absolute;
-  bottom: 30%;
+  bottom: 20%;
   left: 27%;
 }
