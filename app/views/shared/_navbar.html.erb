@@ -5,7 +5,7 @@
       <div class="nav-item dropdown d-flex">
         <%= image_tag "icons/dots.png", class: "burger-bttn logo-navbar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="z-idx-pos dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Edit profile", "#", class: "dropdown-item" %>
+          <%= link_to "Edit profile", edit_my_profile_path, class: "dropdown-item" %>
           <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </div>

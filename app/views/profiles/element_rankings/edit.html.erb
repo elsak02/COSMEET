@@ -1,5 +1,5 @@
-<h4 class="py-3 text-center">What personality traits are you looking for in a match?</h4>
-<h6 class="py-3 text-center">Rank your preferences from top to bottom:</h6>
+<h4 class="py-3 text-center">What traits are you looking for in a match?</h4>
+<h6 class="py-3 text-center"><strong>Drag and drop</strong> to rank your preferences from top to bottom:</h6>
 
 <ul class="list-inline text-center">
   <li id="fire" class="element-tag"><i class="fab fa-gripfire"></i> Independent, Enthousiatic, Active</li>
@@ -12,7 +12,7 @@
 <%= simple_form_for(current_user, url: profiles_element_rankings_path) do |f| %>
   <%= f.input  :element_ranking, required: true, as: :hidden %>
   <div class=" d-flex justify-content-center">
-      <%= f.submit 'Continue', class:'button mt-4' %>
+      <%= f.submit 'Continue', class:'button mt-2' %>
   </div>
 <% end %>
 

@@ -32,6 +32,7 @@ import { initSortable } from '../plugins/init_sortable.js';
 import { profileSwipe } from '../plugins/init_swipe.js';
 import { initChatroomCable } from '../channels/match_channel.js';
 import { togglePersoTags } from '../components/personality_tags.js';
+import {scrollToLastMessage} from '../components/chatroom_scroll.js'
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -44,5 +45,6 @@ document.addEventListener('turbolinks:load', () => {
   profileSwipe();
   initChatroomCable();
   togglePersoTags();
+  scrollToLastMessage();
 });
 

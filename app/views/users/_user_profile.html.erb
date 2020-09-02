@@ -1,30 +1,28 @@
- <div class="d-flex justify-content-center z-idx-pos">
+<div class="d-flex justify-content-center z-idx-neg">
     <div class="row">
       <div class="col">
       <div class="profile-card c">
         <div class="top-sec">
 
-          <% if current_user.photos.any? %>
-            <%= cl_image_tag current_user.photos.first.key %>
+          <% if @user.photos.any? %>
+            <%= cl_image_tag @user.photos.first.key %>
           <% end %>
-         <div class="sign-sec <%= current_user.sign.downcase %> user-sign">
+         <div class="sign-sec <%= @user.sign.downcase %> user-sign">
         </div>
         </div>
 
       <div class="bottom-sec">
 
-            <h4><strong><%= current_user.name %></strong>, <%= current_user.age(current_user.birth_date) %></h4>
+            <h4><strong><%= @user.name %></strong>, <%= @user.age(current_user.birth_date) %></h4>
             <ul class="list-group list-group-horizontal flex-wrap justify-items-center">
-              <% current_user.personality_traits.each do |personality_trait| %>
+              <% @user.personality_traits.each do |personality_trait| %>
               <li class="list-group-item perso-traits"><%= personality_trait %></li>
               <% end %>
              </ul>
             <h5>Love style</h5>
-            <p><%= current_user.short_content %></p>
+            <p><%= @user.short_content %></p>
         </div>
         </div>
         </div>
       </div>
 </div>
-
-

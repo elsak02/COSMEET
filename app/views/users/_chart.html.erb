@@ -1,0 +1,51 @@
+<div class="container">
+  <h4 class="text-center mt-3"><%= @user.name %>'s natal chart</h4>
+  <div class="chart-show">
+    <%= cl_image_tag @user.chart.key %>
+  </div>
+    <div class="police_text">
+    <h4 class="mt-4 mb-4 text-center">
+    <%= image_tag("sun.png", width: "9%", class: "style_image") %>Sun in <%= @user.find_sign("Sun") %></h4>
+    <p><%= @user.first_content("Sun") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    <%= image_tag("ascendant.png", width: "7%", class: "style_image") %>Ascendant in <%= @user.find_sign("Ascendant") %></h4>
+    <p><%= @user.first_content("Ascendant") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    <%= image_tag("moon.png", width: "7%", class: "style_image")%>Moon in <%= @user.find_sign("Moon") %></h4>
+    <p><%= @user.first_content("Moon") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    <%= image_tag("mercury.png", width: "7%", class: "style_image")%>Mercury in <%= @user.find_sign("Mercury") %></h4>
+    <p><%= @user.first_content("Mercury") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    <%= image_tag("venus.png", width: "7%", class: "style_image")%>Venus in <%= @user.find_sign("Venus") %></h4>
+    <p><%= @user.first_content("Venus") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    <%= image_tag("mars.png", width: "9%", class: "style_image")%>Mars in <%= @user.find_sign("Mars") %></h4>
+    <p><%= @user.first_content("Mars") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    <%= image_tag("jupiter.png", width: "7%", class: "style_image")%>Jupiter in <%= @user.find_sign("Jupiter") %></h4>
+    <p><%= @user.first_content("Jupiter") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    <%= image_tag("saturn.png", width: "7%", class: "style_image")%>Saturn in <%= @user.find_sign("Saturn") %></h4>
+    <p><%= @user.first_content("Saturn") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    <%= image_tag("uranus.png", width: "8%", class: "style_image")%>Uranus in <%= @user.find_sign("Uranus") %></h4>
+    <p><%= @user.first_content("Uranus") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    <%= image_tag("neptune.png", width: "7%", class: "style_image")%>Neptun in <%= @user.find_sign("Neptune") %></h4>
+    <p><%= @user.first_content("Neptune") %></p>
+
+    <h4 class="mt-4 mb-4 text-center">
+    <%= image_tag("pluto.png", width: "7%", class: "style_image")%>Pluto in <%= @user.find_sign("Pluto") %></h4>
+    <p><%= @user.first_content("Pluto") %></p>
+  </div>
+</div>

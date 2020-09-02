@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
   devise_for :users, controllers: { registrations: 'users/registrations' }
+
+  authenticated :user do
+    root to: 'users#index', as: :authenticated_root
+  end
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :profiles do
@@ -16,7 +20,15 @@ Rails.application.routes.draw do
     resource :personality_traits, only: [:edit, :update]
   end
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :chart] do
+    member do
+      get 'chart'
+    end
+
+  end
+
+
+
   resources :likes, only: [:new, :create]
   resources :matches, only: [:index, :show]
   # get 'chatroom', to: 'matches#chatroom'

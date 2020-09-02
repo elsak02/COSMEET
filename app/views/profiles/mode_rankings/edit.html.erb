@@ -1,5 +1,5 @@
-<h4 class="py-3 text-center">In your opinion, what is most important in  a relationship?</h4>
-<h6 class="py-3 text-center">Rank your preferences from top to bottom:</h6>
+<h4 class="py-3 text-center">For you, what is most important in a relationship?</h4>
+<h6 class="py-3 text-center"><strong>Drag and drop </strong> to rank your preferences from top to bottom:</h6>
 
 
 <ul class="list-inline text-center">
@@ -13,7 +13,7 @@
 <%= simple_form_for(current_user, url: profiles_mode_rankings_path) do |f| %>
   <%= f.input  :mode_ranking, required: true, as: :hidden %>
   <div class=" d-flex justify-content-center">
-      <%= f.submit 'Continue', class:'button mt-4' %>
+      <%= f.submit 'Continue', class:'button mt-1' %>
   </div>
 <% end %>
 

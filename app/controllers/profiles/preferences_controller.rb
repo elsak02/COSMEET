@@ -5,6 +5,7 @@ class Profiles::PreferencesController < ApplicationController
 
   def update
     authorize current_user
+
     form = PreferencesForm.new(profile_params)
     if form.valid?
       current_user.update(profile_params)
