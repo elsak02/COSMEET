@@ -4,6 +4,7 @@ class PreferencesForm
   attr_accessor(
     :name,
     :gender,
+    :biography,
     :sexual_preference
   )
   validates :name, presence: true

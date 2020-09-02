@@ -7,6 +7,7 @@ class Profiles::PreferencesController < ApplicationController
     authorize current_user
 
     form = PreferencesForm.new(profile_params)
+
     if form.valid?
       current_user.update(profile_params)
       redirect_to edit_profiles_birth_infos_path
@@ -29,6 +30,7 @@ class Profiles::PreferencesController < ApplicationController
       :relationship_type,
       :mode_ranking,
       :element_ranking,
+      :biography,
       photos: [],
       personality_traits: [])
   end
