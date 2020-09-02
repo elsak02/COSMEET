@@ -182,16 +182,16 @@ corentin_malvaux = User.create!(email: "corentin_malvaux@cosmeet.com", password:
 corentin_malvaux.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #User Raphael Bilon
-file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1594388173/fwgzimmjivqzsi9dk1wu.jpg')
+#file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1594388173/fwgzimmjivqzsi9dk1wu.jpg')
 
-raphael_bilon = User.create!(email: "raphael_bilon@cosmeet.com", password: "123456", name: "Raphael B", birth_date: "1992-09-15", birth_time: "00:30", birth_place: "Paris", gender: "Man", sexual_preference: "Woman", relationship_type: "Casual", element_ranking: ["earth","air","water","fire"], mode_ranking: ["cardinal","fixed","mutable"], personality_traits: ["ambitious", "optimistic", "confident"], latitude: 48.85, longitude: 2.34, biography: "Mankind is the only animal that can remain on friendly terms with the victims he intends to eat until he eats them.")
+#raphael_bilon = User.create!(email: "raphael_bilon@cosmeet.com", password: "123456", name: "Raphael B", birth_date: "1992-09-15", birth_time: "00:30", birth_place: "Paris", gender: "Man", sexual_preference: "Woman", relationship_type: "Casual", element_ranking: ["earth","air","water","fire"], mode_ranking: ["cardinal","fixed","mutable"], personality_traits: ["ambitious", "optimistic", "confident"], latitude: 48.85, longitude: 2.34, biography: "Mankind is the only animal that can remain on friendly terms with the victims he intends to eat until he eats them.")
 
-raphael_bilon.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+#raphael_bilon.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #User Adrien Fort
 file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1594044342/wxmddv0pmdhneh3kojbp.jpg')
 
-adrien = User.create!(email: "adrien@cosmeet.com", password: "123456", name: "Adrien", birth_date: "2001-12-19", birth_time: "9:12", birth_place: "Laval", gender: "Man", sexual_preference: "Woman", relationship_type: "Serious", element_ranking: ["water","air","earth","fire"], mode_ranking: ["mutable","cardinal","fixed"], personality_traits: ["generous", "freedom-loving", "great sense of humor"], latitude: 48.07, longitude: -0.76, biography: "I planned on accumulate as much money as possible when I am 30 in order to travel the rest of my life".)
+adrien = User.create!(email: "adrien@cosmeet.com", password: "123456", name: "Adrien", birth_date: "2001-12-19", birth_time: "9:12", birth_place: "Laval", gender: "Man", sexual_preference: "Woman", relationship_type: "Serious", element_ranking: ["water","air","earth","fire"], mode_ranking: ["mutable","cardinal","fixed"], personality_traits: ["generous", "freedom-loving", "great sense of humor"], latitude: 48.07, longitude: -0.76, biography: "I planned on accumulate as much money as possible when I am 30 in order to travel the rest of my life.")
 
 adrien.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
@@ -224,11 +224,11 @@ gregoire = User.create!(email: "gregoire@cosmeet.com", password: "123456", name:
 gregoire.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #User Diane Johnston
-file = URI.open('https://avatars2.githubusercontent.com/u/43373459?v=4')
+#file = URI.open('https://avatars2.githubusercontent.com/u/43373459?v=4')
 
-diane = User.create!(email: "diane@cosmeet.com", password: "123456", name: "Diane", birth_date: "1992-07-16", birth_time: "11:30", birth_place: "Boulogne-Billancourt", gender: "Woman", sexual_preference: "Man", relationship_type: "Serious", element_ranking: ["fire", "earth", "water", "air"], mode_ranking: ["mutable","cardinal","fixed"], personality_traits: ["emotional", "caring", "clingy"], latitude: 48.83, longitude: 2.25, biography: "Dedicated 100percent in what I do, I used to be a fly attendant now I teach how to code to cool people.")
+#diane = User.create!(email: "diane@cosmeet.com", password: "123456", name: "Diane", birth_date: "1992-07-16", birth_time: "11:30", birth_place: "Boulogne-Billancourt", gender: "Woman", sexual_preference: "Man", relationship_type: "Serious", element_ranking: ["fire", "earth", "water", "air"], mode_ranking: ["mutable","cardinal","fixed"], personality_traits: ["emotional", "caring", "clingy"], latitude: 48.83, longitude: 2.25, biography: "Dedicated 100percent in what I do, I used to be a fly attendant now I teach how to code to cool people.")
 
-diane.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+#diane.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #User Jules
 file = URI.open('https://avatars1.githubusercontent.com/u/67333715?v=4')
