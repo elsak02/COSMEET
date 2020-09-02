@@ -25,6 +25,8 @@ require("channels")
 // External imports
 import "bootstrap";
 import "controllers";
+import 'jquery-touchswipe/jquery.touchSwipe';
+
 import { initAutocomplete } from '../plugins/init_autocomplete.js';
 import { initSortable } from '../plugins/init_sortable.js';
 import { profileSwipe } from '../plugins/init_swipe.js';

@@ -15,7 +15,7 @@
             </div>
 
           <div class="bottom-sec">
-            <div class="d-flex user-profile-actions">
+            <div class="user-profile-actions d-none">
               <%= simple_form_for @like, html: {id: "dislike_form_#{user.id}"} do |f|%>
               <%= f.input :receiver_id, as: :hidden, input_html: { value: user.id, id: "dislike_receiver_id_#{user.id}" } %>
               <%= f.input :liked, as: :hidden, input_html: { value: false, id: "dislike_liked_#{user.id}" } %>
