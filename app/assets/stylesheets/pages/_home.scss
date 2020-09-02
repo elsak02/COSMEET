@@ -5,7 +5,6 @@
   margin-bottom: 100px;
 }
 
-
 .wrapper {
   text-align: center;
   align-items: center;
@@ -29,4 +28,23 @@
   width: 100%;
   position: relative;
   overflow: hidden;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale(1.0);
+  }
+  50% {
+    -webkit-transform: scale(0.95);
+    opacity: 1.0;
+  }
+  to {
+    -webkit-transform: scale(1.0);
+  }
+}
+
+img.pulse {
+  -webkit-animation-name: pulse;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-iteration-count: 500;
 }
