@@ -19,7 +19,8 @@
   padding: 15px;
   margin-top: 25px;
   border: 1px solid black;
-  margin-bottom: 90px;
+  margin-bottom:20px;
+  min-height: 75vh;
 }
 
 .top-sec img {
@@ -63,3 +64,20 @@
   height: 50px;
   border-radius: 50%;
 }
+
+.user-profile-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: all 1s ease;
+  &.swipe-right {
+    transform: translateX(100vh);
+  }
+  &.swipe-left {
+    transform: translateX(-100vh);
+  }
+}
+
+
