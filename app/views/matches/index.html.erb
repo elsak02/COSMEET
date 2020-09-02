@@ -13,7 +13,8 @@
 
 <div>
 <% if @matches.empty? %>
-    <div class="container">
+<div class="container" style="width: 100% !important;">
+    <div class="indexchat">
       <h1>Planets did not align for you yet</h1>
 
       <div class="bird-container bird-container--one">
@@ -31,6 +32,7 @@
       <div class="bird-container bird-container--four">
         <div class="bird bird--four"></div>
       </div>
+    </div>
     </div>
     <div class="nomatch">
       <%= link_to "Back to Matches", users_path, class:"button" %>
