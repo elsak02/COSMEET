@@ -198,7 +198,7 @@ adrien.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 #User Julien Bouland
 file = URI.open('https://avatars3.githubusercontent.com/u/47059149?v=4')
 
-julien = User.create!(email: "julien@cosmeet.com", password: "123456", name: "Julien", birth_date: "1995-02-17", birth_time: "14:02", birth_place: "Paris", gender: "Man", sexual_preference: "Both", relationship_type: "Sexual", element_ranking: ["earth","air","water","fire"], mode_ranking: ["cardinal","fixed","mutable"], personality_traits: ["independent", "progressive", "humanitarian"], latitude: 48.85, longitude: 2.34, biography: "I traveled around the world but I still have not find my soulmate yet.")
+julien = User.create!(email: "julienb@cosmeet.com", password: "123456", name: "Julien", birth_date: "1995-02-17", birth_time: "14:02", birth_place: "Paris", gender: "Man", sexual_preference: "Both", relationship_type: "Sexual", element_ranking: ["earth","air","water","fire"], mode_ranking: ["cardinal","fixed","mutable"], personality_traits: ["independent", "progressive", "humanitarian"], latitude: 48.85, longitude: 2.34, biography: "I traveled around the world but I still have not find my soulmate yet.")
 
 julien.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
