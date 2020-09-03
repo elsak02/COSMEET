@@ -69,13 +69,13 @@ class UsersController < ApplicationController
 
       compatibility_percentage = (score / 20.to_f) * 100
 
-       if compatibility_percentage >= 66
-            score = 3
-          elsif compatibility_percentage >= 33
-            score = 2
-          else
-            score = 1
-          end
+      if compatibility_percentage >= 66
+        score = 3
+      elsif compatibility_percentage >= 33
+        score = 2
+      else
+        score = 1
+      end
     end
 
   def condition(user_one, user_two, planet)

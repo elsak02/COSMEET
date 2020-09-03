@@ -1,48 +1,48 @@
-// import Swipe from 'swipejs';
+import { Stack, Card, Direction } from 'swing';
+import { fetchWithToken } from "../plugins/fetch_with_token";
 
 const profileSwipe = () => {
-  console.log("hello");
-
-  $( document ).ready(function() {
-
-    var profiles = $(document.querySelectorAll(".user-profile-card"));
-
-    profiles.each(function() {
-
-      // listen the swipe
-      $(this).swipe({
-        swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-
-          var likeAction = $(this).find('.new_like input[value="Like"]')[0];
-          var dislikeAction = $(this).find('.new_like input[value="Dislike"]')[0];
-
-          // check direction of swipe and trigger the right button
-          if (direction === "left") {
-            dislikeAction.click();
-            $(this).addClass("swipe-left")
-          } else if (direction === "right") {
-            likeAction.click();
-            $(this).addClass("swipe-right")
-          }
-        },
-        threshold:0,
-        fingers:`all`
-      });
-    });
+  const cards = document.querySelectorAll(".user-profile-card")
+  console.log(Stack)
+  // console.log(Swing)
+  const stack = Stack({
+    allowedDirections: [Direction.LEFT, Direction.RIGHT]
+  });
+  cards.forEach((card) => {
+    // Add card element to the Stack.
+    stack.createCard(card);
   });
 
-
-  // const btnsAction = document.querySelectorAll(".user-profile-actions input[type='submit']");
-
-  // btnsAction.forEach((btn) => {
-  //   btn.addEventListener('click', (event) => {
-  //     var target = event.currentTarget
-  //     setTimeout(() => {
-  //       target.closest(".user-profile-card").remove();
-  //     }, 50)
-  //   })
-  // })
-
+  stack.on('throwout', (event) => {
+    // e.target Reference to the element that has been thrown out of the stack.
+    // e.throwDirection Direction in which the element has been thrown (Direction.LEFT, Direction.RIGHT).
+    const currentCard = event.target
+    if (event.throwDirection == Direction.LEFT) {
+      postLike(currentCard.dataset.receiverId, false)
+    } else {
+      postLike(currentCard.dataset.receiverId, true)
+    }
+  });
 }
+
+const postLike = (receiver_id, liked) => {
+  // Fetch "/likes"
+  // Params: { like: { receiver_id: 2, liked: true }}
+  fetchWithToken("/likes", {
+    method: "POST",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ like: { receiver_id: receiver_id, liked: liked }})
+  }).then(response => response.json())
+    .then((data) => {
+      console.log(data)
+      if (data.redirect_url) {
+        window.location.replace(data.redirect_url)
+      }
+    });
+}
+
 
 export { profileSwipe }
