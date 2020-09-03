@@ -2,3 +2,12 @@
   padding-bottom: 75px;
   padding-top: 75px;
 }
+
+#pages-home .custom-container {
+  display: flex;
+  align-items: center;
+    > .row {
+    width: 100%;
+    margin: auto;
+  }
+}
