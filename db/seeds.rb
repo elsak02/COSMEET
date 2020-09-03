@@ -75,9 +75,9 @@ romain = User.create!(email: "romain@cosmeet.com", password:"123456", name: "Rom
 romain.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #User Elsa
-file = URI.open('https://avatars2.githubusercontent.com/u/61321542?v=4')
+file = URI.open('https://avatars2.githubusercontent.com/u/61321542?s=460&u=44c3d6f9b65132a9b3e5185dedcf164bbfaf5c75&v=4')
 
-elsa = User.create!(email: "elsa@cosmeet.com", password:"123456", name: "Elsa", birth_date: "1990-04-02", birth_time: "15:44", birth_place:"Schoelcher", gender: "Woman", sexual_preference: "Man", relationship_type:"Serious", element_ranking: ["earth","air","water","fire"], mode_ranking: ["fixed","mutable","cardinal"], personality_traits: ["adventurous", "traveller", "dynamic"], latitude: 14.61, longitude: -61.05, biography: "Born and raised in Martinique. I love to travel and hate skooters.")
+elsa = User.create!(email: "elsa@cosmeet.com", password:"123456", name: "Elsa", birth_date: "1990-04-02", birth_time: "21:44", birth_place:"Paris", gender: "Woman", sexual_preference: "Man", relationship_type:"Serious", element_ranking: ["earth","air","water","fire"], mode_ranking: ["fixed","mutable","cardinal"], personality_traits: ["adventurous", "traveller", "dynamic"], latitude: 14.61, longitude: -61.05, biography: "Born and raised in Martinique. I love to travel and hate skooters.")
 
 elsa.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
@@ -280,6 +280,6 @@ Like.create(user: dimitri, receiver: oceane, liked: true)
 Like.create(user: edouard, receiver: oceane, liked: true)
 
 puts "Creating Chart Element..."
-  User.find_each do |user|
-    PopulateChartElementJob.perform_now(user)
-  end
+User.find_each do |user|
+  PopulateChartElementJob.perform_later(user)
+end

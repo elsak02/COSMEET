@@ -1,17 +1,19 @@
 <% if @users.empty? %>
 <div class="loader text-center">
   <h5>We are currently wandering the galaxy to find new profiles...</h5>
-<div class="planet">
-  <div class="wrap">
-     <div class="background"></div>
-     <div class="clouds"></div>
+  <div class="planet">
+    <div class="wrap">
+       <div class="background"></div>
+       <div class="clouds"></div>
+    </div>
+    <div class="mask"></div>
   </div>
-  <div class="mask"></div>
-</div>
 </div>
 <% else %>
+
 <div id="slider" class="swipe">
   <div class="swipe-wrap">
+    <div class="loader text-center">
     <% @users.each do |user| %>
       <div class="d-flex justify-content-center user-profile-card" id="user-profile-card_<%= user.id %>" data-receiver-id="<%= user.id %>">
         <div class="row">

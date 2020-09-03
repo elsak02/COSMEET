@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   SCORE ={}
 
   def index
-    @users = User.where.not(id: current_user.id)
+    @users = User.active.where.not(id: current_user.id)
 
     # excluding the ones we already liked/disliked
     already_liked_user_ids = current_user.given_likes.pluck(:receiver_id)

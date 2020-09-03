@@ -40,6 +40,8 @@ class User < ApplicationRecord
   geocoded_by :birth_place
   after_validation :geocode, if: :will_save_change_to_birth_place?
 
+  scope :active, -> { where.not(personality_traits: []) }
+
   def liked_by?(user)
     # likes.find { |like| like.receiver == user } # In Ruby
     received_likes.where(user: user).any?

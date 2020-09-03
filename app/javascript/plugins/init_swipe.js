@@ -23,6 +23,9 @@ const profileSwipe = () => {
       postLike(currentCard.dataset.receiverId, true)
     }
   });
+  stack.on("throwoutend", (event) => {
+    event.target.remove();
+  })
 }
 
 const postLike = (receiver_id, liked) => {
