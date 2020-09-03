@@ -280,6 +280,6 @@ Like.create(user: dimitri, receiver: oceane, liked: true)
 Like.create(user: edouard, receiver: oceane, liked: true)
 
 puts "Creating Chart Element..."
-  User.find_each do |user|
-    PopulateChartElementJob.perform_now(user)
-  end
+User.find_each do |user|
+  PopulateChartElementJob.perform_later(user)
+end
