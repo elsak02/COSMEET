@@ -16,7 +16,7 @@ class MyProfilesController < ApplicationController
   def update
     authorize current_user
     current_user.assign_attributes(strong_params)
-    if current_user.save?
+    if current_user.save
       redirect_to my_profile_path
     else
       render :edit
