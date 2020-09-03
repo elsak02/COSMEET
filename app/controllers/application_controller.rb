@@ -15,7 +15,11 @@ class ApplicationController < ActionController::Base
   # end
 
   def after_sign_in_path_for(resource)
-    users_path
+    if resource.name? || resource.personality_traits.empty?
+      edit_profiles_preferences_path
+    else
+      users_path
+    end
   end
 
   def default_url_options
