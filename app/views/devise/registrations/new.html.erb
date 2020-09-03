@@ -18,8 +18,9 @@
   </div>
 
   <div class="form-actions d-flex justify-content-center">
-    <%= f.button :submit, "Sign up", class:'button mt-4'%>
+    <%= f.button :submit, "Sign up", class:'button mt-5 mb-4'%>
   </div>
 <% end %>
 
+<span class="mt-5"> Already a user? <%= link_to "Sign In!", new_user_session_path, class:"sign-in-link" %></span>
 

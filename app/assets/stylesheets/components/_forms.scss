@@ -93,6 +93,10 @@
 }
 
 
+.edit-account {
+  line-height: 0.5
+
+
 .user_relationship_type .form-check {
   width: 100%;
 
@@ -115,4 +119,5 @@
   .form-check-input:checked + .form-check-label{
     background-color: $white;
   }
+
 }
