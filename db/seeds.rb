@@ -252,11 +252,11 @@ mathilda = User.create!(email: "mathilda@cosmeet.com", password: "123456", name:
 mathilda.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #User Chloé
-file = URI.open('https://avatars3.githubusercontent.com/u/65725594?s=400&u=f4d411365036ba295a615d7afb9924a9a122ea30&v=4')
+#file = URI.open('https://avatars3.githubusercontent.com/u/65725594?s=400&u=f4d411365036ba295a615d7afb9924a9a122ea30&v=4')
 
-chloe = User.create!(email: "chloe@cosmeet.com", password:"123456", name: "Chloé", birth_date: "1988-05-08", birth_time: "13:21", birth_place: "Lagny-sur-Marne", gender: "Woman", sexual_preference: "Man", relationship_type: "Serious", element_ranking: ["fire", "earth", "water", "air"], mode_ranking: ["cardinal","fixed","mutable"], personality_traits: ["generous", "proud", "lustful"], latitude: 48.86, longitude: 2.71, biography: "Manager of a music band, I ride Paris with great hair!")
+#chloe = User.create!(email: "chloe@cosmeet.com", password:"123456", name: "Chloé", birth_date: "1988-05-08", birth_time: "13:21", birth_place: "Lagny-sur-Marne", gender: "Woman", sexual_preference: "Man", relationship_type: "Serious", element_ranking: ["fire", "earth", "water", "air"], mode_ranking: ["cardinal","fixed","mutable"], personality_traits: ["generous", "proud", "lustful"], latitude: 48.86, longitude: 2.71, biography: "Manager of a music band, I ride Paris with great hair!")
 
-chloe.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+#chloe.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 puts "Creating Likes..."
 
