@@ -1,0 +1,70 @@
+.planet{
+  width:150px;
+  height:150px;
+  position:absolute;
+  border-radius:50%;
+  overflow:hidden;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 40%;
+}
+.planet .mask{
+  width:100%;
+  height:100%;
+  position: absolute;
+  box-shadow:inset -10px -10px 40px #251303, inset 10px 10px 30px -10px black;
+  border-radius: 50%;
+}
+.planet .background{
+  animation: translateBackground 40s infinite linear;
+  background-color: black;
+  width:150px;
+  height:150px;
+  position:absolute;
+  border-radius:50%;
+}
+.planet .clouds{
+  background:url(http://artem.anmedio.ru/dev/planet/clouds.png) repeat-x;
+  width:150px;
+  height:150px;
+  position:absolute;
+  border-radius:50%;
+  animation: translateBackground 30s infinite linear;
+  opacity: 0.4;
+}
+.planet .wrap{
+  width:150px;
+  height:150px;
+  position:absolute;
+  border-radius:50%;
+  animation: rotatePlanet 150s infinite linear;
+}
+@keyframes translateBackground{
+  0%{
+    background-position-x:0;
+  }
+  100%{
+    background-position-x:-600px;
+  }
+}
+@keyframes rotatePlanet{
+  0%{
+    transform:rotateZ(0);
+  }
+  100%{
+    transform:rotateZ(-360deg);
+  }
+}
+
+.loader {
+  margin: 0 auto;
+  font-family: $font-family;
+  margin: 20%;
+
+}
+
+.loader h5 {
+  line-height: 30px;
+}

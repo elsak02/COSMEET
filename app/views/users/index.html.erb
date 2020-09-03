@@ -1,3 +1,15 @@
+<% if @users.empty? %>
+<div class="loader text-center">
+  <h5>We are currently wandering the galaxy to find new profiles...</h5>
+<div class="planet">
+  <div class="wrap">
+     <div class="background"></div>
+     <div class="clouds"></div>
+  </div>
+  <div class="mask"></div>
+</div>
+</div>
+<% else %>
 <div id="slider" class="swipe">
   <div class="swipe-wrap">
     <% @users.each do |user| %>
@@ -49,3 +61,4 @@
     <% end %>
   </div>
 </div>
+<% end %>
