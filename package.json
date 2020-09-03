@@ -13,6 +13,7 @@
     "popper.js": "^1.16.1",
     "sortablejs": "^1.10.2",
     "stimulus": "^1.1.1",
+    "swing": "^3.1.4",
     "swipejs": "^2.2.18",
     "turbolinks": "^5.2.0"
   },
