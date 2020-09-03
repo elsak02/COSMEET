@@ -28,10 +28,10 @@ class UsersController < ApplicationController
       @score[id.to_s] = score_compatibility(current_user, user).to_i
     end
 
-    @users = policy_scope(@users).order("score desc")
+    @users = policy_scope(@users).order("score asc")
 
     # RUBY
-    @users = @users.sort_by { |user| -(user.score * 1000 + (@score[user.id.to_s] || 0)) }
+    @users = @users.sort_by { |user| (user.score * 1000 + (@score[user.id.to_s] || 0)) }
     @like = Like.new
   end
 

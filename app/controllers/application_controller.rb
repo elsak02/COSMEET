@@ -15,7 +15,6 @@ class ApplicationController < ActionController::Base
   # end
 
   def after_sign_in_path_for(resource)
-      binding.pry
     if !resource.name? || resource.personality_traits.empty?
       edit_profiles_preferences_path
     else

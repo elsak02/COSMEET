@@ -2,7 +2,6 @@ class LikesController < ApplicationController
   def create
     @like = Like.new(like_params)
     @like.user = current_user
-    # binding.pry
     authorize @like
     if @like.save
       if @like.liked?
