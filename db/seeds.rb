@@ -258,6 +258,14 @@ mathilda.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #chloe.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
+#User Vivian
+file = URI.open('https://avatars1.githubusercontent.com/u/61843515?v=4')
+
+vivian = User.create!(email: "vivian@cosmeet.com", password: "123456", name: "Vivian", birth_date: "1990-01-21", birth_time: "8:015", birth_place: "Rio de Janeiro", sexual_preference: "Man", relationship_type: "Serious", element_ranking: ["fire", "earth", "water", "air"], mode_ranking: ["fixed","mutable","cardinal"], personality_traits: ["intellectual", "intuitive", "original"], latitude: -22.92, longitude: -43.33, biography: "Passionate about fantasy novels, I like to work until my eyes can't see anymore.")
+
+vivian.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+
 puts "Creating Likes..."
 
 Like.create(user: quentin, receiver: elsa, liked: true)
