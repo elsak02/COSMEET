@@ -22,56 +22,6 @@
                     required: true,
                     as: :file) %>
       </div>
-      <div data-controller="img-preview">
-        <%#= f.input(:photo,
-                    label: 'What about a little bit of self-derision? ',
-                    label_html: {
-                      class: 'photo-label',
-                      data: { target: 'img-preview.preview'}
-                    },
-                    input_html: {
-                      class: 'd-none',
-                      id: "user_photo_derision",
-                      data: {
-                        target: 'img-preview.photo',
-                        action: 'change->img-preview#loadPreview'
-                      }
-                    },
-                    as: :file) %>
-      </div>
-      <div data-controller="img-preview">
-        <%#= f.input(:photo,
-                    label: 'Show us your passions!',
-                    label_html: {
-                      class: 'photo-label',
-                      data: { target: 'img-preview.preview'}
-                      },
-                    input_html: {
-                      class: 'd-none',
-                        id: "user_photo_passions",
-                      data: {
-                        target: 'img-preview.photo',
-                        action: 'change->img-preview#loadPreview'
-                      }
-                    },
-                    as: :file) %>
-      </div>
-      <div data-controller="img-preview">
-        <%#= f.input(:photo,
-                    label: 'Now you and your buddies',
-                    label_html: { class: 'photo-label',
-                    data: { target: 'img-preview.preview'}
-                    },
-                    input_html: {
-                      class: 'd-none',
-                      id: "user_photo_buddies",
-                      data: {
-                        target: 'img-preview.photo',
-                        action: 'change->img-preview#loadPreview'
-                      }
-                    },
-                    as: :file) %>
-      </div>
   </div>
   <div class=" d-flex justify-content-center">
       <%= f.submit 'Continue', class:'button' %>

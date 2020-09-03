@@ -1,3 +1,15 @@
+<% if @users.empty? %>
+<div class="loader text-center">
+  <h5>We are currently wandering the galaxy to find new profiles...</h5>
+<div class="planet">
+  <div class="wrap">
+     <div class="background"></div>
+     <div class="clouds"></div>
+  </div>
+  <div class="mask"></div>
+</div>
+</div>
+<% else %>
 <div id="slider" class="swipe">
   <div class="swipe-wrap">
     <% @users.each do |user| %>
@@ -30,10 +42,14 @@
 
             <h4><strong><%= user.name %></strong>, <%= user.age(user.birth_date) %></h4>
             <div class="d-flex pb-2">
-               <% id = user.id %>
-               <% @score[id.to_s].times do %>
+              <% id = user.id %>
+              <% @score[id.to_s].times do %>
                 <%= image_tag "icons/heart.png", class: "mr-1" %>
-                 <% end %>
+              <% end %>
+              <% (3 - @score[id.to_s]).times do %>
+                <%= image_tag "icons/heart_empty.png", class: "mr-1" %>
+              <% end %>
+
              </div>
               <ul class="list-group list-group-horizontal flex-wrap justify-items-center">
               <% user.personality_traits.each do |personality_trait| %>
@@ -49,3 +65,4 @@
     <% end %>
   </div>
 </div>
+<% end %>
