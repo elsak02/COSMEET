@@ -25,20 +25,22 @@
       <%= link_to "Back to Matches", users_path, class:"button" %>
     </div>
 <% else %>
-<div class="text-left mt-2"><p>My Matches</p></div>
-<div class="scrollingtime">
-<div class="d-flex head-box">
-<% @matches.each do |match| %>
-  <% match.user_matches.where.not(user: current_user).each do |user_match| %>
-  <div class="avatar-chat">
-    <%= link_to user_path(user_match.user) do %>
-      <%= cl_image_tag user_match.user.photos.first.key, class: "avatar-message" %>
-    <% end %>
+<div class="text-left">
+  <p>My Matches</p>
+</div>
+  <div class="scrollingtime">
+    <div class="d-flex head-box">
+      <% @matches.each do |match| %>
+        <% match.user_matches.where.not(user: current_user).each do |user_match| %>
+          <div class="avatar-chat">
+             <%= link_to user_path(user_match.user) do %>
+              <%= cl_image_tag user_match.user.photos.first.key, class: "avatar-message" %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-  <% end %>
-<% end %>
-</div>
-</div>
 <div class="text-left mt-3 mb-4"><p>My Messages</p></div>
 <div>
 <div class="allmessages">

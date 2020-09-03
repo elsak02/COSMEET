@@ -1,4 +1,4 @@
-<h4 class="py-3 text-center">Cosmeet helps you boost your profile</h4>
+<h4 class="py-3 text-center">Boost your profile</h4>
 
 
 <%= simple_form_for(current_user, url: profiles_photos_path ) do |f| %>
@@ -7,8 +7,8 @@
         <%= f.input(:photos,
                     label: 'Add your best picture here',
                     label_html: {
-                      class: 'photo-label',
-                      data: { target: 'img-preview.preview'}
+                      class: 'photo-label mt-4',
+                      data: { target: 'img-preview.preview '}
                     },
                     input_html: {
                       class: "d-none",
@@ -24,7 +24,7 @@
       </div>
   </div>
   <div class=" d-flex justify-content-center">
-      <%= f.submit 'Continue', class:'button' %>
+      <%= f.submit 'Continue', class:'button mt-3' %>
   </div>
 <% end %>
 

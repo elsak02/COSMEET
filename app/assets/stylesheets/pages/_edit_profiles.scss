@@ -5,6 +5,7 @@
   }
 }
 
+
 .label {
   border: 1px solid #d3d3d3;
   padding: 16px 24px;
@@ -28,21 +29,23 @@
     font-weight: 500;
     background: #f8f5f6;
     border-radius: 2px;
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
     position: relative;
     text-align: center;
-    margin: 0px;
+    vertical-align: middle;
+    margin-top: 10px;
   }
 
   img {
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: -1px;
+    top: -1px;
     object-fit: cover;
     margin: 0px;
+    border: 1px solid black;
   }
 }
 
