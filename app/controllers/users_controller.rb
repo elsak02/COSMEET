@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :chart]
-  SCORE ={}
 
   def index
-    if current_user.name? || current_user.personality_traits.empty?
+    if !current_user.name? || current_user.personality_traits.empty?
       skip_policy_scope
       return redirect_to edit_profiles_preferences_path
     end
