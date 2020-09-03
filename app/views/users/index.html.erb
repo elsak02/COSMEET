@@ -13,7 +13,6 @@
 
 <div id="slider" class="swipe">
   <div class="swipe-wrap">
-    <div class="loader text-center">
     <% @users.each do |user| %>
       <div class="d-flex justify-content-center user-profile-card" id="user-profile-card_<%= user.id %>" data-receiver-id="<%= user.id %>">
         <div class="row">
