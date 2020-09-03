@@ -16,12 +16,18 @@ class UsersController < ApplicationController
     end
 
     @users = rank_users
-    @users = policy_scope(@users).order("score desc")
+
+    # RUBY
     @score = {}
     @users.each do |user|
       id = user.id
       @score[id.to_s] = score_compatibility(current_user, user).to_i
     end
+
+    @users = policy_scope(@users).order("score desc")
+
+    # RUBY
+    @users = @users.sort_by { |user| -(user.score * 1000 + (@score[user.id.to_s] || 0)) }
     @like = Like.new
   end
 
@@ -63,9 +69,9 @@ class UsersController < ApplicationController
 
       compatibility_percentage = (score / 20.to_f) * 100
 
-       if compatibility_percentage >= 75
+       if compatibility_percentage >= 66
             score = 3
-          elsif compatibility_percentage >= 50
+          elsif compatibility_percentage >= 33
             score = 2
           else
             score = 1
@@ -78,7 +84,10 @@ class UsersController < ApplicationController
         match_two: ["Leo", "Sagittarius", "Aries", "Libra", "Aquarius", "Gemini"]
       }
 
-    elements_matching[:match_one].include?(user_one.find_sign(planet)) & elements_matching[:match_one].include?(user_two.find_sign(planet)) || elements_matching[:match_two].include?(user_one.find_sign(planet)) & elements_matching[:match_two].include?(user_two.find_sign(planet))
+    user_one_sign = user_one.find_sign(planet)
+    user_two_sign = user_two.find_sign(planet)
+
+    elements_matching[:match_one].include?(user_one_sign) & elements_matching[:match_one].include?(user_two_sign) || elements_matching[:match_two].include?(user_one_sign) & elements_matching[:match_two].include?(user_two_sign)
   end
 
 
@@ -135,6 +144,15 @@ class UsersController < ApplicationController
 
     ranking_select_element = <<~SQL
       users.*,
+      CASE  WHEN chart_elements.sign IN (#{elements0}) THEN 4
+            WHEN chart_elements.sign IN (#{elements1}) THEN 3
+            WHEN chart_elements.sign IN (#{elements2}) THEN 2
+            ELSE 1
+      END as score_element,
+      CASE  WHEN chart_elements.sign IN (#{mode0}) THEN 3
+            WHEN chart_elements.sign IN (#{mode1}) THEN 2
+            ELSE 1
+      END AS score_mode,
       CASE  WHEN chart_elements.sign IN (#{elements0}) THEN 4
             WHEN chart_elements.sign IN (#{elements1}) THEN 3
             WHEN chart_elements.sign IN (#{elements2}) THEN 2
