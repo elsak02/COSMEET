@@ -32,24 +32,30 @@ const profileSwipe = () => {
             $(this).addClass("swipe-right")
           }
         },
-        threshold:0,
-        fingers:`all`
+        swipeStatus: swipeStatus,
+        threshold: 0,
+        fingers: `all`,
+        allowPageScroll: "vertical",
+        triggerOnTouchEnd: true
       });
     });
   });
+}
 
+const swipeStatus = (event, phase, direction, distance) => {
+  if (phase == "move" && (direction == "left" || direction == "right")) {
+    var duration = 0;
+    const img_width = 597
 
-  // const btnsAction = document.querySelectorAll(".user-profile-actions input[type='submit']");
+    if (direction == "left") {
+        scrollImages($(this), (img_width) + distance, duration);
+    } else if (direction == "right") {
+        scrollImages($(this), (img_width) - distance, duration);
+    }
 
-  // btnsAction.forEach((btn) => {
-  //   btn.addEventListener('click', (event) => {
-  //     var target = event.currentTarget
-  //     setTimeout(() => {
-  //       target.closest(".user-profile-card").remove();
-  //     }, 50)
-  //   })
-  // })
-
+  } else if (phase == "cancel") {
+    scrollImages($(this), img_width, speed);
+  }
 }
 
 const postLike = (receiver_id, liked) => {
@@ -65,8 +71,18 @@ const postLike = (receiver_id, liked) => {
   }).then(response => response.json())
     .then((data) => {
       console.log(data)
-      // handle JSON response from server
+      if (data.redirect_url) {
+        window.location.replace(data.redirect_url)
+      }
     });
+}
+
+const scrollImages = (element, distance, duration) => {
+  element.css("transition-duration", (duration / 1000).toFixed(1) + "s");
+
+  //inverse the number we set in the css
+  var value = (distance < 0 ? "" : "-") + Math.abs(distance).toString();
+  element.css("transform", "translate(" + value + "px,0)");
 }
 
 export { profileSwipe }

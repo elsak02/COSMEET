@@ -5,17 +5,17 @@ class LikesController < ApplicationController
     # binding.pry
     authorize @like
     if @like.save
-      #if @like.liked?
-        # match = @like.create_match
-        # if match
-          # redirect_to match_path(match)
-        # else
-          #redirect_to users_path
-        # end
-      #else
-        #redirect_to users_path
-      #end
-      render json: { success: true }
+      if @like.liked?
+        match = @like.create_match
+        if match
+          render json: { success: true, redirect_url: match_path(match) }
+          #redirect_to match_path(match)
+        else
+          render json: { success: true }
+        end
+      else
+        render json: { success: true }
+      end
     else
       render json: { success: false }
     end
