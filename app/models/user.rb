@@ -78,17 +78,6 @@ class User < ApplicationRecord
     chart_elements.where(planet: planet).first.content.split(".").first(3).join(".")+"."
   end
 
-  # def score_compatibility(user)
-  #   score = self.compatibilities.where(receiver: user).first&.compatibility_score
-
-  #   # if score >= 75
-  #   #   score = 3
-  #   # elsif score >= 50
-  #   #   score = 2
-  #   # else
-  #   #   score = 1
-  #   # end
-  # end
 
   def describe_compatibility(user)
     compatibilities.where(receiver_id: user.id).first.compatibility_description

@@ -3,10 +3,12 @@
     <%= f.input(:birth_date,
                 label: 'Your date of birth:',
                 input_html: { class: 'form-input'},
+                default: Date.parse('1990-01-01'),
                 as: :date,
                 start_year: Date.today.year - 90,
                 end_year: Date.today.year - 18,
                 required: true) %>
+
     <%= f.input(:birth_time,
                 label: 'Your time of birth:',
                 input_html: { class: 'form-input'},
