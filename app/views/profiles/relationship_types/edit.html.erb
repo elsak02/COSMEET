@@ -6,7 +6,7 @@
 <%= simple_form_for(current_user, url: profiles_relationship_types_path) do |f| %>
   <div class="pink-label ">
     <%= f.input(:relationship_type,
-                collection: ["A galactical love #veryserious", "A celestial Big Bang #friendswithbenefits", "Explore the unknown #justcurious"],
+                collection: [["A galactical love </br>  #veryserious".html_safe, "serious"], ["A celestial Big Bang </br> #friendswithbenefits".html_safe, "fun"], ["Explore the unknown </br> #justcurious".html_safe, "curious"]],
                 required: true,
                 legend_tag_html: {class: "d-none"},
                 as: :radio_buttons,
@@ -15,7 +15,7 @@
   </div>
     <br>
   <div class=" d-flex justify-content-center">
-      <%= f.submit 'Continue', class:'button mt-5' %>
+      <%= f.submit 'Continue', class:'button mt-2' %>
   </div>
 <% end %>
 

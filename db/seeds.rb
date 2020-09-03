@@ -55,7 +55,7 @@ louis = User.create!(email: "louis@cosmeet.com", password: "123456", name: "Loui
 louis.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #User Quentin
-file = URI.open('https://avatars3.githubusercontent.com/u/61389907?v=4')
+file = URI.open('https://avatars0.githubusercontent.com/u/61389907?s=460&u=a202ba8aa81578809c4a49974fb52a6e13d1c084&v=4')
 quentin = User.create!(email: "quentin@cosmeet.com", password: "123456", name: "Quentin", birth_date: "1990-09-22", birth_time: "16:30", birth_place:"Rueil-Malmaison", gender: "Man", sexual_preference: "Both", relationship_type:"Casual", element_ranking: ["water","fire","earth","air"], mode_ranking: ["cardinal","fixed","mutable"], personality_traits: ["adventurous", "go-getter", "curious"], latitude: 48.88, longitude: 2.20, biography: "US football fan, I coach teams for a living. I also love to spend time with Mango my cat.")
 
 quentin.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
