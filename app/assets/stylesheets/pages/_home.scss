@@ -1,4 +1,11 @@
 // Specific CSS for your home-page
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .logo-home {
   width: 120px;
   margin-top: 20px;
