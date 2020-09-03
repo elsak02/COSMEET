@@ -1,15 +1,15 @@
-<h4 class="py-3 text-center">Select the 3 tags that better fit to your personality</h4>
+<h4 class="mt-4 mb-5 text-center">Select the 3 tags that better fit to <strong>your</strong> personality</h4>
 
 <%= simple_form_for(current_user, url: profiles_personality_traits_path) do |f| %>
-   <div class=" d-flex flex-wrap justify-content-center personality-traits">
+   <div class=" my-5 d-flex flex-wrap justify-content-center personality-traits">
     <% current_user.perso_traits.each do |trait| %>
       <%= check_box_tag "user[personality_traits][]", trait, false, id: "user_personality_traits_#{trait}", class: "d-none" %>
       <%= label_tag "user_personality_traits_#{trait}", trait, class: "" %>
     <% end %>
   </div>
 
-   <div class="d-flex justify-content-center">
-      <%= f.submit 'Continue', class:'button mt-5' %>
+   <div class="d-flex justify-content-center mt-4">
+      <%= f.submit 'Continue', class:'button mt-4' %>
   </div>
 <% end %>
 

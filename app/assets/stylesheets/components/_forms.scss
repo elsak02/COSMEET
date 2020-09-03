@@ -19,12 +19,12 @@
   margin-right: 0;
   background: $pink;
   border: 1px solid #d2bbc4 !important;
-  font-size: 14px;
+  font-size: 16px;
   color: #6b5f63;
   padding: 4px 8px;
   border-radius: 20px !important;
   box-shadow: 1px 3px 0px $pink;
-  margin: 0 5px 10px;
+  margin: 0 8px 12px;
   &.checked {
   background: #fff;
   // border: 1px solid #d2bbc4 !important;
@@ -99,6 +99,7 @@
 
 .user_relationship_type .form-check {
   width: 100%;
+
 
   .form-check-label {
   width: 100%;
