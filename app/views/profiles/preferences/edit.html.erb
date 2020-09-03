@@ -1,4 +1,6 @@
-<div class="py-2 form-card">
+<h4 class="pt-3 pb-2 text-center">Your personal information</h4>
+
+<div class="mt-4 form-card">
   <%= simple_form_for(current_user, url: profiles_preferences_path ) do |f| %>
     <%= f.input :name, required: true, label: 'Your name', input_html: { class: 'form-input'} %>
     <%= f.input :biography, label: 'Define yourself in a few words', input_html: { maxlength: 150, class: 'form-input'} %>
@@ -21,7 +23,7 @@
                 wrapper: :vertical_collection_inline) %>
     </div>
     <div class=" d-flex justify-content-center">
-        <%= f.submit 'Continue', class:'button mt-1'%>
+        <%= f.submit 'Continue', class:'button mt-2'%>
     </div>
   <% end %>
 </div>
