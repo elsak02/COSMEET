@@ -6,7 +6,7 @@
 <%= simple_form_for(current_user, url: profiles_relationship_types_path) do |f| %>
   <div class="pink-label ">
     <%= f.input(:relationship_type,
-                collection: ["A galactical love #veryserious", "A celestial Big Bang #friendswithbenefits", "Explore the unknown #justcurious"],
+                collection: ['A galactical love <br>#veryserious'.html_safe, "A celestial Big Bang #friendswithbenefits", "Explore the unknown #justcurious"],
                 required: true,
                 legend_tag_html: {class: "d-none"},
                 as: :radio_buttons,
