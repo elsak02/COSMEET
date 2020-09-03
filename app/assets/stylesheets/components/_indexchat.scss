@@ -2,7 +2,7 @@
 
 
 .indexchat h1 {
-    font-family: 'Arima Madurai', cursive;
+    font-family: $font-family;
     color: black;
     font-size: 2rem;
     letter-spacing: -3px;
@@ -174,4 +174,13 @@
   position: absolute;
   bottom: 20%;
   left: 27%;
+}
+
+.scrollingtime {
+    overflow-x: scroll;
+    width: 100vw;
+    margin-top: -20px;
+    border-bottom: 1px solid black;
+    margin-left: -15px;
+    padding-left: 15px;
 }
