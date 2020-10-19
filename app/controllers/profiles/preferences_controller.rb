@@ -31,7 +31,9 @@ class Profiles::PreferencesController < ApplicationController
       :mode_ranking,
       :element_ranking,
       :biography,
+      :age_preference,
       photos: [],
-      personality_traits: [])
+      personality_traits: [],
+      activities: [])
   end
 end

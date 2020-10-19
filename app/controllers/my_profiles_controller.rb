@@ -36,6 +36,8 @@ class MyProfilesController < ApplicationController
       :relationship_type,
       :mode_ranking,
       :element_ranking,
+      :age_preference,
+      :activities,
       photos: [],
       personality_traits: [])
   end
