@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resource :element_rankings, only: [:edit, :update]
     resource :mode_rankings, only: [:edit, :update]
     resource :personality_traits, only: [:edit, :update]
+    resource :activities, only: [:edit, :update]
   end
 
   resources :users, only: [:index, :show, :chart] do
