@@ -14,6 +14,9 @@ class Profiles::BirthInfosController < Profiles::PreferencesController
     end
   end
 
+  def index
+  end
+
   private
 
   def format_params
