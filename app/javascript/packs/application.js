@@ -7,6 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("jquery-ui")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -32,7 +33,8 @@ import { initSortable } from '../plugins/init_sortable.js';
 import { profileSwipe } from '../plugins/init_swipe.js';
 import { initChatroomCable } from '../channels/match_channel.js';
 import { togglePersoTags } from '../components/personality_tags.js';
-import {scrollToLastMessage} from '../components/chatroom_scroll.js'
+import {scrollToLastMessage} from '../components/chatroom_scroll.js';
+import { ageSlider } from '../plugins/age_slider.js';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -46,5 +48,6 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   togglePersoTags();
   scrollToLastMessage();
+  ageSlider();
 });
 

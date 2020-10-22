@@ -72,6 +72,11 @@ class User < ApplicationRecord
     traits["tags"][self.sign]
   end
 
+  def activities
+    activities = YAML.load(open(Rails.root.join("db", "yaml", "activities.yml")).read)
+    activities["activities"]
+  end
+
   def find_sign(planet)
     chart_elements.where(planet: planet).first.sign
   end

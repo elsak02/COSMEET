@@ -9,6 +9,7 @@
     "bootstrap": "^4.5.2",
     "jquery": "^3.5.1",
     "jquery-touchswipe": "^1.6.19",
+    "jquery-ui-dist": "^1.12.1",
     "places.js": "^1.19.0",
     "popper.js": "^1.16.1",
     "sortablejs": "^1.10.2",
