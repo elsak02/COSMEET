@@ -22,27 +22,13 @@ const ageSlider = () => {
           $(".slider-input").find(".ui-slider-handle:last").text($(".slider-input").slider("values", 1));
         },
         slide: function(event, ui) {
-          let age_preference = []
           let lowestAge = $(".slider-input").slider("values", 0);
           let highestAge = $(".slider-input").slider("values", 1);
           $(".slider-input").find(".ui-slider-handle:first").text(lowestAge);
           $(".slider-input").find(".ui-slider-handle:last").text(highestAge);
-          age_preference.push(lowestAge)
-          age_preference.push(highestAge)
           const input = document.querySelector("#user_age_preference");
-          //input.value = Array.from(age_preference)
-          input.value = age_preference
-          //input.value = `${lowestAge}, ${highestAge}`;
-          console.log(input);
-          console.log(input.value);
-          // console.log(lowestAge);
-          // console.log(highestAge);
-          // const arrayAge = input.value.split(",");
-          // console.log(arrayAge);
-          // $("#user_age_preference").val([`${lowestAge}`, `${highestAge}`]);
-          // console.log(input);
-          // input.value = [lowestAge, highestAge];
-          // console.log(input.value)
+          input.value = [lowestAge, highestAge];
+
         }
       });
     };
