@@ -6,7 +6,9 @@ class PreferencesForm
     :gender,
     :biography,
     :sexual_preference,
-    :age_preference
+    :age_preference,
+    :min_age,
+    :max_age
   )
   validates :name, presence: true
   validates :gender, presence: true

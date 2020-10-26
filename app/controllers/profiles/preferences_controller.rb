@@ -10,6 +10,8 @@ class Profiles::PreferencesController < ApplicationController
     form.age_preference = []
     form.age_preference << params["user"]["age_preference"].split(',').first.to_i
     form.age_preference << params["user"]["age_preference"].split(',').last.to_i
+    current_user.min_age = params["user"]["age_preference"].split(',').first.to_i
+     current_user.max_age = params["user"]["age_preference"].split(',').last.to_i
     if form.valid?
       current_user.update(profile_params)
       current_user.age_preference = form.age_preference
@@ -36,7 +38,7 @@ class Profiles::PreferencesController < ApplicationController
       :element_ranking,
       :biography,
       :age_preference,
-      activities: [],
+      :activities,
       photos: [],
       personality_traits: [])
   end
