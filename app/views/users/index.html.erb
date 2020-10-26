@@ -28,7 +28,7 @@
             </div>
 
           <div class="bottom-sec">
-            <h4><strong><%= user.name %></strong>, <%= user.age(user.birth_date) %></h4>
+            <h4><strong><%= user.name %></strong>, <%= user.find_age(user.birth_date) %></h4>
             <div class="d-flex pb-2">
               <% id = user.id %>
               <% @score[id.to_s].times do %>
