@@ -1,15 +1,5 @@
 import { slider } from "jquery-ui";
 
-// const ageSlider = () => {
-//   $( ".slider-input" ).slider({
-//   range: true,
-//   min: 18,
-//   max: 80,
-//   values: [ 18, 80 ],
-//   step: 1,
-
-// });
-// }
 
 const ageSlider = () => {
   if (document.querySelector(".slider-input")) {

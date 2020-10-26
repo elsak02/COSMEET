@@ -19,6 +19,11 @@ class UsersController < ApplicationController
       @users = @users.where(gender: current_user.sexual_preference)
     end
 
+    # selecting user's age_preference
+
+    @users = @users.where("min_age <= ? AND max_age >=? AND age >= ? AND age <= ?", current_user.age, current_user.age, current_user.min_age, current_user.max_age)
+
+    #ranking users
     @users = rank_users
 
     # RUBY
@@ -93,7 +98,6 @@ class UsersController < ApplicationController
 
     elements_matching[:match_one].include?(user_one_sign) & elements_matching[:match_one].include?(user_two_sign) || elements_matching[:match_two].include?(user_one_sign) & elements_matching[:match_two].include?(user_two_sign)
   end
-
 
   def set_user
     @user = User.find(params[:id])

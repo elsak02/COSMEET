@@ -47,7 +47,7 @@ class User < ApplicationRecord
     received_likes.where(user: user).any?
   end
 
-  def age(birth_date)
+  def find_age(birth_date)
     now = Time.now.utc.to_date
     now.year - birth_date.year - ((now.month > birth_date.month || (now.month == birth_date.month && now.day >= birth_date.day)) ? 0 : 1)
   end
@@ -72,7 +72,7 @@ class User < ApplicationRecord
     traits["tags"][self.sign]
   end
 
-  def activities
+  def perso_activities
     activities = YAML.load(open(Rails.root.join("db", "yaml", "activities.yml")).read)
     activities["activities"]
   end

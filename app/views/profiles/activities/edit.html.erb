@@ -2,7 +2,7 @@
 
 <%= simple_form_for(current_user, url: profiles_activities_path) do |f| %>
    <div class=" my-5 d-flex flex-wrap justify-content-center personality-traits">
-    <% current_user.activities.each do |activity| %>
+    <% current_user.perso_activities.each do |activity| %>
       <%= check_box_tag "user[activities][]", activity, false, id: "user_activities_#{activity}", class: "d-none" %>
       <%= label_tag "user_activities_#{activity}", activity, class: "" %>
     <% end %>
