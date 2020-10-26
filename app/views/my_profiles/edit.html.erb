@@ -2,6 +2,27 @@
 
 <div class="py-2">
   <%= simple_form_for(current_user, url: my_profile_path ) do |f| %>
+    <div class="photos-container flex-wrap justify-content-around">
+      <div data-controller="img-preview">
+        <%= f.input(:photos,
+                    label: 'Change your profile picture',
+                    label_html: {
+                      class: 'photo-label mt-4',
+                      data: { target: 'img-preview.preview '}
+                    },
+                    input_html: {
+                      class: "d-none",
+                      id: "user_photo_wall",
+                      data: {
+                        target: 'img-preview.photo',
+                        action: 'change->img-preview#loadPreview'
+                      },
+                      multiple: true
+                    },
+                    required: true,
+                    as: :file) %>
+      </div>
+    </div>
     <%= f.input :name, required: true, label: 'Your name', input_html: { class: 'form-input'} %>
     <%= f.input :biography, label: 'Define yourself in a few words', input_html: { maxlength: 150, class: 'form-input'} %>
     <div class="pink-label mb-0">
@@ -21,6 +42,13 @@
                 as: :radio_buttons,
                 required: true,
                 wrapper: :vertical_collection_inline) %>
+    </div>
+       <div class="mb-3">
+    <%= f.input(:age_preference,
+                label: 'Aged between',
+                as: :slider,
+                # input_html: { values:[18,80]},
+                required: true) %>
     </div>
     <%= f.input(:birth_date,
               label: 'Your date of birth:',
@@ -49,15 +77,22 @@
                 as: :radio_buttons,
                 wrapper: :vertical_collection_inline) %>
     </div>
-    <span>Please select three personality traits:</span>
+    <span>Please select 3 personality traits:</span>
     <div class="my-3 d-flex flex-wrap justify-content-center personality-traits">
     <% current_user.perso_traits.each do |trait| %>
       <%= check_box_tag "user[personality_traits][]", trait, false, id: "user_personality_traits_#{trait}", class: "d-none" %>
       <%= label_tag "user_personality_traits_#{trait}", trait, class: "" %>
     <% end %>
   </div>
+
+    <span>Please select the 3 tags that better represent <strong>your</strong> priorities in life:</span>
+     <div class=" my-3 d-flex flex-wrap justify-content-center personality-traits">
+    <% current_user.activities.each do |activity| %>
+      <%= check_box_tag "user[activities][]", activity, false, id: "user_activities_#{activity}", class: "d-none" %>
+      <%= label_tag "user_activities_#{activity}", activity, class: "" %>
+    <% end %>
+  </div>
       <div class=" d-flex justify-content-center">
         <%= f.submit 'Continue', class:'button mt-1' %>
     </div>
   <% end %>
-</div>
