@@ -1,6 +1,6 @@
 class MatchesController < ApplicationController
   def index
-    @matches = policy_scope(Match)
+    @matches = policy_scope(Match).order('created_at desc')
   end
 
   def show
