@@ -14,6 +14,12 @@
       <div class="bottom-sec">
 
             <h4><strong><%= @user.name %></strong>, <%= @user.find_age(@user.birth_date) %></h4>
+              <% @score.times do %>
+                <%= image_tag "icons/heart.png", class: "mr-1 pb-1" %>
+              <% end %>
+               <% (3 - @score).times do %>
+                <%= image_tag "icons/heart_empty.png", class: "mr-1 pb-1" %>
+              <% end %>
             <ul class="list-group list-group-horizontal flex-wrap justify-items-center">
               <% @user.personality_traits.each do |personality_trait| %>
               <li class="list-group-item perso-traits"><%= personality_trait %></li>
