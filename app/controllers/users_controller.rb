@@ -42,6 +42,7 @@ class UsersController < ApplicationController
 
   def show
     authorize @user
+    @score = score_compatibility(current_user, @user).to_i
   end
 
   def update
@@ -52,6 +53,7 @@ class UsersController < ApplicationController
   end
 
   private
+
 
   def score_compatibility(user_one, user_two)
       personal_planets = %w[Sun Moon Ascendant]
