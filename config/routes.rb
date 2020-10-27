@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :profiles do
     resource :preferences, only: [:edit, :update]
-    resource :birth_infos, only: [:edit, :update, :index]
+    resource :birth_infos, only: [:edit, :update]
     resource :photos, only: [:edit, :update]
     resource :relationship_types, only: [:edit, :update]
     resource :element_rankings, only: [:edit, :update]
