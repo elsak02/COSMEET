@@ -23,7 +23,7 @@
                 input_html: { class: 'form-input'}) %>
 
     <div class=" d-flex justify-content-center">
-      <button type="button" data-toggle="modal", data-target="#modalInfos" >Continue</button>
+      <button id="submitFormBirth" class="button mt-4" type="button" data-toggle="modal", data-target="#modalInfos" >Continue</button>
     </div>
     <div class="modal fade" id="modalInfos" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -39,8 +39,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <%= f.submit, 'Submit', class:'button mt-4' %>
-            <!-- <button type="submit" id="submitFormBirth" class="button mt-4">Submit</button> -->
+            <%= f.submit 'Submit', class:'button mt-4' %>
           </div>
         </div>
       </div>

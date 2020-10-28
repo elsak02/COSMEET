@@ -33,7 +33,6 @@ import { profileSwipe } from '../plugins/init_swipe.js';
 import { initChatroomCable } from '../channels/match_channel.js';
 import { togglePersoTags } from '../components/personality_tags.js';
 import {scrollToLastMessage} from '../components/chatroom_scroll.js';
-import { formConfirm } from '../components/form_confirm.js'
 import { displayInfosUser } from '../components/display_infos_user.js'
 
 
@@ -49,7 +48,6 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   togglePersoTags();
   scrollToLastMessage();
-  formConfirm();
   displayInfosUser();
 });
 
