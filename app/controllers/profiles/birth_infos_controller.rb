@@ -1,12 +1,11 @@
 class Profiles::BirthInfosController < Profiles::PreferencesController
   def update
-    authorize current_user
 
+    authorize current_user
     form = BirthInfosForm.new(format_params)
     if form.valid?
       current_user.update(profile_params)
       PopulateChartElementJob.perform_now(current_user)
-      # raise
       redirect_to edit_profiles_photos_path
     else
       flash[:alert] = form.errors.full_messages.join(", ")

@@ -22,25 +22,28 @@
                 required: true,
                 input_html: { class: 'form-input'}) %>
 
-    <div id="post-content" class=" d-flex justify-content-center" data-toggle="modal" data-target="#modalInfos">
-      <%= f.submit 'Continue', class:'button mt-4' %>
+    <div class=" d-flex justify-content-center">
+      <button type="button" data-toggle="modal", data-target="#modalInfos" >Continue</button>
+    </div>
+    <div class="modal fade" id="modalInfos" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Mes Infos</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul id="infosBirthUser"></ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <%= f.submit, 'Submit', class:'button mt-4' %>
+            <!-- <button type="submit" id="submitFormBirth" class="button mt-4">Submit</button> -->
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 
-<div class="modal fade" id="modalInfos" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Mes Infos</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p><%= birth_place %></p>
-        <p><%= birth_time.to_s.split(" ")[1] %></p>
-        <p><%= birth_place %></p>
-      </div>
-    </div>
-  </div>
-</div>

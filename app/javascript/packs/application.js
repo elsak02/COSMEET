@@ -32,7 +32,10 @@ import { initSortable } from '../plugins/init_sortable.js';
 import { profileSwipe } from '../plugins/init_swipe.js';
 import { initChatroomCable } from '../channels/match_channel.js';
 import { togglePersoTags } from '../components/personality_tags.js';
-import {scrollToLastMessage} from '../components/chatroom_scroll.js'
+import {scrollToLastMessage} from '../components/chatroom_scroll.js';
+import { formConfirm } from '../components/form_confirm.js'
+import { displayInfosUser } from '../components/display_infos_user.js'
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -46,5 +49,7 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   togglePersoTags();
   scrollToLastMessage();
+  formConfirm();
+  displayInfosUser();
 });
 
