@@ -17,6 +17,8 @@ module COSMEET
     config.load_defaults 6.0
     #config sidekiq
     config.active_job.queue_adapter = :sidekiq
+    #config timezone
+    config.time_zone = "Europe/Paris"
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
