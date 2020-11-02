@@ -64,7 +64,11 @@
       </div>
       <div class="row small-message">
         <%= link_to user_match.match.messages.last.content.truncate(25) , chatroom_match_path(user_match.match), class: "text-message" %>
-        <small>at <%= user_match.match.messages.last.created_at.strftime("%l:%M%p") %></small>
+         <% if user_match.match.messages.last.created_at.today? %>
+        <small>Today at <%= user_match.match.messages.last.created_at.strftime("%l:%M%p") %></small>
+        <% else %>
+        <small><%= user_match.match.messages.last.created_at.strftime("%e %b. %Y")%></small>
+        <% end %>
       </div>
       <% end %>
     </div>

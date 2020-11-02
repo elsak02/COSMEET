@@ -5,5 +5,9 @@
   <p class="line-text"><%= message.content %></p>
 </div>
 <div class="message-container <%= message.user != user ? 'current-time' : 'user-time' %>">
-  <small><%= message.created_at.strftime("%l:%M%p")%></small>
+  <% if message.created_at.today? %>
+  <small>Today at <%= message.created_at.strftime("%l:%M%p")%></small>
+  <% else %>
+  <small><%= message.created_at.strftime("%e %b. %Y")%></small>
+  <% end %>
 </div>
