@@ -1,5 +1,11 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-chatroom">
+   <span><%= cl_image_tag @chatroom.user_matches.where.not(user: current_user).first.user.photos.first.key, class: "avatar-message" %>
+    <%= link_to user_path(@chatroom.user_matches.where.not(user: current_user).first.user) do %>
+    <%= @chatroom.user_matches.where.not(user: current_user).first.user.name %></span>
+    <% end %>
+</div>
 
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+<div class="container custom-container min-vh-100" id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% @chatroom.messages.each do |message| %>
     <div class="message-container <%= message.user == current_user ? 'current-message' : 'user-message' %>" id="message-<%= message.id %>">
       <i class="author">
