@@ -56,14 +56,16 @@
   </head>
 
     <body id="<%= controller.controller_name %>-<%= controller.action_name %>" class="min-vh-100">
-      <% unless controller_name == "pages" || (controller_name == "matches" && action_name == 'show') %>
+      <% unless controller_name == "pages" || (controller_name == "matches" && (action_name == 'show'|| action_name == 'chatroom'))%>
         <%= render 'shared/navbar' %>
       <% end  %>
       <%= render 'shared/flashes' %>
       <% if controller_name == 'matches' && action_name == 'show' %>
         <div class="container custom-container min-vh-100" style= "background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/1341279/pexels-photo-1341279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')">
       <% else %>
+        <% unless controller_name == 'matches' && action_name == 'chatroom' %>
         <div class="container custom-container min-vh-100">
+          <% end %>
       <% end  %>
         <%= yield %>
       </div>

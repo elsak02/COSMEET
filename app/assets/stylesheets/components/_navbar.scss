@@ -11,6 +11,23 @@
   padding: 12px;
 }
 
+.navbar-chatroom {
+  justify-content: center;
+  background: $pink;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 -1px 4px rgba(0,0,0,5.2);
+  margin-bottom: 10px;
+  padding: 10px;
+  a {
+   color: black;
+   text-decoration: none;
+ }
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -45,3 +62,5 @@
   z-index: -1;
   position: relative;
 }
+
+
