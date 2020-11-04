@@ -5,29 +5,32 @@
     <% end %>
 </div>
 
-<div class="container custom-container min-vh-100" id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
-    <div class="message-container <%= message.user == current_user ? 'current-message' : 'user-message' %>" id="message-<%= message.id %>">
-      <i class="author">
-        <span><strong><%= message.user.name %></strong></span>
-      </i>
-      <p class="line-text"><%= message.content %></p>
-    </div>
-    <div class="message-container <%= message.user == current_user ? 'current-time' : 'user-time' %>">
-       <% if message.created_at.today? %>
-        <small>Today at <%= message.created_at.strftime("%l:%M%p")%></small>
-        <% else %>
-        <small><%= message.created_at.strftime("%e %b. %Y")%></small>
-        <% end %>
-    </div>
-  <% end %>
-    </div>
-    <div class="input-text">
-  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-      <div class="text-button">
-        <%= f.input :content, as: :string, label: false, placeholder: "Send love..."%>
-        <%= f.submit 'SEND', id: 'submit-btn' %>
+<div class="container custom-container" >
+  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+    <% @chatroom.messages.each do |message| %>
+      <div class="message-container <%= message.user == current_user ? 'current-message' : 'user-message' %>" id="message-<%= message.id %>">
+        <i class="author">
+          <span><strong><%= message.user.name %></strong></span>
+        </i>
+        <p class="line-text"><%= message.content %></p>
       </div>
-  <% end %>
+      <div class="message-container <%= message.user == current_user ? 'current-time' : 'user-time' %>">
+         <% if message.created_at.today? %>
+          <small>Today at <%= message.created_at.strftime("%l:%M%p")%></small>
+          <% else %>
+          <small><%= message.created_at.strftime("%e %b. %Y")%></small>
+          <% end %>
+      </div>
+    <% end %>
+      </div>
+      <div class="input-text">
+    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+        <div class="text-button">
+          <%= f.input :content, as: :string, label: false, placeholder: "Send love..."%>
+          <%= f.submit 'SEND', id: 'submit-btn' %>
+        </div>
+    <% end %>
+  </div>
 </div>
+
 
