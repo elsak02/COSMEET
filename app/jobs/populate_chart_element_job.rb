@@ -35,9 +35,9 @@ ASTRO_API = AstroService.new(ENV["ASTRO_ID"], ENV["ASTRO_KEY"])
       api_content_ascendant = ASTRO_API.call("general_ascendant_report/tropical", date, month, year, hour, minute, latitude, longitude, timezone)
       content_parsed_ascendant = JSON.parse(api_content_ascendant)
       ChartElement.create!(user: user, planet: "Ascendant", sign: user_parsed["houses"][0]["sign"], content: content_parsed_ascendant["report"])
-    # raise
 
-    # //ASCENDANT//
+
+    # //CHART//
       api_chart = ASTRO_API.call("custom_western_chart", date, month, year, hour, minute, latitude, longitude, timezone)
       chart_parsed = JSON.parse(api_chart)
       chart_url = chart_parsed["url"]

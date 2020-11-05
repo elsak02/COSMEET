@@ -168,12 +168,6 @@ christophe = User.create!(email: "christophe@cosmee.com", password: "123456", na
 
 christophe.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-#User Hugo Lavorel
-file = URI.open('https://avatars2.githubusercontent.com/u/63447451?v=4')
-
-hugo = User.create!(email: "hugo@cosmeet.com", password: "123456", name: "Hugo L", birth_date: "1990-08-06", birth_time: "18:50", birth_place: "Vitry-sur-seine", gender: "Man", sexual_preference: "Woman", relationship_type: "Serious", element_ranking: ["water","air","earth","fire"], mode_ranking: ["fixed","mutable","cardinal"], personality_traits: ["generous", "idealistic", "lustful"], latitude: 48.78, longitude: 2.4, biography: "I usually seduce with my suave voice. Wait to see my other talents...", age_preference: [25, 35], activities: ["partying", "socializing", "meditation"])
-
-hugo.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 #User Corentin Malvaux
 file = URI.open('https://res.cloudinary.com/wagon/image/upload/v1594053645/uvcfxlqizphyumwnqzck.jpg')
@@ -265,6 +259,13 @@ file = URI.open('https://avatars1.githubusercontent.com/u/61843515?s=400&u=9cd88
 vivian = User.create!(email: "vivian@cosmeet.com", password: "123456", name: "Vivian", birth_date: "1990-01-21", birth_time: "8:015", birth_place: "Rio de Janeiro", sexual_preference: "Man", relationship_type: "Serious", element_ranking: ["fire", "earth", "water", "air"], mode_ranking: ["fixed","mutable","cardinal"], personality_traits: ["intellectual", "intuitive", "original"], latitude: -22.92, longitude: -43.33, biography: "Passionate about fantasy novels, I like to work until my eyes can't see anymore.", age_preference: [25, 35], activities: ["partying", "socializing", "meditation"])
 
 vivian.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+#User Hugo Lavorel
+#file = URI.open('https://avatars2.githubusercontent.com/u/63447451?v=4')
+
+#hugo = User.create!(email: "hugo@cosmeet.com", password: "123456", name: "Hugo L", birth_date: "1990-08-06", birth_time: "18:50", birth_place: "Vitry-sur-seine", gender: "Man", sexual_preference: "Woman", relationship_type: "Serious", element_ranking: ["water","air","earth","fire"], mode_ranking: ["fixed","mutable","cardinal"], personality_traits: ["generous", "idealistic", "lustful"], latitude: 48.78, longitude: 2.4, biography: "I usually seduce with my suave voice. Wait to see my other talents...", age_preference: [25, 35], activities: ["partying", "socializing", "meditation"])
+
+#hugo.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 puts "Adding age infos..."
 
