@@ -15,9 +15,18 @@ class MyProfilesController < ApplicationController
 
   def update
     authorize current_user
+    birthdate = current_user.birth_date
+    birthplace = current_user.birth_place
+    birthtime = current_user.birth_time
     current_user.assign_attributes(strong_params)
     if current_user.save
-      redirect_to my_profile_path
+      if (birthdate == current_user.birth_date) && (birthplace == current_user.birth_place) && (birthtime == current_user.birth_time)
+        redirect_to my_profile_path
+      else
+        current_user.chart_elements.destroy_all
+        PopulateChartElementJob.perform_now(current_user)
+        redirect_to my_profile_path
+      end
     else
       render :edit
     end
@@ -28,6 +37,7 @@ class MyProfilesController < ApplicationController
   def strong_params
     params.require(:user).permit(
       :name,
+      :biography,
       :birth_date,
       :birth_place,
       :birth_time,

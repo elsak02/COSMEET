@@ -38,7 +38,7 @@ class Profiles::PreferencesController < ApplicationController
       :element_ranking,
       :biography,
       :age_preference,
-      :activities,
+      activities: [],
       photos: [],
       personality_traits: [])
   end

@@ -47,7 +47,7 @@
     <%= f.input(:age_preference,
                 label: 'Aged between',
                 as: :slider,
-                # input_html: { values:[18,80]},
+                input_html: { values:[current_user.min_age, current_user.max_age]},
                 required: true) %>
     </div>
     <%= f.input(:birth_date,
