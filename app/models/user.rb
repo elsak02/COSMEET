@@ -20,6 +20,8 @@ class User < ApplicationRecord
     mutable: ["Sagittarius", "Virgo", "Gemini", "Pisces"]
   }
 
+  ACTIVITIES = YAML.load(open(Rails.root.join("db", "yaml", "activities.yml")).read)
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

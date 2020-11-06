@@ -47,7 +47,7 @@
     <%= f.input(:age_preference,
                 label: 'Aged between',
                 as: :slider,
-                input_html: { values:[current_user.min_age, current_user.max_age]},
+                input_html: { value: [current_user.min_age, current_user.max_age] || [18, 80]},
                 required: true) %>
     </div>
     <%= f.input(:birth_date,
@@ -87,10 +87,11 @@
 
     <span>Please select the 3 tags that better represent <strong>your</strong> priorities in life:</span>
      <div class=" my-3 d-flex flex-wrap justify-content-center personality-traits">
-    <% current_user.activities.each do |activity| %>
-      <%= check_box_tag "user[activities][]", activity, false, id: "user_activities_#{activity}", class: "d-none" %>
-      <%= label_tag "user_activities_#{activity}", activity, class: "" %>
-    <% end %>
+       <%= f.input :activities, as: :check_boxes, collection: User::ACTIVITIES, input_html: {class: "d-none"}, wrapper_html: {class: "label-activities"} %>
+    <% #current_user.activities.each do |activity| %>
+      <%#= check_box_tag "user[activities][]", activity, false, id: "user_activities_#{activity}", class: "d-none" %>
+      <%#= label_tag "user_activities_#{activity}", activity, class: "" %>
+    <%# end %>
   </div>
       <div class=" d-flex justify-content-center">
         <%= f.submit 'Continue', class:'button mt-1' %>
