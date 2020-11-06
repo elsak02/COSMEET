@@ -13,14 +13,17 @@ class UsersController < ApplicationController
     already_liked_user_ids = current_user.given_likes.pluck(:receiver_id)
     @users = @users.where.not(id: already_liked_user_ids)
 
+    #selecting according to user's sexual preference&
     if current_user.sexual_preference == "Both"
       @users = @users.where(sexual_preference: ["Both", current_user.gender])
     else
       @users = @users.where(gender: current_user.sexual_preference)
     end
 
-    # selecting user's age_preference
+    #selecting user's relationship preference
+    @users = @users.where(relationship_type: ["curious", current_user.relationship_type])
 
+    # selecting user's age_preference
     @users = @users.where("min_age <= ? AND max_age >=? AND age >= ? AND age <= ?", current_user.age, current_user.age, current_user.min_age, current_user.max_age)
 
     #ranking users
@@ -54,6 +57,9 @@ class UsersController < ApplicationController
 
   private
 
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def score_compatibility(user_one, user_two)
       personal_planets = %w[Sun Moon Ascendant]
@@ -101,9 +107,6 @@ class UsersController < ApplicationController
     elements_matching[:match_one].include?(user_one_sign) & elements_matching[:match_one].include?(user_two_sign) || elements_matching[:match_two].include?(user_one_sign) & elements_matching[:match_two].include?(user_two_sign)
   end
 
-  def set_user
-    @user = User.find(params[:id])
-  end
 
   def rank_users
     # -- elements ranking
@@ -131,14 +134,6 @@ class UsersController < ApplicationController
     elements1 = User::ELEMENTS[element_ranking[1].to_sym].map { |sign| "'#{sign}'" }.join(', ')
     elements2 = User::ELEMENTS[element_ranking[2].to_sym].map { |sign| "'#{sign}'" }.join(', ')
 
-    # ranking_select_element = <<~SQL
-    #   users.*,
-    #   CASE  WHEN chart_elements.sign IN (#{elements0}) THEN 4
-    #         WHEN chart_elements.sign IN (#{elements1}) THEN 3
-    #         WHEN chart_elements.sign IN (#{elements2}) THEN 2
-    #         ELSE 1
-    #   END AS element_score
-    # SQL
 
     # -- modes ranking
     #MODES = {

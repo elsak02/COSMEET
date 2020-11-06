@@ -12,7 +12,7 @@
 }
 
 .form-check-input.is-valid ~ .form-check-label {
-  color: black;
+  color: #6b5f63;
 }
 // edit perso tags
 .personality-traits label {
@@ -25,6 +25,7 @@
   border-radius: 20px !important;
   box-shadow: 1px 3px 0px $pink;
   margin: 0 8px 12px;
+  text-align: center;
   &.checked {
   background: #fff;
   // border: 1px solid #d2bbc4 !important;
@@ -122,3 +123,14 @@
   }
 
 }
+
+.label-activities {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+  legend {
+  display: none;
+  }
+}
+
+
